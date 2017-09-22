@@ -140,6 +140,5 @@ int main(int argc, char* argv[])
 		cout << "(" << it->x << "," << it->y << ") ";
 	}
 	cout << endl;
-	system("pause");
 	return 0;
 }
