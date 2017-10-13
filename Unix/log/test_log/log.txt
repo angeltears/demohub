@@ -1,0 +1,4 @@
+ [10/11/17 20:53:41 ] test.c:0018 <LOG_ERR> open test.txt file fail.
+ [10/11/17 21:10:56 ] test.c:0018 <LOG_ERR> open test.txt file fail.
+ [10/11/17 21:10:58 ] test.c:0018 <LOG_ERR> open test.txt file fail.
+ [10/11/17 21:10:59 ] test.c:0018 <LOG_ERR> open test.txt file fail.
