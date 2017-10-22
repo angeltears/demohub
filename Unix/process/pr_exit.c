@@ -31,7 +31,7 @@ int main()
         err_sys("fork error");
     }
     else if(pid == 0)
-    {
+        vv  
         exit(7);
     }
 
