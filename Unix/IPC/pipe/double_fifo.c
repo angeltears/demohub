@@ -73,18 +73,19 @@ int main()
     pid = fork();
     if (pid == 0)
     {
-        readfd = open(FIFO1, O_RDONLY, 0755);
-        writefd = open(FIFO2,O_WRONLY, 0755);
-        printf("child");
+        readfd = open(FIFO1, O_RDONLY, 0);
+        writefd = open(FIFO2,O_WRONLY, 0);
+
         server(readfd, writefd);
         exit(0);
     }
     else if(pid > 0)
     {
-        readfd = open(FIFO2, O_RDONLY, 0755);
-        writefd = open(FIFO1, O_WRONLY, 0755);
-        printf("parent");
+        readfd = open(FIFO2, O_RDONLY, 0);
+        writefd = open(FIFO1, O_WRONLY, 0);
+
         client(readfd, writefd);
+        
         waitpid(pid, NULL, 0);
         
         close(readfd);
