@@ -12,32 +12,45 @@ int main()
         perror("mkfifo fail:");
 
     readfd = open(FIFO1, O_RDONLY, 0);
-    dummyfd = open(FIFO2, O_WRONLY, 0);
-
-    while ((n = readline(readfd, buff, MAXLINE)) > 0)
+    dummyfd = open(FIFO1, O_WRONLY, 0);
+    while(1)
     {
-        if (buff[n -1] == '\n')
-            n--;
-        buff[n] = '\0';
+        while ((n = Readline(readfd, buff, MAXLINE)) > 0)
+        {
+            if (buff[n -1] == '\n')
+               n--;
+            buff[n] = '\0';
 
-        if ((ptr = strchr(buff, '')) == NULL)
-        {
-            printf("can not open:%s", buff);
-            continue;
-        }
+            if ((ptr = strchr(buff, ' ')) == NULL)
+            {
+                printf("can not open:%s", buff);
+                continue;
+            }
 
-        *ptr++ =0;
-        pid = atol(buff);   //atol 可以将字符串转化成数
-        snprintf(fifoname, sizeof(fifoname),"/home/fire/桌面/fifo.%ld",(long)pid);
-        if ((writefd = open(fifoname, O_WRONLY, 0)) < 0)
-        {
-            printf("can not open : %s", fifoname);
-            continue;
-        }
-        if ((fd = open(ptr, O_RDONLY)) < 0)
-        {
-            snprintf(buff + n, sizeof(buff), "can open : %s\n",
-                     sterrno);
+            *ptr++ =0;
+            pid = atol(buff);   //atol 可以将字符串转化成数
+            snprintf(fifoname, sizeof(fifoname),"/home/fire/桌面/fifo.%ld",(long)pid);
+            if ((writefd = open(fifoname, O_WRONLY, 0)) < 0)
+            {
+                printf("can not open : %s", fifoname);
+                continue;
+            }
+            if ((fd = open(ptr, O_RDONLY)) < 0)
+            {
+                snprintf(buff + n, sizeof(buff) - n, ": can't open,  %s\n",
+                        strerror(errno));
+                n = strlen(ptr);
+                write(writefd, ptr, n);
+                close(writefd);
+            }
+            else
+            {
+                while ((n = read(fd, buff, MAXLINE)) > 0)
+                    write(writefd, buff, n);
+                close(fd);
+                close(writefd);
+            }
         }
     }
+    exit(0);
 }
