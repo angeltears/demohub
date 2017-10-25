@@ -28,7 +28,7 @@ void InitMaze()
 {
 	//简单起见，本题定义一个固定大小10*10的迷宫  
 	//定义一个迷宫，0表示通道，1表示墙(或不可走)  
-		int mz[N][N] = {
+	int mz[N][N] = {
 			{0,0,0,0,0}, 
 			{0,1,0,1,0}, 
 			{1,1,0,0,0},  
@@ -64,11 +64,7 @@ void MazeTrack(int x, int y)
 		}
 		cout << endl;
 
-		//判断是否更优  
-		if (First)//如果是找到的第一条路径，直接复制到最优路径  
-		{
-			for (it = Path.begin(); it != Path.end(); ++it)
-			{
+		//判断是否更
 				BestPath.push_back(*it);
 			}
 			First = false;
