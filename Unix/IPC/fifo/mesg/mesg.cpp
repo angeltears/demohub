@@ -7,17 +7,20 @@ mesg::mesg()
 }
 ssize_t mesg::setsize()
 {
-    return (sizeof(struct mymesg)-MAXDATA);
+    _size = sizeof(struct mymesg)-MAXDATA;
+    return _size;
 }
 ssize_t mesg::mesg_send(int fd)
 {
+    setsize();
     return(write(fd, _mesg, _size));
 }
-ssize_t mesg::mese_recv(int fd)
+ssize_t mesg::mesg_recv(int fd)
 {
     size_t len;
     ssize_t n;
 
+    setsize();
     if ((n = read(fd, _mesg, _size)) == 0)
         return 0;
     else if (n != _size)
@@ -40,7 +43,7 @@ mesg::~mesg()
     delete _mesg;
     _mesg = NULL;
 }
-
+client::client():mesg(){}
 void client::_client(int readfd, int writefd)
 {
     int len;
@@ -54,11 +57,13 @@ void client::_client(int readfd, int writefd)
     }
     _mesg->mesg_len = len;
     _mesg->mesg_type = 1;
-    mesg::mesg_send(writefd, _mesg);
+    mesg::mesg_send(writefd);
 
-    while((n = mesg::mesg_recv(readfd, _mesg)) > 0)
+    while((n = mesg::mesg_recv(readfd)) > 0)
         write(STDOUT_FILENO, _mesg->mesg_date, n);
 }
+
+severt::severt(): mesg::mesg(){}
 
 void severt::_severt(int readfd, int writefd)
 {
@@ -66,7 +71,7 @@ void severt::_severt(int readfd, int writefd)
     ssize_t n;
     
     _mesg->mesg_type = 1;
-    if ((n = mesg::mesg_recv(readfd, _mesg)) == 0)
+    if ((n = mesg::mesg_recv(readfd)) == 0)
     {
             printf("missing pathname!");
             exit(0);
@@ -78,18 +83,20 @@ void severt::_severt(int readfd, int writefd)
         snprintf(_mesg->mesg_date, sizeof(_mesg->mesg_date)-n,
                  ": can't open, %s",strerror(errno));
         _mesg->mesg_len = strlen(_mesg->mesg_date);
-        mesg::mesg_send(writefd, _mesg);
+        mesg::mesg_send(writefd);
     }
     else 
     {
         while ((fgets(_mesg->mesg_date,MAXDATA, fp)) != NULL)
         {
             _mesg->mesg_len = strlen(_mesg->mesg_date);
-            mesg::mesg_send(writefd, _mesg);
+            mesg::mesg_send(writefd);
         }
     }
     fclose(fp);
 
     _mesg->mesg_len = 0;
-    mesg::mesg_send(writefd, _mesg);
+    mesg::mesg_send(writefd);
 }
+
+
