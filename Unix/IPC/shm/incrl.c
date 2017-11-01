@@ -1,5 +1,5 @@
 #include "shm.h"
-
+#include <semaphore.h>
 #define SEM_NAME "mysem"
 
 int count = 0;

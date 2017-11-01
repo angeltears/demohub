@@ -53,4 +53,5 @@ void my_unlock(int fd)
 int main()
 {
     my_lock(0);
+    semctl(semid, 0,IPC_RMID);
 }
