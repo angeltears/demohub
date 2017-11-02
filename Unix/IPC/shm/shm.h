@@ -10,6 +10,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <semaphore.h>
+#include <sys/mman.h>
 #define CREAT_MODE  IPC_CREAT|IPC_EXCL|0755
 #define PATH_MAX 256
 
@@ -54,6 +55,38 @@ int Semop(int semid, struct sembuf *opsptr, size_t size)
     return ret;
 }
 
+int Munmap(void *addr, size_t len)
+{
+    int ret = munmap(addr, len);
+    if (ret == -1)
+    {
+        perror("munmap :");
+        exit(1);
+    }
+    return ret;
+}
+
+int Msync(void *addr, size_t len,int flag)
+{
+    int ret = msync(addr, len, flag);
+    if (ret == -1)
+    {
+        perror("msync:");
+        exit(1);
+    }
+    return ret;
+}
+
+int Close(int fd)
+{
+    int ret = close(fd);
+    if (ret == -1)
+    {
+        perror("close:");
+        exit(0);
+    }
+    return ret;
+}
 
 char *px_ipc_name(const char *name)
 {
