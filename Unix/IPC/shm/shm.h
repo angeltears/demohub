@@ -11,6 +11,7 @@
 #include <sys/stat.h>
 #include <semaphore.h>
 #include <sys/mman.h>
+#include <sys/shm.h>
 #define CREAT_MODE  IPC_CREAT|IPC_EXCL|0755
 #define PATH_MAX 256
 
@@ -100,7 +101,7 @@ char *px_ipc_name(const char *name)
 #ifdef  POSIX_IPC_PREFIX
                 dir = POSIX_IPC_PREFIX;         /* from "config.h" */
 #else
-                dir = "/tmp";                           /* default */
+
 #endif
         }
                 /* 4dir must end in a slash */
