@@ -27,7 +27,7 @@ key_t Ftok(char *pathname, int pojet_id)
     key_t ret = ftok(pathname, pojet_id);
     if (ret == -1)
     {
-        perror("ftok, ");
+        perror("ftok:");
         exit(1);
     }
     return ret;
@@ -38,7 +38,7 @@ int Semget(key_t key, int nsems, int oflg)
     int ret = semget(key, nsems, oflg);
     if (ret == -1)
     {
-        perror("semget, ");
+        perror("semget:");
         exit(0);
     }
     return ret;
@@ -50,7 +50,7 @@ int Semop(int semid, struct sembuf *opsptr, size_t size)
     int ret = semop(semid, opsptr, size);
     if (ret == -1)
     {
-        perror("semget, ");
+        perror("semget:");
         exit(0);
     }
     return ret;
@@ -61,7 +61,7 @@ int Munmap(void *addr, size_t len)
     int ret = munmap(addr, len);
     if (ret == -1)
     {
-        perror("munmap :");
+        perror("munmap:");
         exit(1);
     }
     return ret;
