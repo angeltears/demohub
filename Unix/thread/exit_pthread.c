@@ -3,13 +3,16 @@
 void *fun1(void *arg)
 {
     printf("thread 1 return\n");
-    return ((void *)1);
+    int *ret = (int *)malloc(sizeof(int));
+    *ret = 1;
+    return (void *)ret;
 }
 
 void *fun2(void *arg)
 {
     printf("thread 2 return\n");
-    pthread_exit((void *)2);
+    int ret = 2;
+    pthread_exit((void *)(&ret));
 }
 
 
