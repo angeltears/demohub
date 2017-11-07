@@ -70,20 +70,9 @@ void foo_rele(struct foo *fp)
 {
   struct foo *tfp;
   int idx;
-
-  pthread_mutex_lock(&fp->f_lock);
-  if (fp->f_count == 1)
+  pthread_mutex_lock(&hashlock);
+  if (--fp->f_count == 0)
   {
-    pthread_mutex_unlock(&fp->f_lock);
-    pthread_mutex_lock(&hashlock);
-    pthread_mutex_lock(&fp->f_lock);
-    if (fp ->f_count != 1)
-    {
-        fp->f_count--;
-        pthread_mutex_unlock(&fp->f_lock);
-        pthread_mutex_unlock(&hashlock);
-        return;
-    }
     idx = HASH(fp->f_id);
     tfp = fh[idx];
     if (tfp == fp)
@@ -99,14 +88,12 @@ void foo_rele(struct foo *fp)
         tfp->f_next = fp->f_next;
     }
     pthread_mutex_unlock(&hashlock);
-    pthread_mutex_unlock(&fp->f_lock);
     pthread_mutex_destroy(&fp->f_lock);
     free(fp);
     }
   else
   {
-    fp->f_count--;
-    pthread_mutex_unlock(&fp->f_lock);
+    pthread_mutex_unlock(&hashlock);
   }
 }
 
