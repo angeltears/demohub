@@ -4,12 +4,13 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-
-#define mq_name  "/tmp/mq_test"
+#include "pr_ipc_name.h"
+#define mq_name  "mq_test.1"
 int main()
 {
-
-    mqd_t qid = mq_open(mq_name, O_CREAT|O_RDWR, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH|S_IWGRP|S_IWOTH, NULL);
+    char *name = px_ipc_name(mq_name);
+    printf("%s\n",name);
+    mqd_t qid = mq_open(mq_name, O_RDONLY);
     struct mq_attr attr;
     attr.mq_maxmsg = 0;
     mq_getattr(qid, &attr);
@@ -19,10 +20,10 @@ int main()
         printf("error");
 
 
-   
-    
-    
-    
+
+
+
+
     mq_close(qid);
     mq_unlink(mq_name);
 
