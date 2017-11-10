@@ -162,7 +162,7 @@ int my_pthread_rwlock_wrlock(my_pthread_rwlock_t *rw)
 #ifdef RD_LOCK
     if (rw->rw_nwaitreaders > 0)
     {
-        result = pthread_cond_signal(&rw->rw_condreaders);
+        result = pthread_cond_broadcast(&rw->rw_condreaders);
     }
     else if (rw->rw_nwaitwriters > 0)
     {
@@ -172,7 +172,7 @@ int my_pthread_rwlock_wrlock(my_pthread_rwlock_t *rw)
         }
     }
 #endif
-#ifdef  WR_LOCK　
+#ifdef  WR_LOCK
     if(rw->rw_nwaitwriters > 0)
     {
         if(rw->rw_refcount == 0)
