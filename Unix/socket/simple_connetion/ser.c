@@ -1,10 +1,4 @@
 
-/**********************************************************
- *    > File Name: ser.c
- *    > Author: 51CC_baosongshan
- *    > Mail: baosongshan2006@163.com
- *    > Created Time: 2017年11月13日 星期一 18时43分05秒
- **********************************************************/
 
 #include"../utili.h"
 #include <pthread.h>
