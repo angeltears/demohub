@@ -8,7 +8,7 @@
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<arpa/inet.h>
-
+#include <errno.h>
 #define SERVER_PORT 8080
 #define SERVER_IP   "192.168.1.171"
 #define LISTEN_QUEUE_SIZE 5
