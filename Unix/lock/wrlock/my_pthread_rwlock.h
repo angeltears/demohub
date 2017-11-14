@@ -37,8 +37,14 @@ int my_pthread_rwlock_unlock(my_pthread_rwlock_t *rw);
 int my_pthread_rwlock_destroy(my_pthread_rwlock_t *rw);
 int my_pthread_rwlock_trywrlock(my_pthread_rwlock_t *rw);
 int my_pthread_rwlock_tryrdlock(my_pthread_rwlock_t *rw);
+void clean_up(void *arg);
 //////////////////////////////////////////////////////////////////////////////////
-
+void clean_up(void *arg)
+{
+    my_pthread_rwlock_t *rw = (my_pthread_rwlock_t*)arg;
+    rw->rw_nwaitreaders--;
+    pthread_mutex_unlock(&rw->rw_mutex);
+}
 
 
 
@@ -59,7 +65,7 @@ int my_pthread_rwlock_init(my_pthread_rwlock_t *rw, my_pthread_rwlockattr_t *att
     }
     if ((result = pthread_cond_init(&rw->rw_condwriters,NULL)) != 0)
     {
-        pthread_cond_destroy(&rw->rw_condreaders);  
+        pthread_cond_destroy(&rw->rw_condreaders);
         pthread_mutex_destroy(&rw->rw_mutex);
         return result;
     }
@@ -82,7 +88,9 @@ int my_pthread_rwlock_rdlock(my_pthread_rwlock_t *rw)
     while(rw->rw_refcount<0)
     {
         rw->rw_nwaitreaders++;
+        pthread_cleanup_push(clean_up, rw);
         result = pthread_cond_wait(&rw->rw_condreaders, &rw->rw_mutex);
+        pthread_cleanup_pop(0);
         rw->rw_nwaitreaders--;
         if(result != 0)
             break;
@@ -94,7 +102,9 @@ int my_pthread_rwlock_rdlock(my_pthread_rwlock_t *rw)
     while (rw->rw_refcount < 0 || rw->rw_nwaitwriters > 0)
     {
         rw->rw_nwaitreaders++;
+        pthread_cleanup_push(clean_up, rw);
         result = pthread_cond_wait(&rw->rw_condreaders, &rw->rw_mutex);
+        pthread_cleanup_pop(0);
         rw->rw_nwaitreaders--;
         if (result != 0)
             break;
@@ -119,7 +129,9 @@ int my_pthread_rwlock_wrlock(my_pthread_rwlock_t *rw)
     while(rw->rw_refcount != 0 || rw->rw_nwaitreaders != 0)
     {
         rw->rw_nwaitwriters++;
+        pthread_cleanup_push(clean_up, rw);
         result = pthread_cond_wait(&rw->rw_condwriters, &rw->rw_mutex);
+        pthread_cleanup_pop(0);
         rw->rw_nwaitwriters--;
         if(result != 0)
             break;
@@ -131,7 +143,9 @@ int my_pthread_rwlock_wrlock(my_pthread_rwlock_t *rw)
     while(rw->rw_refcount != 0)
     {
         rw->rw_nwaitwriters++;
+        pthread_cleanup_push(clean_up, rw);
         result = pthread_cond_wait(&rw->rw_condwriters, &rw->rw_mutex);
+        pthread_cleanup_pop(0);
         rw->rw_nwaitreaders--;
         if(result != 0)
             break;
@@ -202,7 +216,6 @@ int my_pthread_rwlock_destroy(my_pthread_rwlock_t *rw)
     pthread_cond_destroy(&rw->rw_condwriters);
     rw->rw_magic = 0;
     return 0;
-
 }
 
 
@@ -220,7 +233,7 @@ int my_pthread_rwlock_trywrlock(my_pthread_rwlock_t *rw)
     {
         return EBUSY;
     }
-    else 
+    else
     {
         rw->rw_refcount = -1;
     }
@@ -244,7 +257,7 @@ int my_pthread_rwlock_tryrdlock(my_pthread_rwlock_t *rw)
     {
         return EBUSY;
     }
-    else 
+    else
     {
         rw->rw_refcount++;
     }
@@ -252,12 +265,3 @@ int my_pthread_rwlock_tryrdlock(my_pthread_rwlock_t *rw)
     return result;
 }
 #endif // _MY_PTHREAD_RWLOCK_H
-
-
-
-
-
-
-
-
-
