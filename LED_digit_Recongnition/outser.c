@@ -1,4 +1,5 @@
 ////////////////////////////////////////////////////////////////////////
+//this is for ouuput server
 // /////////////////////////////////////////////////////////////////////
 #include<netinet/in.h>
 #include<sys/types.h>
@@ -9,8 +10,9 @@
 #include<unistd.h>
 #include<pthread.h>
 #include<sys/wait.h>
+#include<sys/stat.h>
 
-#define HELLO_WORLD_SERVER_PORT    6666
+#define HELLO_WORLD_SERVER_PORT    6667
 #define LENGTH_OF_LISTEN_QUEUE     20
 #define BUFFER_SIZE                1024
 #define FILE_NAME_MAX_SIZE         512
@@ -25,6 +27,7 @@ void *translater(void *arg)
       pthread_exit(NULL);
   }
 
+
   char buffer[BUFFER_SIZE];
   bzero(buffer, sizeof(buffer));
   int length = recv(new_server_socket, buffer, BUFFER_SIZE, 0);
@@ -36,8 +39,8 @@ void *translater(void *arg)
 
   char file_name[FILE_NAME_MAX_SIZE + 1];
   bzero(file_name, sizeof(file_name));
-  strncpy(file_name, buffer,
-          strlen(buffer) > FILE_NAME_MAX_SIZE ? FILE_NAME_MAX_SIZE : strlen(buffer));
+  snprintf(file_name,FILE_NAME_MAX_SIZE, "%s%s" ,"output/",buffer);
+
 
   FILE *fp = fopen(file_name, "r");
   if (fp == NULL)
@@ -66,17 +69,6 @@ void *translater(void *arg)
   }
 
   close(new_server_socket);
-  int pid = vfork();
-  if (pid == 0)
-  {
-
-      execle("cli", "cli", "192.168.1.131", NULL, NULL);
-  }
-  else if (pid > 0)
-  {
-     waitpid(pid, NULL, 0);
-  }
-
   pthread_exit(NULL);
 }
 

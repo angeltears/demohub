@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////
-// file_client.c  socket传输文件的client端示例程序
+// this is for check client
 // ///////////////////////////////////////////////////
 #include<netinet/in.h>                         // for sockaddr_in
 #include<sys/types.h>                          // for socket
@@ -9,7 +9,7 @@
 #include<string.h>                             // for bzero
 #include<unistd.h>
 #include<arpa/inet.h>
-#define HELLO_WORLD_SERVER_PORT       6666
+#define HELLO_WORLD_SERVER_PORT       6667
 #define BUFFER_SIZE                   1024
 #define FILE_NAME_MAX_SIZE            512
 
