@@ -8,10 +8,26 @@
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<arpa/inet.h>
-#include <errno.h>
+#include<errno.h>
+#include<errno.h>
 #define SERVER_PORT 8080
 #define SERVER_IP   "192.168.1.171"
 #define LISTEN_QUEUE_SIZE 5
 #define BUFFER_SIZE 256
+
+void Listen(int fd, int backlog)
+{
+    char *ptr;
+
+    if ((ptr = getenv("LISTENQ")) != NULL)
+        backlog = atoi(ptr);
+
+    if (listen(fd, backlog) < 0)
+    {
+        perror("Listen error");
+        exit(1);
+    }
+}
+
 
 #endif // _UTILI_H
