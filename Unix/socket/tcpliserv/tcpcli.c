@@ -1,14 +1,7 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "../utili.h"
+#include <readline/readline.h>
 #define SERV_PORT 9877
-#define BUFFER_SIZE 1024
+
 void str_cli(FILE *fp, int socket);
 int main(int argc, char *argv[])
 {
@@ -35,13 +28,12 @@ int main(int argc, char *argv[])
 
 void str_cli(FILE *fp, int socket)
 {
-  char sendline[BUFFER_SIZE], recline[BUFFER_SIZE];
+  char sendline[MAXLINE], recline[MAXLINE];
   int n;
-  while(fgets(sendline, BUFFER_SIZE, fp) != NULL)
+  while(fgets(sendline, MAXLINE, fp) != NULL)
   {
-    write(socket, sendline, strlen(sendline) + 1);
-
-    if ((n = read(socket, recline, BUFFER_SIZE)) == -1)
+    Writen(socket, sendline, strlen(sendline) + 1);
+    if ((n = Readline(socket, recline, MAXLINE)) == 0)
     {
       perror("read error");
       exit(1);

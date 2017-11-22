@@ -1,14 +1,6 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <errno.h>
-#include <stdlib.h>
-#include <string.h>
-
+#include "../utili.h"
 #define SERV_PORT 9877
-#define BUFFER_SIZE 1024
+
 void Listen(int fd, int backlog);
 void str_echo(int socket);
 int main(int argc, char *argv[])
@@ -45,7 +37,7 @@ int main(int argc, char *argv[])
     clilen = sizeof(cliaddr);
     connfd = accept(listenfd, (struct sockaddr *)&cliaddr, &clilen);
 
-    if ((pid = fork()) < 0)
+    if ((pid = fork()) == 0)
     {
       close(listenfd);
       str_echo(connfd);
@@ -58,13 +50,13 @@ int main(int argc, char *argv[])
 void str_echo(int socket)
 {
   ssize_t n;
-  char buff[BUFFER_SIZE];
+  char buff[MAXLINE];
 
 again:
-  while((n = read(socket, buff, BUFFER_SIZE)) > 0)
+  while((n = Readn(socket, buff, MAXLINE)) > 0)
   {
-      write(socket, buff, strlen(buff) + 1);
-
+      Writen(socket, buff, n);
+  }
       if (n < 0 && errno == EINTR)
       {
         goto again;
@@ -74,19 +66,5 @@ again:
         perror("str_echo read error");
         exit(1);
       }
-  }
-}
-void Listen(int fd, int backlog)
-{
-    char *ptr;
-    if ((ptr = getenv("LISTENQ")) != NULL)
-    {
-        backlog = atoi(ptr);
-    }
 
-    if (listen(fd, backlog) < 0)
-    {
-        perror("Listen error");
-        exit(1);
-    }
 }
