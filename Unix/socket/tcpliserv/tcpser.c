@@ -36,9 +36,9 @@ int main(int argc, char *argv[])
   {
     clilen = sizeof(cliaddr);
     connfd = accept(listenfd, (struct sockaddr *)&cliaddr, &clilen);
-
     if ((pid = fork()) == 0)
     {
+      printf("fork suceess\n");
       close(listenfd);
       str_echo(connfd);
       exit(0);
@@ -55,7 +55,9 @@ void str_echo(int socket)
 again:
   while((n = Readn(socket, buff, MAXLINE)) > 0)
   {
+    printf("rec messege\n");
       Writen(socket, buff, n);
+    printf("send messege\n");
   }
       if (n < 0 && errno == EINTR)
       {

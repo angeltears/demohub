@@ -30,9 +30,12 @@ void str_cli(FILE *fp, int socket)
 {
   char sendline[MAXLINE], recline[MAXLINE];
   int n;
+  int ret;
   while(fgets(sendline, MAXLINE, fp) != NULL)
   {
-    Writen(socket, sendline, strlen(sendline) + 1);
+    printf("get messege\n");
+    ret = Writen(socket, sendline, strlen(sendline));
+    printf("send messege\n");
     if ((n = Readline(socket, recline, MAXLINE)) == 0)
     {
       perror("read error");
