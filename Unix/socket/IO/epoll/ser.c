@@ -94,10 +94,16 @@ int main()
               else
               {
                 sockfd = events[i].data.fd;
+                if (!strcmp(buff, "quit"))
+                {
+                  clievent.data.fd = sockfd;
+                  epoll_ctl(epolfd,EPOLL_CTL_DEL,sockfd,&clievent);
+                  printf("one cli close\n");
+                }
                 write(sockfd, buff, strlen(buff)+1);
                 clievent.data.fd = sockfd;
                 clievent.events = EPOLLIN|EPOLLET;
-                epoll_ctl(epolfd,EPOLL_CTL_MOD,sockfd,events);
+                epoll_ctl(epolfd,EPOLL_CTL_MOD,sockfd,&clievent);
               }
 
             }

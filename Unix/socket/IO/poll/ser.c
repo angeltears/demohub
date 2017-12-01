@@ -23,7 +23,7 @@ int main()
     char buff[BUFF_SIZE];
     int n;
     socketfd = socket(AF_INET, SOCK_STREAM, 0);
-
+    int socket_clifd;
     ser.sin_family = AF_INET;
     ser.sin_port = htons(9090);
     inet_pton(AF_INET, "127.0.0.1", &ser.sin_addr);
@@ -102,17 +102,17 @@ int main()
           for (i = 1; i< MAX_CLIENT_SIZE; ++i)
           {
 
-              if((socketfd = cli_fd[i].fd) < 0)
+              if((socket_clifd= cli_fd[i].fd) < 0)
               {
                   continue;
               }
               if(cli_fd[i].revents & (POLLRDNORM | POLLERR))
               {
-                if ((n = read(socketfd, buff, BUFF_SIZE)) < 0)
+                if ((n = read(socket_clifd, buff, BUFF_SIZE)) < 0)
                 {
                   if(errno == ECONNRESET)
                   {
-                    close(socketfd);
+                    close(socket_clifd);
                     cli_fd[i].fd = -1;
                   }
                   else
@@ -123,12 +123,25 @@ int main()
                 }
                 else if(n == 0)
                 {
-                    close(socketfd);
+                    close(socket_clifd);
                     cli_fd[i].fd = -1;
                 }
                 else
                 {
-                  write(socketfd, buff, strlen(buff)+1);
+                  if (!strcmp(buff, "quit"))
+                  {
+                    for (i = 1; i< MAX_CLIENT_SIZE; ++i)
+                    {
+                        if(socket_clifd == cli_fd[i].fd)
+                        {
+                           cli_fd[i].fd = -1;
+                           cli_fd[i].events = 0;
+                           cli_num--;
+                        }
+                    }
+                  }
+                  else
+                    write(socketfd, buff, strlen(buff)+1);
                 }
                 if (--nready <= 0)
                 {
@@ -136,8 +149,8 @@ int main()
                 }
 
 
-                }
               }
+            }
           }
         }
 }
