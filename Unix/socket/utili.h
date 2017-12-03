@@ -9,7 +9,7 @@
 #include<netinet/in.h>
 #include<arpa/inet.h>
 #include<errno.h>
-#include<errno.h>
+
 #define SERVER_IP   "127.0.0.1"
 #define LISTEN_QUEUE_SIZE 5
 #define BUFFER_SIZE 1024
