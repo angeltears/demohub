@@ -173,7 +173,7 @@ void sort_timer_list::tick()
   printf("timer tick\n");
   time_t cur = time(NULL);
   util_time *tmp = head;
-  while (!tmp)
+  while (tmp)
   {
     if (cur < tmp->expire)
     {
