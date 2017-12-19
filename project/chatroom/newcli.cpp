@@ -47,7 +47,7 @@ int main()
   bool sendfile = false;
   while (1)
   {
-    int ret = poll(fds, 2, -1);
+    int ret = poll(fds, 3, -1);
     if (ret < 0)
     {
       perror("poll error");
@@ -62,12 +62,21 @@ int main()
 
     if (fds[1].revents & POLLIN)
     {
-      memset(cli_data, 0, sizeof(cli_data));
-      recv(sockfd, cli_data, sizeof(cli_data), 0);
+      memset(cli_data, 0, sizeof(data));
+      int ret = recv(sockfd, cli_data, sizeof(data), 0);
+      printf("接受到消息 %d bytes from ser[%d]\n", ret, sockfd);
       if (cli_data->flag == WRBUFF)
+      {
+        printf("接受到字符串\n");
+        if (cli_data->buff == NULL)
+        {
+          printf("NULL!!!\n");
+        }
         printf("%s",  cli_data->buff);
+      }
       else if(cli_data->flag == WDFILE || recvfile == false)
       {
+        printf("打开文件\n");
         fd = open(cli_data->buff, O_CREAT|O_EXCL|O_WRONLY);
         fds[2].events |= POLLIN;
         recvfile = true;
@@ -95,8 +104,7 @@ int main()
         }
         else
         {
-          fputs(buff, stdin);
-          ret = splice(0, NULL, pipefd[1], NULL, BUFFER_SIZE,  SPLICE_F_MOVE| SPLICE_F_MORE);
+          write(pipefd[1], buff, strlen(buff)+1);
           ret = splice(pipefd[0], NULL, sockfd, NULL, BUFFER_SIZE,  SPLICE_F_MOVE| SPLICE_F_MORE);
         }
     }

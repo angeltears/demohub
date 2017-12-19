@@ -12,7 +12,7 @@ using namespace std;
 typedef struct client_data
 {
   struct sockaddr_in addr;
-  char *write_buff;
+  data *tmp_data;
   data cli_data;
 }client_data;
 
@@ -81,6 +81,7 @@ int main()
         users[clisock].addr = cli;
         printf("a new user[%d] comming in\n", clisock);
       }
+
       else if ((fds[i].fd == udpfd) && (fds[i].revents & POLLIN))
       {
         lpthfd fd;
@@ -112,6 +113,7 @@ int main()
           (*it)->flag == FINSH;
         }
       }
+
       else if (fds[i].revents & POLLERR)
       {
         printf("get an error from %d\n", fds[i].fd);
@@ -128,6 +130,7 @@ int main()
         }
         continue;
       }
+
       else if(fds[i].revents & POLLRDHUP)
       {
         users[fds[i].fd] = users[fds[user_count].fd];
@@ -137,6 +140,7 @@ int main()
         user_count--;
         printf("a cli left \n");
       }
+
       else if(fds[i].revents & POLLIN)
       {
         int connfd = fds[i].fd;
@@ -174,23 +178,28 @@ int main()
             {
               continue;
             }
+            if (fds[j].fd == udpfd)
+            {
+              continue;
+            }
             fds[j].events |= ~POLLIN;
             fds[j].events |= POLLOUT;
-            users[fds[j].fd].write_buff = users[connfd].cli_data.buff;
+            users[fds[j].fd].tmp_data = &(users[connfd].cli_data);
           }
         }
       }
-      else if (fds[i].revents & POLLOUT)
+      else if (fds[i].revents & POLLOUT && fds[i].fd != sockfd && fds[i].fd != udpfd)
       {
         int connfd = fds[i].fd;
-        if (!users[connfd].write_buff)
+        if (!users[connfd].tmp_data->buff)
         {
           continue;
         }
-        send(connfd, users[connfd].write_buff, strlen(users[connfd].write_buff)+1, 0);
-        users[connfd].write_buff = NULL;
-        fds[i].events |= POLLIN;
-        fds[i].events |= ~POLLOUT;
+        users[connfd].tmp_data->flag = WRBUFF;
+        int ret = send(connfd, users[connfd].tmp_data, sizeof(data), 0);
+        printf("send a messege %d bytes to cli[%d]\n", ret, connfd);
+        users[connfd].tmp_data = NULL;
+        fds[i].events = POLLIN || POLLRDHUP;
       }
 
     }
