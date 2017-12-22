@@ -67,12 +67,11 @@ int main()
       printf("接受到消息 %d bytes from ser[%d]\n", ret, sockfd);
       if (cli_data->flag == WRBUFF)
       {
-        printf("接受到字符串\n");
         if (cli_data->buff == NULL)
         {
           printf("NULL!!!\n");
         }
-        printf("%s",  cli_data->buff);
+        printf("%s\n",  cli_data->buff);
       }
       else if(cli_data->flag == WDFILE || recvfile == false)
       {
@@ -92,21 +91,36 @@ int main()
     {
         char buff[BUFF_SIZE];
         memset(buff, 0, BUFF_SIZE);
+        data *tmp = new data;
         scanf("%s", buff);
         int ret = strncmp(buff,"FILE:", 5);
         if (ret == 0)
         {
-          char *ptr  = buff + 6 * sizeof(char);
-          fd = open(ptr, O_CREAT|O_EXCL|O_WRONLY);
-          fds[2].events |= POLLIN;
-          sendfile = true;
-          recvfile = false;
+          char *ptr  = buff + 5 * sizeof(char);
+          fd = open(ptr, O_WRONLY);
+          if (fd > 0)
+          {
+            printf("打开文件：%s\n", ptr);
+            fds[2].events |= POLLIN;
+            sendfile = true;
+            recvfile = false;
+            tmp->flag = WDFILE;
+            strcpy(tmp->buff, ptr);
+          }
+          else
+          {
+            std::cout<<"打开失败，请检查输入文件名字"<<std::endl;
+            continue;
+          }
         }
         else
         {
-          write(pipefd[1], buff, strlen(buff)+1);
-          ret = splice(pipefd[0], NULL, sockfd, NULL, BUFFER_SIZE,  SPLICE_F_MOVE| SPLICE_F_MORE);
+            tmp->flag = WRBUFF;
+            strcpy(tmp->buff, buff);
         }
+        write(pipefd[1], tmp, sizeof(data));
+        ret = splice(pipefd[0], NULL, sockfd, NULL, BUFFER_SIZE,  SPLICE_F_MOVE| SPLICE_F_MORE);
+        delete tmp;
     }
 
     if (fds[2].revents & POLLIN & recvfile == true)
@@ -127,6 +141,7 @@ int main()
     }
     else if (fds[2].revents & POLLIN & sendfile == true)
     {
+        printf("开始传输文件\n");
         char *buff = new char[BUFF_SIZE];
         memset(buff, 0, BUFF_SIZE);
         int tmp = read(fd, buff, BUFF_SIZE);

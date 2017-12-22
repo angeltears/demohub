@@ -145,8 +145,8 @@ int main()
       {
         int connfd = fds[i].fd;
         memset(&users[connfd].cli_data, 0, sizeof(data));
-        int ret = recv(connfd, &users[connfd].cli_data, sizeof(data), 0);
-        printf("get %d bytes of client[%d]\n", ret, connfd);
+        int ret = recv(connfd, &(users[connfd].cli_data), sizeof(data), 0);
+        printf("get %d bytes of client[%d]:%s\n", ret, connfd, users[connfd].cli_data.buff);
         if (ret < 0)
         {
           if(errno != EAGAIN)
@@ -163,6 +163,7 @@ int main()
         }
         else if(users[connfd].cli_data.flag == WDFILE)
         {
+            printf("打开文件：%s\n",users[connfd].cli_data.buff);
             int fd = open(users[connfd].cli_data.buff, O_CREAT|O_EXCL|O_WRONLY, 0755);
             file_info info;
             info.fd = fd;
