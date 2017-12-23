@@ -27,7 +27,7 @@ typedef struct file_list
 int main()
 {
   int sockfd = start_up(SERVER_IP, 9090, TCP);
-  int udpfd = start_up(SERVER_IP, 9090, UDP);
+  int udpfd = start_up(SERVER_IP, 9091, UDP);
   struct sockaddr_in cli;
   socklen_t len;
 
@@ -84,6 +84,7 @@ int main()
 
       else if ((fds[i].fd == udpfd) && (fds[i].revents & POLLIN))
       {
+        printf("开始接受文件\n");
         lpthfd fd;
         fd.udpfd = udpfd;
         list<file_info *>::iterator it = (fd_list.it).begin();

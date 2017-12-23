@@ -16,6 +16,7 @@
 #define LISTEN_QUEUE_SIZE 5
 #define BUFFER_SIZE 1024
 #define MAXLINE 4096
+#define MAX_EVENT_NUM 1024
 ///////////////////////////////////////////////////
 ssize_t Readn(int fd, void *vptr, size_t n);
 ssize_t Writen(int fd, void *vptr, size_t n);
