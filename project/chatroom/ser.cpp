@@ -1,145 +1,363 @@
 #define _GNU_SOURCE  1
 #include "utili.h"
-#include "socket.h"
-
+#include <iostream>
+#include <assert.h>
+#include <sys/epoll.h>
+#include "data.h"
+#include <pthread.h>
+#include <list>
 #define FD_LIMIT 65535
-#define BUFF_SIZE 1024
+using namespace std;
+
+pthread_mutex_t *mutex = new pthread_mutex_t;
 
 typedef struct client_data
 {
   struct sockaddr_in addr;
-  char *write_buff;
-  char buff[BUFF_SIZE];
+  data *tmp_data;
+  data cli_data;
+  char name[NAME_BUFF_SIZE];
 }client_data;
 
+typedef struct file_list
+{
+  int fd_num;
+  list<file_info *> it;
+}file_list;
+
+void *sendfile(void *arg);
+void *recvfile(void *arg);
+void addfd(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLIN | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &event);
+  setnoblocking(fd);
+}
+
+void delfd(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLIN | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, &event);
+  setnoblocking(fd);
+}
+
+void addout(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLOUT | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &event);
+  setnoblocking(fd);
+}
+
+void delout(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLOUT | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, &event);
+  setnoblocking(fd);
+}
+
+
+typedef struct fd_data
+{
+    char name[20];
+    int fd;
+}fd_data;
 
 int main()
 {
-  int sockfd = start_up(SERVER_IP, 9090, TCP);
-  struct sockaddr_in cli;
-  socklen_t len;
+  struct sockaddr_in ser;
+  inet_pton(AF_INET, SERVER_IP, &ser.sin_addr);
+  ser.sin_port = htons(8080);
+  ser.sin_family = AF_INET;
+  int tcpsock = socket(AF_INET, SOCK_STREAM, 0);
+  assert(tcpsock > 0);
+  socklen_t len = sizeof(ser);
+  int oflag = 1;
+  setsockopt(tcpsock, SOL_SOCKET, SO_REUSEADDR, &oflag, sizeof(int));
+  int ret = bind(tcpsock, (struct sockaddr *)&ser, len);
+  assert(ret != -1);
+  ret = listen(tcpsock, 5);
+  assert(ret != -1);
+
+  memset(&ser, 0, len);
+  int udpsock = socket(PF_INET, SOCK_DGRAM, 0);
+  ser.sin_port = htons(8080);
+  ser.sin_family = AF_INET;
+  inet_pton(AF_INET, SERVER_IP, &ser.sin_addr);
+  ret = bind(udpsock, (struct sockaddr *)&ser, len);
+  assert(ret != -1);
+
+  int epollfd = epoll_create(LISTEN_QUEUE_SIZE);
+  assert(epollfd != -1);
+  epoll_event events[MAX_EVENT_NUM];
+  addfd(epollfd,tcpsock);
+  struct sockaddr_in addr;
+
 
   client_data *users = new client_data[FD_LIMIT];
-  struct pollfd fds[LISTEN_QUEUE_SIZE + 1];
   int user_count = 0;
-  for (int i = 1; i <= LISTEN_QUEUE_SIZE; i++)
-  {
-    fds[i].fd = -1;
-    fds[i].events = 0;
-  }
-  fds[0].fd = sockfd;
-  fds[0].events = POLLIN | POLLRDHUP;
-  fds[0].revents = 0;
+  file_list fd_list;
+  fd_list.fd_num = 0;
+
+  fd_data fds[FD_LIMIT];
+  bzero(fds, sizeof(fds));
+  data *cli_data = new data;
+  pthread_mutex_init(mutex, nullptr);
 
   while (1)
   {
-    int ret = Poll(fds, LISTEN_QUEUE_SIZE, -1);
-    if (ret == -1)
+    int number = epoll_wait(epollfd, events, MAX_EVENT_NUM+2, -1);
+    if (number < 0)
     {
-      continue;
+      perror("epoll error");
+      break;
     }
 
-    for(int i = 0; i < user_count + 1; i++)
+    for (int i = 0; i < number; i++)
     {
-      if ((fds[i].fd == sockfd) && (fds[i].revents & POLLIN))
+      int sockfd = events[i].data.fd;
+      if (sockfd == tcpsock)
       {
-        int clisock = accept(sockfd, (struct sockaddr*)&cli, &len);
-        if (clisock < 0)
+        int length = 0;
+        len = sizeof(addr);
+        bzero(&addr, len);
+        int connfd = accept(tcpsock, (struct sockaddr *)&addr, &len);
+        if (connfd < 0)
         {
-          perror("connect error");
+          perror("accept error");
           continue;
         }
+
         if (user_count >= LISTEN_QUEUE_SIZE)
         {
+          memset(cli_data, 0, sizeof(data));
           char *info = "too many cli";
-          printf("%s\n",info);
-          send(clisock, info, strlen(info)+1, 0);
-          close(clisock);
+          strcpy(cli_data->buff, info);
+          cli_data->flag = WRBUFF;
+          send(connfd, cli_data, sizeof(data), 0);
+          close(connfd);
           continue;
         }
-        user_count++;
-        setnoblocking(clisock);
-        fds[user_count].fd = clisock;
-        fds[user_count].events = POLLIN | POLLRDHUP | POLLERR;
-        users[clisock].addr = cli;
-        printf("a new user[%d] comming in\n", clisock);
-      }
-      else if (fds[i].revents & POLLERR)
-      {
-        printf("get an error from %d\n", fds[i].fd);
-        char errors[100];
-        memset(errors, 0, 100);
-        socklen_t length = sizeof(errors);
-        if ((getsockopt(fds[i].fd, SOL_SOCKET, SO_ERROR, &errors, &length)) < 0)
+        memset(cli_data, 0, sizeof(data));
+        ret = recv(connfd, cli_data, sizeof(data), 0);
+        length = strlen(cli_data->buff);
+        if (ret <= 0 && length > 0 && length < 20)
         {
-          perror("get socketopt error\n");
+          memset(cli_data, 0, sizeof(data));
+          char *info = "error cli";
+          strcpy(cli_data->buff, info);
+          cli_data->flag = WRBUFF;
+          send(connfd, cli_data, sizeof(data), 0);
+          close(connfd);
+          continue;
+        }
+
+        addfd(epollfd, connfd);
+        users[connfd].addr = addr;
+        fds[user_count].fd = connfd;
+        user_count++;
+        strcpy(users[connfd].name,cli_data->buff);
+        printf("cli[%s] comming in\n",cli_data->buff);
+      }
+
+      else if(sockfd == udpsock)
+      {
+        printf("进入文件传输\n");
+        lpthfd fd;
+        fd.udpfd = udpsock;
+        list<file_info *>::iterator it = (fd_list.it).begin();
+        while(it != (fd_list.it).end())
+        {
+          if ((*it)->flag == UPDATE)
+          {
+            break;
+          }
+        }
+        if (it == (fd_list.it).end())
+        {
+          delfd(epollfd,udpsock);
         }
         else
         {
-          printf("%s\n",errors);
+          strcpy(fd.name, (*it)->name);
+          pthread_t pid;
+          if (users[(*it)->fd].cli_data.flag == RDFILE)
+          {
+//          printf("开始发送文件\n");
+//          pthread_create(&pid, NULL, sendfile, &fd);
+          }
+          else
+          {
+            printf("开始接受文件\n");
+            pthread_create(&pid, NULL, recvfile, &fd);
+          }
+          (*it)->flag == FINSH;
+          delfd(epollfd,udpsock);
         }
-        continue;
       }
-      else if(fds[i].revents & POLLRDHUP)
+
+      else if(events[i].events & EPOLLIN)
       {
-        users[fds[i].fd] = users[fds[user_count].fd];
-        close(fds[i].fd);
-        fds[i].fd = fds[user_count].fd;
-        i--;
-        user_count--;
-        printf("a cli left \n");
-      }
-      else if(fds[i].revents & POLLIN)
-      {
-        int connfd = fds[i].fd;
-        memset(users[connfd].buff, 0, BUFF_SIZE);
-        int ret = recv(connfd, &users[connfd].buff, BUFF_SIZE, 0);
-        printf("get %d bytes of client[%d]\n", ret, connfd);
+        memset(&users[sockfd].cli_data, 0, sizeof(data));
+        ret = recv(sockfd, &(users[sockfd].cli_data), sizeof(data), 0);
         if (ret < 0)
         {
           if(errno != EAGAIN)
           {
-            users[fds[i].fd] = users[fds[user_count].fd];
-            close(fds[i].fd);
-            fds[i].fd = fds[user_count].fd;
-            i--;
+            bzero(&users[events[i].data.fd], sizeof(client_data));
+            close(events[i].data.fd);
             user_count--;
           }
         }
         else if(ret == 0)
         {
         }
+        else if(users[sockfd].cli_data.flag == WDFILE)
+        {
+            printf("接受文件：%s\n",users[sockfd].cli_data.buff);
+            int length = strlen(users[sockfd].cli_data.buff);
+            assert(length < 80);
+            file_info info;
+            memset(&info, 0, sizeof(info));
+            strcpy(info.name, users[sockfd].cli_data.buff);
+            info.flag = UPDATE;
+            info.fd = sockfd;
+            fd_list.it.push_back(&info);
+            addfd(epollfd, udpsock);
+            memset(&users[sockfd].cli_data, 0, sizeof(data));
+        }
+        else if(users[sockfd].cli_data.flag == RDFILE)
+        {
+          char *ptr  = users[sockfd].cli_data.buff + 5 * sizeof(char);
+          int ret;
+          list<file_info *>::iterator it = (fd_list.it).begin();
+          while(it != (fd_list.it).end())
+          {
+            ret = strncmp((*it)->name, ptr, strlen(ptr));
+            if (ret == 0)
+            {
+              printf("找到文件%s\n", ptr);
+              break;
+            }
+          }
+          if (it == (fd_list.it).end() || ret != 0)
+          {
+            printf("文件寻找失败\n");
+            memset(cli_data, 0, sizeof(data));
+            char *info = "can't find file!";
+            strcpy(cli_data->buff, info);
+            cli_data->flag = WRBUFF;
+            send(sockfd, cli_data, sizeof(data), 0);
+            continue;
+          }
+          lpthfd fd;
+          fd.udpfd = udpsock;
+          strcpy(fd.name, ptr);
+          pthread_t pid;
+          printf("文件寻找成功\n");
+          pthread_create(&pid, NULL, sendfile, &fd);
+          sleep(1);
+          memset(&users[sockfd].cli_data, 0, sizeof(data));
+        }
         else
         {
-          for(int j = 1; j <= user_count; j++)
+          char tmp[BUFF_SIZE];
+          strcpy(tmp,users[sockfd].cli_data.buff);
+          snprintf(users[sockfd].cli_data.buff, BUFF_SIZE, "%s:%s", users[sockfd].name, tmp);
+          for(int j = 0; j < user_count; j++)
           {
-            if (fds[j].fd == connfd)
-            {
-              continue;
-            }
-            fds[j].events |= ~POLLIN;
-            fds[j].events |= POLLOUT;
-            users[fds[j].fd].write_buff = users[connfd].buff;
+            if(fds[j].fd == sockfd)
+                continue;
+            delfd(epollfd, fds[j].fd);
+            addout(epollfd, fds[j].fd);
+            users[fds[j].fd].tmp_data = &(users[sockfd].cli_data);
           }
         }
       }
-      else if (fds[i].revents & POLLOUT)
+      else if(events[i].events & EPOLLOUT)
       {
-        int connfd = fds[i].fd;
-        if (!users[connfd].write_buff)
+        if (!users[sockfd].tmp_data->buff)
         {
           continue;
         }
-        send(connfd, users[connfd].write_buff, \
-          strlen(users[connfd].write_buff)+1, 0);
-        users[connfd].write_buff = NULL;
-        fds[i].events |= POLLIN;
-        fds[i].events |= ~POLLOUT;
+        users[sockfd].tmp_data->flag = WRBUFF;
+        int ret = send(sockfd, users[sockfd].tmp_data, sizeof(data), 0);
+        printf("send a messege %d bytes to cli[%d]\n", ret, sockfd);
+        users[sockfd].tmp_data = NULL;
+        delout(epollfd, sockfd);
+        addfd(epollfd, sockfd);
       }
 
     }
   }
-  delete []users;
-  close(sockfd);
+  close(tcpsock);
   return 0;
+}
+
+
+void *recvfile(void *arg)
+{
+  pthread_mutex_lock(mutex);
+  lpthfd *fd_data = (lpthfd *)arg;
+  int fd = open(fd_data->name, O_CREAT|O_EXCL|O_WRONLY, 0755);
+  char buff[BUFF_SIZE];
+  while(1)
+  {
+    memset(buff, 0, BUFF_SIZE);
+    int ret = recvfrom(fd_data->udpfd, buff, BUFF_SIZE, 0, nullptr, nullptr);
+    printf("recv %d bytes from %d\n", ret, fd_data ->udpfd);
+    if (ret == 0)
+    {
+      write(fd, 0, 0);
+      break;
+    }
+    else
+    {
+      int wrt = write(fd, buff, ret);
+      printf("write %d to file[%d]", wrt, fd);
+    }
+  }
+  close(fd);
+  pthread_mutex_lock(mutex);
+}
+
+void *sendfile(void *arg)
+{
+  printf("开始传输文件\n");
+  int ret = pthread_mutex_trylock(mutex);
+  if(ret < 0)
+  {
+    printf("加锁失败\n");
+  }
+  else
+  {
+  lpthfd *fd_data  = (lpthfd *)arg;
+  char buff[BUFF_SIZE];
+  int fd = open(fd_data->name, O_RDONLY);
+  while(1)
+  {
+    memset(buff, 0, BUFF_SIZE);
+    int ret = read(fd, buff, BUFF_SIZE);
+    printf("read %d bytes from fd %d", ret, fd);
+    if (ret == 0)
+    {
+      sendto(fd_data ->udpfd, nullptr, 0, 0, nullptr, 0);
+      break;
+    }
+    else
+    {
+      sendto(fd_data ->udpfd, buff, ret, 0, nullptr, 0);
+      printf("send %d bytes to  %d", ret, fd_data->udpfd);
+    }
+  }
+  close(fd);
+  pthread_mutex_lock(mutex);
+  }
 }

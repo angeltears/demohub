@@ -26,9 +26,10 @@ int start_up(char *ip, short port, int mode)
   socklen_t len = sizeof(struct sockaddr);
 
   int oflag = 1;
-  setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &oflag, sizeof(int));
+  if (mode == TCP)
+    setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &oflag, sizeof(int));
   int ret = bind(sockfd, (struct sockaddr *)&address, len);
-  if (ret == -1)
+  if (ret < 0)
   {
     perror("bind :");
     return -1;
