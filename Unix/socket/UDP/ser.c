@@ -3,7 +3,7 @@
 
 int main()
 {
-    int sockSer = start_up("192.168.1.171",9090, UDP);
+    int sockSer = start_up("127.0.0.1",9090, UDP);
     char sendbuf[128];
     char recvbuf[128];
     struct sockaddr_in addrCli;

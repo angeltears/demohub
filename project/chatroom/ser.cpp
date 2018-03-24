@@ -235,7 +235,7 @@ int main()
         }
         else if(users[sockfd].cli_data.flag == RDFILE)
         {
-          char *ptr  = users[sockfd].cli_data.buff + 5 * sizeof(char);
+          char *ptr  = users[sockfd].cli_data.buff;
           int ret;
           list<file_info *>::iterator it = (fd_list.it).begin();
           while(it != (fd_list.it).end())
@@ -259,7 +259,8 @@ int main()
           }
           lpthfd fd;
           fd.udpfd = udpsock;
-          strcpy(fd.name, ptr);
+          strcpy(fd.name, users[sockfd].cli_data.buff);
+          printf("name : %s yuanshi : %s", fd.name, ptr);
           pthread_t pid;
           printf("文件寻找成功\n");
           pthread_create(&pid, NULL, sendfile, &fd);
@@ -338,25 +339,32 @@ void *sendfile(void *arg)
   }
   else
   {
-  lpthfd *fd_data  = (lpthfd *)arg;
-  char buff[BUFF_SIZE];
-  int fd = open(fd_data->name, O_RDONLY);
-  while(1)
-  {
-    memset(buff, 0, BUFF_SIZE);
-    int ret = read(fd, buff, BUFF_SIZE);
-    printf("read %d bytes from fd %d", ret, fd);
-    if (ret == 0)
+    lpthfd *fd_data  = (lpthfd *)arg;
+    char buff[BUFF_SIZE];
+    printf("name %s\n", fd_data->name);
+    int fd = open(fd_data->name, O_RDONLY);
+    assert(fd > 0);
+    while(1)
     {
-      sendto(fd_data ->udpfd, nullptr, 0, 0, nullptr, 0);
-      break;
+      memset(buff, 0, BUFF_SIZE);
+      int ret = read(fd, buff, BUFF_SIZE);
+      printf("read %d bytes from fd %d\n", ret, fd);
+      if (ret == 0)
+      {
+        sendto(fd_data ->udpfd, nullptr, 0, 0, nullptr, 0);
+        break;
+      }
+      else if(ret < 0)
+      {
+        close(fd);
+        perror("read error");
+      }
+      else
+      {
+        sendto(fd_data ->udpfd, buff, ret, 0, nullptr, 0);
+        printf("send %d bytes to  %d\n", ret, fd_data->udpfd);
+      }
     }
-    else
-    {
-      sendto(fd_data ->udpfd, buff, ret, 0, nullptr, 0);
-      printf("send %d bytes to  %d", ret, fd_data->udpfd);
-    }
-  }
   close(fd);
   pthread_mutex_lock(mutex);
   }

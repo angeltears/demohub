@@ -1,10 +1,9 @@
 #ifndef _SOCKET_H
 #define _SOCKET_H
-#include "utili.h"
 #define TCP 0
 #define UDP 1
 #define LISTEN_QUEUE_SIZE 5
-
+#include "utili.h"
 int start_up(char *ip, short port, int mode)
 {
   int sockfd;

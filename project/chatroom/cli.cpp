@@ -5,6 +5,27 @@
 #include "data.h"
 #include <sys/epoll.h>
 #include <assert.h>
+
+
+void addfd(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLIN | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_ADD, fd, &event);
+  setnoblocking(fd);
+}
+
+void delfd(int epollfd, int fd)
+{
+  epoll_event event;
+  event.data.fd = fd;
+  event.events = EPOLLIN | EPOLLET;
+  epoll_ctl(epollfd, EPOLL_CTL_DEL, fd, &event);
+  setnoblocking(fd);
+}
+
+
 int main()
 {
   data *cli_data = new data;
@@ -46,9 +67,7 @@ int main()
   event.events = EPOLLIN | EPOLLERR | EPOLLET | EPOLLRDHUP;
   epoll_ctl(epollfd, EPOLL_CTL_ADD, sockfd, &event);
   memset(&event, 0, sizeof(event));
-  event.data.fd = 0;
-  event.events = EPOLLIN;
-  epoll_ctl(epollfd, EPOLL_CTL_ADD, 0, &event);
+  addfd(epollfd, 0);
   while (1)
   {
 
@@ -60,13 +79,13 @@ int main()
     }
     for(int i = 0; i < ret; i++)
     {
-          if (events[i].data.fd == sockfd && events[i].events& POLLRDHUP)
+          if (events[i].data.fd == sockfd && events[i].events& EPOLLRDHUP)
           {
               printf("ser has closed\n");
               break;
           }
 
-          else if (events[i].data.fd == sockfd && events[i].events & POLLIN)
+          else if (events[i].data.fd == sockfd && events[i].events & EPOLLIN)
           {
               memset(cli_data, 0, sizeof(data));
               int ret = recv(sockfd, cli_data, sizeof(data), 0);
@@ -82,24 +101,30 @@ int main()
               {
                 printf("创建文件\n");
                 fd = open(cli_data->buff, O_CREAT|O_EXCL|O_WRONLY);
-                char *buff = new char[BUFF_SIZE];
-                memset(buff, 0, BUFF_SIZE);
-                int start = recvfrom(udpfd, buff, BUFF_SIZE, 0, (struct sockaddr *)&udpaddr, &udplen);
-                write(fd, buff, start);
-                while(start > 0)
-                {
-                  memset(buff, 0, BUFF_SIZE);
-                  start = recvfrom(udpfd, buff, BUFF_SIZE, 0, (struct sockaddr *)&udpaddr, &udplen);
-                  write(fd, buff, start);
-                }
-                write(fd, nullptr, 0);
+                addfd(epollfd, udpfd);
               }
               else
               {
                 printf("正在下载文件，请稍后重试！\n");
               }
             }
-            else if (events[i].events & POLLIN)
+            else if(events[i].data.fd == udpfd)
+            {
+              char *buff = new char[BUFF_SIZE];
+              memset(buff, 0, BUFF_SIZE);
+              int tmp = recvfrom(udpfd, buff, BUFF_SIZE, 0, (struct sockaddr *)&udpaddr, &udplen);
+              perror("error:");
+              printf("tmp = %d\n", tmp);
+              while (tmp > 0)
+              {
+                ret = write(fd, buff, tmp);
+                printf("ret = %d tmp = %d\n",ret, tmp);
+                tmp = recvfrom(udpfd, buff, BUFF_SIZE, 0, (struct sockaddr *)&udpaddr, &udplen);
+                memset(buff, 0, BUFF_SIZE);
+              }
+              tmp = write(fd, 0, 0);
+            }
+            else if (events[i].events & EPOLLIN)
             {
               char buff[BUFF_SIZE];
               memset(buff, 0, BUFF_SIZE);
@@ -154,20 +179,8 @@ int main()
                   strcpy(tmp->buff, ptr);
                   write(pipefd[1], tmp, sizeof(data));
                   ret = splice(pipefd[0], NULL, sockfd, NULL, sizeof(data),  SPLICE_F_MOVE| SPLICE_F_MORE);
-                  printf("开始传输文件\n");
-                  char *buff = new char[BUFF_SIZE];
-                  memset(buff, 0, BUFF_SIZE);
-                  int tmp = recvfrom(udpfd, buff, tmp, 0, (struct sockaddr *)&udpaddr, &udplen);
-                  perror("error:");
-                  printf("tmp = %d\n", tmp);
-                  while (tmp > 0)
-                  {
-                    ret = recvfrom(udpfd, buff, tmp, 0, (struct sockaddr *)&udpaddr, &udplen);
-                    memset(buff, 0, BUFF_SIZE);
-                    tmp = write(fd, buff, BUFF_SIZE);
-                    printf("ret = %d tmp = %d\n",ret, tmp);
-                  }
-                  tmp = write(fd, 0, 0);
+                  printf("开始接受文件\n");
+
                 }
               }
               else
