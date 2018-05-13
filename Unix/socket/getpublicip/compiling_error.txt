@@ -1,0 +1,7 @@
+/home/onter/project/hub/demohub/Unix/socket/getpublicip/test.cpp: In function ‘int main()’:
+/home/onter/project/hub/demohub/Unix/socket/getpublicip/test.cpp:45:18: error: invalid initialization of non-const reference of type ‘std::__cxx11::string& {aka std::__cxx11::basic_string<char>&}’ from an rvalue of type ‘std::__cxx11::string* {aka std::__cxx11::basic_string<char>*}’
+   getPublicIp(&ip);
+                  ^
+/home/onter/project/hub/demohub/Unix/socket/getpublicip/test.cpp:12:6: note: in passing argument 1 of ‘bool getPublicIp(std::__cxx11::string&)’
+ bool getPublicIp(string& ip)
+      ^
