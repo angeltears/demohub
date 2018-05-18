@@ -18,12 +18,23 @@ public:
     }
     int type {1};
     char name{'a'};
-
 };
 
+class Info2
+{
+public:
+    Info2(): Info2(1){}
+    Info2(int i):Info2(i, 'a'){}     //注意不要生成委托环
+    Info2(char b):Info2(1, b) {}
+private:
+    Info2(int i, char e):type(i), name(e){}   //不允许带默认参数
+    int type {1};
+    char name{'a'};
+};
 int main()
 {
     Info b('c');
+    Info2 c('c');
     cout << b.type << " " <<b.name<<endl;
     return 0;
 }
