@@ -24,7 +24,7 @@ class Info2
 {
 public:
     Info2(): Info2(1){}
-    Info2(int i):Info2(i, 'a'){}     //注意不要生成委托环
+    Info2(int i):Info2(i, 'a'){}     //注意不要生成委托环`  
     Info2(char b):Info2(1, b) {}
 private:
     Info2(int i, char e):type(i), name(e){}   //不允许带默认参数
