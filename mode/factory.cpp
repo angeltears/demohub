@@ -87,5 +87,5 @@ int main()
     Factory *fac = new ConcreteFactory();
     Product *p  = fac->CreateProduct();
     Factory *fac1 = new ConcreteFactory1();
-    Product *p1 = fac->CreateProduct();
+    Product *p1 = fac1->CreateProduct();
 }
