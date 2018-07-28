@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o  -o muduo 
