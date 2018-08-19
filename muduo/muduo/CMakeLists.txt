@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.5.1)
 project(muduo)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -26,21 +26,43 @@ set(CXX_FLAGS
         -std=c++11
         )
 
-add_executable(muduo
-        muduo/base/copyable.h
-        muduo/base/Timestamp.cc
-        muduo/base/Timestamp.h
-        muduo/base/Types.h
-        muduo/base/Atomic.h
-        muduo/base/Exception.cpp
-        muduo/base/Exception.h
-        muduo/test/base/Exception_unittest.cpp
-        muduo/base/CurrentThread.h
+set(base_SRCS
+        muduo/base/Thread.cpp
         muduo/base/Thread.h
-        muduo/base/Mutex.hpp
+        muduo/base/Exception.h
+        muduo/base/Exception.cpp
+        muduo/base/ThreadLocal.h
+        muduo/base/Timestamp.cc
+        muduo/base/Types.h
+        muduo/base/ThreadPoll.cpp
+        muduo/base/ThreadPool.h
+        muduo/base/Timestamp.h
+        muduo/base/Atomic.h
         muduo/base/Condition.hpp
+        muduo/base/copyable.h
+        muduo/base/Mutex.hpp
+        muduo/base/BlockingQueue.hpp
+        muduo/base/BoundedBlockingQueue.hpp
         muduo/base/CountDownLatch.hpp
-        muduo/base/Thread.cpp)
+        muduo/base/CurrentThread.h muduo/base/ThreadLocalSingletion.h)
 
-include_directories(${PROJECT_SOURCE_DIR})
-TARGET_LINK_LIBRARIES(muduo pthread)
+add_library(muduo_base ${base_SRCS})
+target_link_libraries(muduo_base pthread rt)
+
+install(TARGETS muduo_base DESTINATION lib)
+file(GLOB HEADERS "*.h")
+install(FILES ${HEADERS} DESTINATION include/muduo/base)
+
+add_executable(ThreadLocal_test
+       muduo/test/base/TheadLocal_test.cc)
+target_link_libraries(ThreadLocal_test muduo_base)
+
+
+add_executable(Atomic_unittest
+        muduo/test/base/Atomic_unittest.cpp)
+target_link_libraries(Atomic_unittest muduo_base)
+
+
+add_executable(ThreadLocalSingle_test
+        muduo/test/base/ThreadLocalSingle_test.cc)
+target_link_libraries(ThreadLocalSingle_test muduo_base)

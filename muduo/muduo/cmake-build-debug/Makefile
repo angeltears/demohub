@@ -56,16 +56,27 @@ CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -77,6 +88,41 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +157,137 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named muduo
+# Target rules for targets named ThreadLocalSingle_test
 
 # Build rule for target.
-muduo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 muduo
-.PHONY : muduo
+ThreadLocalSingle_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingle_test
+.PHONY : ThreadLocalSingle_test
 
 # fast build rule for target.
-muduo/fast:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/build
-.PHONY : muduo/fast
+ThreadLocalSingle_test/fast:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
+.PHONY : ThreadLocalSingle_test/fast
+
+#=============================================================================
+# Target rules for targets named Atomic_unittest
+
+# Build rule for target.
+Atomic_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Atomic_unittest
+.PHONY : Atomic_unittest
+
+# fast build rule for target.
+Atomic_unittest/fast:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
+.PHONY : Atomic_unittest/fast
+
+#=============================================================================
+# Target rules for targets named ThreadLocal_test
+
+# Build rule for target.
+ThreadLocal_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocal_test
+.PHONY : ThreadLocal_test
+
+# fast build rule for target.
+ThreadLocal_test/fast:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/build
+.PHONY : ThreadLocal_test/fast
+
+#=============================================================================
+# Target rules for targets named muduo_base
+
+# Build rule for target.
+muduo_base: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 muduo_base
+.PHONY : muduo_base
+
+# fast build rule for target.
+muduo_base/fast:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
+.PHONY : muduo_base/fast
+
+muduo/base/Exception.o: muduo/base/Exception.cpp.o
+
+.PHONY : muduo/base/Exception.o
+
+# target to build an object file
+muduo/base/Exception.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Exception.cpp.o
+.PHONY : muduo/base/Exception.cpp.o
+
+muduo/base/Exception.i: muduo/base/Exception.cpp.i
+
+.PHONY : muduo/base/Exception.i
+
+# target to preprocess a source file
+muduo/base/Exception.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Exception.cpp.i
+.PHONY : muduo/base/Exception.cpp.i
+
+muduo/base/Exception.s: muduo/base/Exception.cpp.s
+
+.PHONY : muduo/base/Exception.s
+
+# target to generate assembly for a file
+muduo/base/Exception.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Exception.cpp.s
+.PHONY : muduo/base/Exception.cpp.s
+
+muduo/base/Thread.o: muduo/base/Thread.cpp.o
+
+.PHONY : muduo/base/Thread.o
+
+# target to build an object file
+muduo/base/Thread.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Thread.cpp.o
+.PHONY : muduo/base/Thread.cpp.o
+
+muduo/base/Thread.i: muduo/base/Thread.cpp.i
+
+.PHONY : muduo/base/Thread.i
+
+# target to preprocess a source file
+muduo/base/Thread.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Thread.cpp.i
+.PHONY : muduo/base/Thread.cpp.i
+
+muduo/base/Thread.s: muduo/base/Thread.cpp.s
+
+.PHONY : muduo/base/Thread.s
+
+# target to generate assembly for a file
+muduo/base/Thread.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Thread.cpp.s
+.PHONY : muduo/base/Thread.cpp.s
+
+muduo/base/ThreadPoll.o: muduo/base/ThreadPoll.cpp.o
+
+.PHONY : muduo/base/ThreadPoll.o
+
+# target to build an object file
+muduo/base/ThreadPoll.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ThreadPoll.cpp.o
+.PHONY : muduo/base/ThreadPoll.cpp.o
+
+muduo/base/ThreadPoll.i: muduo/base/ThreadPoll.cpp.i
+
+.PHONY : muduo/base/ThreadPoll.i
+
+# target to preprocess a source file
+muduo/base/ThreadPoll.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ThreadPoll.cpp.i
+.PHONY : muduo/base/ThreadPoll.cpp.i
+
+muduo/base/ThreadPoll.s: muduo/base/ThreadPoll.cpp.s
+
+.PHONY : muduo/base/ThreadPoll.s
+
+# target to generate assembly for a file
+muduo/base/ThreadPoll.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ThreadPoll.cpp.s
+.PHONY : muduo/base/ThreadPoll.cpp.s
 
 muduo/base/Timestamp.o: muduo/base/Timestamp.cc.o
 
@@ -129,7 +295,7 @@ muduo/base/Timestamp.o: muduo/base/Timestamp.cc.o
 
 # target to build an object file
 muduo/base/Timestamp.cc.o:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.o
 .PHONY : muduo/base/Timestamp.cc.o
 
 muduo/base/Timestamp.i: muduo/base/Timestamp.cc.i
@@ -138,7 +304,7 @@ muduo/base/Timestamp.i: muduo/base/Timestamp.cc.i
 
 # target to preprocess a source file
 muduo/base/Timestamp.cc.i:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.i
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.i
 .PHONY : muduo/base/Timestamp.cc.i
 
 muduo/base/Timestamp.s: muduo/base/Timestamp.cc.s
@@ -147,7 +313,7 @@ muduo/base/Timestamp.s: muduo/base/Timestamp.cc.s
 
 # target to generate assembly for a file
 muduo/base/Timestamp.cc.s:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.s
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.s
 .PHONY : muduo/base/Timestamp.cc.s
 
 muduo/test/base/Atomic_unittest.o: muduo/test/base/Atomic_unittest.cpp.o
@@ -156,7 +322,7 @@ muduo/test/base/Atomic_unittest.o: muduo/test/base/Atomic_unittest.cpp.o
 
 # target to build an object file
 muduo/test/base/Atomic_unittest.cpp.o:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.o
 .PHONY : muduo/test/base/Atomic_unittest.cpp.o
 
 muduo/test/base/Atomic_unittest.i: muduo/test/base/Atomic_unittest.cpp.i
@@ -165,7 +331,7 @@ muduo/test/base/Atomic_unittest.i: muduo/test/base/Atomic_unittest.cpp.i
 
 # target to preprocess a source file
 muduo/test/base/Atomic_unittest.cpp.i:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.i
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.i
 .PHONY : muduo/test/base/Atomic_unittest.cpp.i
 
 muduo/test/base/Atomic_unittest.s: muduo/test/base/Atomic_unittest.cpp.s
@@ -174,8 +340,62 @@ muduo/test/base/Atomic_unittest.s: muduo/test/base/Atomic_unittest.cpp.s
 
 # target to generate assembly for a file
 muduo/test/base/Atomic_unittest.cpp.s:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.s
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.s
 .PHONY : muduo/test/base/Atomic_unittest.cpp.s
+
+muduo/test/base/TheadLocal_test.o: muduo/test/base/TheadLocal_test.cc.o
+
+.PHONY : muduo/test/base/TheadLocal_test.o
+
+# target to build an object file
+muduo/test/base/TheadLocal_test.cc.o:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/muduo/test/base/TheadLocal_test.cc.o
+.PHONY : muduo/test/base/TheadLocal_test.cc.o
+
+muduo/test/base/TheadLocal_test.i: muduo/test/base/TheadLocal_test.cc.i
+
+.PHONY : muduo/test/base/TheadLocal_test.i
+
+# target to preprocess a source file
+muduo/test/base/TheadLocal_test.cc.i:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/muduo/test/base/TheadLocal_test.cc.i
+.PHONY : muduo/test/base/TheadLocal_test.cc.i
+
+muduo/test/base/TheadLocal_test.s: muduo/test/base/TheadLocal_test.cc.s
+
+.PHONY : muduo/test/base/TheadLocal_test.s
+
+# target to generate assembly for a file
+muduo/test/base/TheadLocal_test.cc.s:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/muduo/test/base/TheadLocal_test.cc.s
+.PHONY : muduo/test/base/TheadLocal_test.cc.s
+
+muduo/test/base/ThreadLocalSingle_test.o: muduo/test/base/ThreadLocalSingle_test.cc.o
+
+.PHONY : muduo/test/base/ThreadLocalSingle_test.o
+
+# target to build an object file
+muduo/test/base/ThreadLocalSingle_test.cc.o:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/muduo/test/base/ThreadLocalSingle_test.cc.o
+.PHONY : muduo/test/base/ThreadLocalSingle_test.cc.o
+
+muduo/test/base/ThreadLocalSingle_test.i: muduo/test/base/ThreadLocalSingle_test.cc.i
+
+.PHONY : muduo/test/base/ThreadLocalSingle_test.i
+
+# target to preprocess a source file
+muduo/test/base/ThreadLocalSingle_test.cc.i:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/muduo/test/base/ThreadLocalSingle_test.cc.i
+.PHONY : muduo/test/base/ThreadLocalSingle_test.cc.i
+
+muduo/test/base/ThreadLocalSingle_test.s: muduo/test/base/ThreadLocalSingle_test.cc.s
+
+.PHONY : muduo/test/base/ThreadLocalSingle_test.s
+
+# target to generate assembly for a file
+muduo/test/base/ThreadLocalSingle_test.cc.s:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/muduo/test/base/ThreadLocalSingle_test.cc.s
+.PHONY : muduo/test/base/ThreadLocalSingle_test.cc.s
 
 # Help Target
 help:
@@ -183,15 +403,37 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... edit_cache"
-	@echo "... muduo"
+	@echo "... ThreadLocalSingle_test"
+	@echo "... Atomic_unittest"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... ThreadLocal_test"
+	@echo "... rebuild_cache"
+	@echo "... muduo_base"
+	@echo "... muduo/base/Exception.o"
+	@echo "... muduo/base/Exception.i"
+	@echo "... muduo/base/Exception.s"
+	@echo "... muduo/base/Thread.o"
+	@echo "... muduo/base/Thread.i"
+	@echo "... muduo/base/Thread.s"
+	@echo "... muduo/base/ThreadPoll.o"
+	@echo "... muduo/base/ThreadPoll.i"
+	@echo "... muduo/base/ThreadPoll.s"
 	@echo "... muduo/base/Timestamp.o"
 	@echo "... muduo/base/Timestamp.i"
 	@echo "... muduo/base/Timestamp.s"
 	@echo "... muduo/test/base/Atomic_unittest.o"
 	@echo "... muduo/test/base/Atomic_unittest.i"
 	@echo "... muduo/test/base/Atomic_unittest.s"
+	@echo "... muduo/test/base/TheadLocal_test.o"
+	@echo "... muduo/test/base/TheadLocal_test.i"
+	@echo "... muduo/test/base/TheadLocal_test.s"
+	@echo "... muduo/test/base/ThreadLocalSingle_test.o"
+	@echo "... muduo/test/base/ThreadLocalSingle_test.i"
+	@echo "... muduo/test/base/ThreadLocalSingle_test.s"
 .PHONY : help
 
 

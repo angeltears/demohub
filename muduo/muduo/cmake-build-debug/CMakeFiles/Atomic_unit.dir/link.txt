@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Atomic_unit.dir/muduo/test/base/Atomic_unittest.cpp.o  -o Atomic_unit libmuduo_base.a -lpthread -lrt 

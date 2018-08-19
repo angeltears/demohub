@@ -61,7 +61,7 @@ namespace jmuduo
 
         ThreadNameInitializer init;
 
-        struct ThreadDate
+        struct ThreadData
         {
             typedef jmuduo::Thread::ThreadFunc ThreadFunc;
             ThreadFunc func_;
@@ -69,7 +69,7 @@ namespace jmuduo
             pid_t* tid_;
             CountDownLatch* latch_;
 
-            ThreadDate(const ThreadFunc& func,
+            ThreadData(const ThreadFunc& func,
                        const string& name,
                        pid_t* tid,
                        CountDownLatch* latch)
@@ -119,7 +119,7 @@ namespace jmuduo
 
         void* startThread(void* obj)
         {
-            ThreadDate* data = static_cast<ThreadDate*>(obj);
+            ThreadData* data = static_cast<ThreadData*>(obj);
             data->runInThread();
             delete data;
             return NULL;
@@ -200,4 +200,31 @@ void Thread::setDefaultName()
         snprintf(buf, sizeof buf, "Thread%d", num);
         name_ = buf;
     }
+}
+
+
+void Thread::start()
+{
+    assert(!started_);
+    started_ = true;
+    detail::ThreadData* data = new detail::ThreadData(func_, name_, &tid_, &latch_);
+    if (pthread_create(&pthreadId_, NULL, &detail::startThread, data))
+    {
+        started_ = false;
+        delete data;
+    }
+    else
+    {
+        latch_.wait();
+        assert(tid_ > 0);
+    }
+
+}
+
+int Thread::join()
+{
+    assert(started_);
+    assert(!joined_);
+    joined_ = true;
+    return pthread_join(pthreadId_, NULL);
 }

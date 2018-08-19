@@ -60,39 +60,150 @@ CMAKE_SOURCE_DIR = /home/onter/project/hub/demohub/muduo/muduo
 CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/muduo.dir
+# Target rules for target CMakeFiles/ThreadLocalSingle_test.dir
 
 # All Build rule for target.
-CMakeFiles/muduo.dir/all:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/depend
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=1,2,3 "Built target muduo"
-.PHONY : CMakeFiles/muduo.dir/all
+CMakeFiles/ThreadLocalSingle_test.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/depend
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target ThreadLocalSingle_test"
+.PHONY : CMakeFiles/ThreadLocalSingle_test.dir/all
 
 # Include target in all.
-all: CMakeFiles/muduo.dir/all
+all: CMakeFiles/ThreadLocalSingle_test.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/muduo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/muduo.dir/all
+CMakeFiles/ThreadLocalSingle_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ThreadLocalSingle_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/muduo.dir/rule
+.PHONY : CMakeFiles/ThreadLocalSingle_test.dir/rule
 
 # Convenience name for target.
-muduo: CMakeFiles/muduo.dir/rule
+ThreadLocalSingle_test: CMakeFiles/ThreadLocalSingle_test.dir/rule
 
-.PHONY : muduo
-
-# clean rule for target.
-CMakeFiles/muduo.dir/clean:
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/clean
-.PHONY : CMakeFiles/muduo.dir/clean
+.PHONY : ThreadLocalSingle_test
 
 # clean rule for target.
-clean: CMakeFiles/muduo.dir/clean
+CMakeFiles/ThreadLocalSingle_test.dir/clean:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/clean
+.PHONY : CMakeFiles/ThreadLocalSingle_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ThreadLocalSingle_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Atomic_unittest.dir
+
+# All Build rule for target.
+CMakeFiles/Atomic_unittest.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/depend
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Atomic_unittest"
+.PHONY : CMakeFiles/Atomic_unittest.dir/all
+
+# Include target in all.
+all: CMakeFiles/Atomic_unittest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Atomic_unittest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Atomic_unittest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Atomic_unittest.dir/rule
+
+# Convenience name for target.
+Atomic_unittest: CMakeFiles/Atomic_unittest.dir/rule
+
+.PHONY : Atomic_unittest
+
+# clean rule for target.
+CMakeFiles/Atomic_unittest.dir/clean:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/clean
+.PHONY : CMakeFiles/Atomic_unittest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/Atomic_unittest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/ThreadLocal_test.dir
+
+# All Build rule for target.
+CMakeFiles/ThreadLocal_test.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/depend
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target ThreadLocal_test"
+.PHONY : CMakeFiles/ThreadLocal_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/ThreadLocal_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/ThreadLocal_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ThreadLocal_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/ThreadLocal_test.dir/rule
+
+# Convenience name for target.
+ThreadLocal_test: CMakeFiles/ThreadLocal_test.dir/rule
+
+.PHONY : ThreadLocal_test
+
+# clean rule for target.
+CMakeFiles/ThreadLocal_test.dir/clean:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/clean
+.PHONY : CMakeFiles/ThreadLocal_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/ThreadLocal_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/muduo_base.dir
+
+# All Build rule for target.
+CMakeFiles/muduo_base.dir/all:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/depend
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=7,8,9,10,11 "Built target muduo_base"
+.PHONY : CMakeFiles/muduo_base.dir/all
+
+# Include target in all.
+all: CMakeFiles/muduo_base.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/muduo_base.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/muduo_base.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/muduo_base.dir/rule
+
+# Convenience name for target.
+muduo_base: CMakeFiles/muduo_base.dir/rule
+
+.PHONY : muduo_base
+
+# clean rule for target.
+CMakeFiles/muduo_base.dir/clean:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/clean
+.PHONY : CMakeFiles/muduo_base.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/muduo_base.dir/clean
 
 .PHONY : clean
 

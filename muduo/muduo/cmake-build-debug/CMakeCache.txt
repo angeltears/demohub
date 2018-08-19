@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Dependencies for target
+-lmuduo_base_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+-pthread_LIB_DEPENDS:STATIC=
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -194,11 +200,23 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
 
+//Dependencies for target
+lmuduo_base_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+lpthread_LIB_DEPENDS:STATIC=
+
 //Value Computed by CMake
 muduo_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 
 //Value Computed by CMake
 muduo_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/muduo/muduo
+
+//Dependencies for the target
+muduo_base_LIB_DEPENDS:STATIC=general;pthread;general;rt;
+
+//Dependencies for target
+pthread_LIB_DEPENDS:STATIC=
 
 
 ########################

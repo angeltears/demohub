@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ThreadLocalSingle_test.dir/muduo/test/base/ThreadLocalSingle_test.cc.o  -o ThreadLocalSingle_test libmuduo_base.a -lpthread -lrt 

@@ -81,43 +81,147 @@ CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o.provides: CMakeFiles/muduo.dir/mu
 CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o.provides.build: CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o
 
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o: CMakeFiles/muduo.dir/flags.make
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o: ../muduo/test/base/Atomic_unittest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Atomic_unittest.cpp
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o: CMakeFiles/muduo.dir/flags.make
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o: ../muduo/base/Exception.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Exception.cpp
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Atomic_unittest.cpp > CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.i
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/base/Exception.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Exception.cpp > CMakeFiles/muduo.dir/muduo/base/Exception.cpp.i
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Atomic_unittest.cpp -o CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.s
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/base/Exception.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Exception.cpp -o CMakeFiles/muduo.dir/muduo/base/Exception.cpp.s
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.requires:
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.requires:
 
-.PHONY : CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.requires
+.PHONY : CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.requires
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.provides: CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.provides.build
-.PHONY : CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.provides
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.provides: CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.requires
+	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.provides.build
+.PHONY : CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.provides
 
-CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.provides.build: CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o
+CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.provides.build: CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o
+
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o: CMakeFiles/muduo.dir/flags.make
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o: ../muduo/test/base/Exception_unittest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Exception_unittest.cpp
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Exception_unittest.cpp > CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.i
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Exception_unittest.cpp -o CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.s
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.requires:
+
+.PHONY : CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.requires
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.provides: CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.provides.build
+.PHONY : CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.provides
+
+CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.provides.build: CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o
+
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o: CMakeFiles/muduo.dir/flags.make
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o: ../muduo/base/Thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Thread.cpp
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/base/Thread.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Thread.cpp > CMakeFiles/muduo.dir/muduo/base/Thread.cpp.i
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/base/Thread.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Thread.cpp -o CMakeFiles/muduo.dir/muduo/base/Thread.cpp.s
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.requires:
+
+.PHONY : CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.requires
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.provides: CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.requires
+	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.provides.build
+.PHONY : CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.provides
+
+CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.provides.build: CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o
+
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o: CMakeFiles/muduo.dir/flags.make
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o: ../muduo/base/ThreadPoll.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadPoll.cpp
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadPoll.cpp > CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.i
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadPoll.cpp -o CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.s
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.requires:
+
+.PHONY : CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.requires
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.provides: CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.requires
+	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.provides.build
+.PHONY : CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.provides
+
+CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.provides.build: CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o
+
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o: CMakeFiles/muduo.dir/flags.make
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o: ../muduo/base/ThreadLocal_test.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadLocal_test.cc
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadLocal_test.cc > CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.i
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadLocal_test.cc -o CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.s
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.requires:
+
+.PHONY : CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.requires
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.provides: CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.requires
+	$(MAKE) -f CMakeFiles/muduo.dir/build.make CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.provides.build
+.PHONY : CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.provides
+
+CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.provides.build: CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o
 
 
 # Object files for target muduo
 muduo_OBJECTS = \
 "CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o" \
-"CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o"
+"CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o" \
+"CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o" \
+"CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o" \
+"CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o" \
+"CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o"
 
 # External object files for target muduo
 muduo_EXTERNAL_OBJECTS =
 
 muduo: CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o
-muduo: CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o
+muduo: CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o
+muduo: CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o
+muduo: CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o
+muduo: CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o
+muduo: CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o
 muduo: CMakeFiles/muduo.dir/build.make
 muduo: CMakeFiles/muduo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable muduo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable muduo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/muduo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -126,7 +230,11 @@ CMakeFiles/muduo.dir/build: muduo
 .PHONY : CMakeFiles/muduo.dir/build
 
 CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/base/Timestamp.cc.o.requires
-CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/test/base/Atomic_unittest.cpp.o.requires
+CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/base/Exception.cpp.o.requires
+CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/test/base/Exception_unittest.cpp.o.requires
+CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/base/Thread.cpp.o.requires
+CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/base/ThreadPoll.cpp.o.requires
+CMakeFiles/muduo.dir/requires: CMakeFiles/muduo.dir/muduo/base/ThreadLocal_test.cc.o.requires
 
 .PHONY : CMakeFiles/muduo.dir/requires
 
