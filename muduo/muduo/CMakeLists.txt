@@ -44,7 +44,9 @@ set(base_SRCS
         muduo/base/BlockingQueue.hpp
         muduo/base/BoundedBlockingQueue.hpp
         muduo/base/CountDownLatch.hpp
-        muduo/base/CurrentThread.h muduo/base/ThreadLocalSingletion.h)
+        muduo/base/CurrentThread.h
+        muduo/base/ThreadLocalSingletion.h
+        muduo/base/StringPiece.h muduo/base/ProcessInfo.h muduo/base/ProcessInfo.cc muduo/base/FileUtil.h muduo/base/FileUtil.cc)
 
 add_library(muduo_base ${base_SRCS})
 target_link_libraries(muduo_base pthread rt)
@@ -59,7 +61,7 @@ target_link_libraries(ThreadLocal_test muduo_base)
 
 
 add_executable(Atomic_unittest
-        muduo/test/base/Atomic_unittest.cpp)
+        muduo/test/base/Atomic_unittest.cpp )
 target_link_libraries(Atomic_unittest muduo_base)
 
 

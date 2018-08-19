@@ -286,7 +286,22 @@
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Exception.h">
 			<Option target="muduo_base"/>
 		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/FileUtil.cc">
+			<Option target="muduo_base"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/FileUtil.h">
+			<Option target="muduo_base"/>
+		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Mutex.hpp">
+			<Option target="muduo_base"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/ProcessInfo.cc">
+			<Option target="muduo_base"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/ProcessInfo.h">
+			<Option target="muduo_base"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/StriingPiece.hpp">
 			<Option target="muduo_base"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Thread.cpp">

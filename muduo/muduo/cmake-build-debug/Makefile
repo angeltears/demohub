@@ -235,6 +235,60 @@ muduo/base/Exception.cpp.s:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Exception.cpp.s
 .PHONY : muduo/base/Exception.cpp.s
 
+muduo/base/FileUtil.o: muduo/base/FileUtil.cc.o
+
+.PHONY : muduo/base/FileUtil.o
+
+# target to build an object file
+muduo/base/FileUtil.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.o
+.PHONY : muduo/base/FileUtil.cc.o
+
+muduo/base/FileUtil.i: muduo/base/FileUtil.cc.i
+
+.PHONY : muduo/base/FileUtil.i
+
+# target to preprocess a source file
+muduo/base/FileUtil.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.i
+.PHONY : muduo/base/FileUtil.cc.i
+
+muduo/base/FileUtil.s: muduo/base/FileUtil.cc.s
+
+.PHONY : muduo/base/FileUtil.s
+
+# target to generate assembly for a file
+muduo/base/FileUtil.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.s
+.PHONY : muduo/base/FileUtil.cc.s
+
+muduo/base/ProcessInfo.o: muduo/base/ProcessInfo.cc.o
+
+.PHONY : muduo/base/ProcessInfo.o
+
+# target to build an object file
+muduo/base/ProcessInfo.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ProcessInfo.cc.o
+.PHONY : muduo/base/ProcessInfo.cc.o
+
+muduo/base/ProcessInfo.i: muduo/base/ProcessInfo.cc.i
+
+.PHONY : muduo/base/ProcessInfo.i
+
+# target to preprocess a source file
+muduo/base/ProcessInfo.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ProcessInfo.cc.i
+.PHONY : muduo/base/ProcessInfo.cc.i
+
+muduo/base/ProcessInfo.s: muduo/base/ProcessInfo.cc.s
+
+.PHONY : muduo/base/ProcessInfo.s
+
+# target to generate assembly for a file
+muduo/base/ProcessInfo.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ProcessInfo.cc.s
+.PHONY : muduo/base/ProcessInfo.cc.s
+
 muduo/base/Thread.o: muduo/base/Thread.cpp.o
 
 .PHONY : muduo/base/Thread.o
@@ -416,6 +470,12 @@ help:
 	@echo "... muduo/base/Exception.o"
 	@echo "... muduo/base/Exception.i"
 	@echo "... muduo/base/Exception.s"
+	@echo "... muduo/base/FileUtil.o"
+	@echo "... muduo/base/FileUtil.i"
+	@echo "... muduo/base/FileUtil.s"
+	@echo "... muduo/base/ProcessInfo.o"
+	@echo "... muduo/base/ProcessInfo.i"
+	@echo "... muduo/base/ProcessInfo.s"
 	@echo "... muduo/base/Thread.o"
 	@echo "... muduo/base/Thread.i"
 	@echo "... muduo/base/Thread.s"

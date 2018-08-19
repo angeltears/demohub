@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/muduo_base.dir/muduo/base/Exception.cpp.o"
   "CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.o"
   "CMakeFiles/muduo_base.dir/muduo/base/ThreadPoll.cpp.o"
+  "CMakeFiles/muduo_base.dir/muduo/base/ProcessInfo.cc.o"
+  "CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.o"
   "libmuduo_base.pdb"
   "libmuduo_base.a"
 )
