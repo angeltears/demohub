@@ -3,7 +3,7 @@
 //
 
 #include "FileUtil.h"
-//#include "Logging.h"
+#include "Loggin.h"
 
 #include <boost/static_assert.hpp>
 
@@ -153,7 +153,7 @@ template int FileUtil::ReadSmallFile::readToString(
 #endif
 
 
-AppendFile::AppendFile(StringArg filename)
+FileUtil::AppendFile::AppendFile(StringArg filename)
     :fp_(fopen(filename.c_str(), "we")),         // e for   O_CLOEXEC
      writtenBytes_(0)
 {
@@ -161,17 +161,17 @@ AppendFile::AppendFile(StringArg filename)
     ::setbuffer(fp_, buffer_, sizeof buffer_);
 }
 
-AppendFile::~AppendFile()
+FileUtil::AppendFile::~AppendFile()
 {
     ::fclose(fp_);
 }
 
-void AppendFile::flush()
+void FileUtil::AppendFile::flush()
 {
     ::fflush(fp_);
 }
 
-void AppendFile::append(const char *logline, const size_t len)
+void FileUtil::AppendFile::append(const char *logline, const size_t len)
 {
     size_t n = write(logline, len);
     size_t remain  = len - n;
@@ -193,7 +193,7 @@ void AppendFile::append(const char *logline, const size_t len)
     writtenBytes_ += len;
 }
 
-size_t AppendFile::write(const char *logline, size_t len)
+size_t FileUtil::AppendFile::write(const char *logline, size_t len)
 {
     return ::fwrite_unlocked(logline, 1 , len, fp_);
 }

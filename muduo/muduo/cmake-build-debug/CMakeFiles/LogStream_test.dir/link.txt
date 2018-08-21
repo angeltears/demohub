@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/LogStream_test.dir/muduo/test/base/LogStream_test.cc.o  -o LogStream_test libmuduo_base.a -lpthread -lrt 

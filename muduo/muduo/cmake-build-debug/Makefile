@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -67,27 +79,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -101,17 +92,15 @@ install/strip/fast: preinstall/fast
 	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -123,6 +112,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -157,30 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ThreadLocalSingle_test
+# Target rules for targets named muduo_base
 
 # Build rule for target.
-ThreadLocalSingle_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingle_test
-.PHONY : ThreadLocalSingle_test
+muduo_base: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 muduo_base
+.PHONY : muduo_base
 
 # fast build rule for target.
-ThreadLocalSingle_test/fast:
-	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
-.PHONY : ThreadLocalSingle_test/fast
-
-#=============================================================================
-# Target rules for targets named Atomic_unittest
-
-# Build rule for target.
-Atomic_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Atomic_unittest
-.PHONY : Atomic_unittest
-
-# fast build rule for target.
-Atomic_unittest/fast:
-	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
-.PHONY : Atomic_unittest/fast
+muduo_base/fast:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
+.PHONY : muduo_base/fast
 
 #=============================================================================
 # Target rules for targets named ThreadLocal_test
@@ -196,17 +194,96 @@ ThreadLocal_test/fast:
 .PHONY : ThreadLocal_test/fast
 
 #=============================================================================
-# Target rules for targets named muduo_base
+# Target rules for targets named Atomic_unittest
 
 # Build rule for target.
-muduo_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 muduo_base
-.PHONY : muduo_base
+Atomic_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Atomic_unittest
+.PHONY : Atomic_unittest
 
 # fast build rule for target.
-muduo_base/fast:
-	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
-.PHONY : muduo_base/fast
+Atomic_unittest/fast:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
+.PHONY : Atomic_unittest/fast
+
+#=============================================================================
+# Target rules for targets named ThreadLocalSingle_test
+
+# Build rule for target.
+ThreadLocalSingle_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingle_test
+.PHONY : ThreadLocalSingle_test
+
+# fast build rule for target.
+ThreadLocalSingle_test/fast:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
+.PHONY : ThreadLocalSingle_test/fast
+
+#=============================================================================
+# Target rules for targets named LogStream_test
+
+# Build rule for target.
+LogStream_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LogStream_test
+.PHONY : LogStream_test
+
+# fast build rule for target.
+LogStream_test/fast:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/build
+.PHONY : LogStream_test/fast
+
+#=============================================================================
+# Target rules for targets named Logging_test
+
+# Build rule for target.
+Logging_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Logging_test
+.PHONY : Logging_test
+
+# fast build rule for target.
+Logging_test/fast:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
+.PHONY : Logging_test/fast
+
+#=============================================================================
+# Target rules for targets named LogFile_test
+
+# Build rule for target.
+LogFile_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LogFile_test
+.PHONY : LogFile_test
+
+# fast build rule for target.
+LogFile_test/fast:
+	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/build
+.PHONY : LogFile_test/fast
+
+muduo/base/Date.o: muduo/base/Date.cc.o
+
+.PHONY : muduo/base/Date.o
+
+# target to build an object file
+muduo/base/Date.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Date.cc.o
+.PHONY : muduo/base/Date.cc.o
+
+muduo/base/Date.i: muduo/base/Date.cc.i
+
+.PHONY : muduo/base/Date.i
+
+# target to preprocess a source file
+muduo/base/Date.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Date.cc.i
+.PHONY : muduo/base/Date.cc.i
+
+muduo/base/Date.s: muduo/base/Date.cc.s
+
+.PHONY : muduo/base/Date.s
+
+# target to generate assembly for a file
+muduo/base/Date.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Date.cc.s
+.PHONY : muduo/base/Date.cc.s
 
 muduo/base/Exception.o: muduo/base/Exception.cpp.o
 
@@ -261,6 +338,87 @@ muduo/base/FileUtil.s: muduo/base/FileUtil.cc.s
 muduo/base/FileUtil.cc.s:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.s
 .PHONY : muduo/base/FileUtil.cc.s
+
+muduo/base/LogFile.o: muduo/base/LogFile.cpp.o
+
+.PHONY : muduo/base/LogFile.o
+
+# target to build an object file
+muduo/base/LogFile.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o
+.PHONY : muduo/base/LogFile.cpp.o
+
+muduo/base/LogFile.i: muduo/base/LogFile.cpp.i
+
+.PHONY : muduo/base/LogFile.i
+
+# target to preprocess a source file
+muduo/base/LogFile.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.i
+.PHONY : muduo/base/LogFile.cpp.i
+
+muduo/base/LogFile.s: muduo/base/LogFile.cpp.s
+
+.PHONY : muduo/base/LogFile.s
+
+# target to generate assembly for a file
+muduo/base/LogFile.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.s
+.PHONY : muduo/base/LogFile.cpp.s
+
+muduo/base/LogStream.o: muduo/base/LogStream.cc.o
+
+.PHONY : muduo/base/LogStream.o
+
+# target to build an object file
+muduo/base/LogStream.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogStream.cc.o
+.PHONY : muduo/base/LogStream.cc.o
+
+muduo/base/LogStream.i: muduo/base/LogStream.cc.i
+
+.PHONY : muduo/base/LogStream.i
+
+# target to preprocess a source file
+muduo/base/LogStream.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogStream.cc.i
+.PHONY : muduo/base/LogStream.cc.i
+
+muduo/base/LogStream.s: muduo/base/LogStream.cc.s
+
+.PHONY : muduo/base/LogStream.s
+
+# target to generate assembly for a file
+muduo/base/LogStream.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/LogStream.cc.s
+.PHONY : muduo/base/LogStream.cc.s
+
+muduo/base/Loggin.o: muduo/base/Loggin.cc.o
+
+.PHONY : muduo/base/Loggin.o
+
+# target to build an object file
+muduo/base/Loggin.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Loggin.cc.o
+.PHONY : muduo/base/Loggin.cc.o
+
+muduo/base/Loggin.i: muduo/base/Loggin.cc.i
+
+.PHONY : muduo/base/Loggin.i
+
+# target to preprocess a source file
+muduo/base/Loggin.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Loggin.cc.i
+.PHONY : muduo/base/Loggin.cc.i
+
+muduo/base/Loggin.s: muduo/base/Loggin.cc.s
+
+.PHONY : muduo/base/Loggin.s
+
+# target to generate assembly for a file
+muduo/base/Loggin.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Loggin.cc.s
+.PHONY : muduo/base/Loggin.cc.s
 
 muduo/base/ProcessInfo.o: muduo/base/ProcessInfo.cc.o
 
@@ -343,6 +501,33 @@ muduo/base/ThreadPoll.cpp.s:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/ThreadPoll.cpp.s
 .PHONY : muduo/base/ThreadPoll.cpp.s
 
+muduo/base/TimeZone.o: muduo/base/TimeZone.cc.o
+
+.PHONY : muduo/base/TimeZone.o
+
+# target to build an object file
+muduo/base/TimeZone.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/TimeZone.cc.o
+.PHONY : muduo/base/TimeZone.cc.o
+
+muduo/base/TimeZone.i: muduo/base/TimeZone.cc.i
+
+.PHONY : muduo/base/TimeZone.i
+
+# target to preprocess a source file
+muduo/base/TimeZone.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/TimeZone.cc.i
+.PHONY : muduo/base/TimeZone.cc.i
+
+muduo/base/TimeZone.s: muduo/base/TimeZone.cc.s
+
+.PHONY : muduo/base/TimeZone.s
+
+# target to generate assembly for a file
+muduo/base/TimeZone.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/TimeZone.cc.s
+.PHONY : muduo/base/TimeZone.cc.s
+
 muduo/base/Timestamp.o: muduo/base/Timestamp.cc.o
 
 .PHONY : muduo/base/Timestamp.o
@@ -396,6 +581,90 @@ muduo/test/base/Atomic_unittest.s: muduo/test/base/Atomic_unittest.cpp.s
 muduo/test/base/Atomic_unittest.cpp.s:
 	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.s
 .PHONY : muduo/test/base/Atomic_unittest.cpp.s
+
+muduo/test/base/LogFile_test.o: muduo/test/base/LogFile_test.cc.o
+
+.PHONY : muduo/test/base/LogFile_test.o
+
+# target to build an object file
+muduo/test/base/LogFile_test.cc.o:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.o
+	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.o
+.PHONY : muduo/test/base/LogFile_test.cc.o
+
+muduo/test/base/LogFile_test.i: muduo/test/base/LogFile_test.cc.i
+
+.PHONY : muduo/test/base/LogFile_test.i
+
+# target to preprocess a source file
+muduo/test/base/LogFile_test.cc.i:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.i
+	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.i
+.PHONY : muduo/test/base/LogFile_test.cc.i
+
+muduo/test/base/LogFile_test.s: muduo/test/base/LogFile_test.cc.s
+
+.PHONY : muduo/test/base/LogFile_test.s
+
+# target to generate assembly for a file
+muduo/test/base/LogFile_test.cc.s:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.s
+	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.s
+.PHONY : muduo/test/base/LogFile_test.cc.s
+
+muduo/test/base/LogStream_test.o: muduo/test/base/LogStream_test.cc.o
+
+.PHONY : muduo/test/base/LogStream_test.o
+
+# target to build an object file
+muduo/test/base/LogStream_test.cc.o:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/muduo/test/base/LogStream_test.cc.o
+.PHONY : muduo/test/base/LogStream_test.cc.o
+
+muduo/test/base/LogStream_test.i: muduo/test/base/LogStream_test.cc.i
+
+.PHONY : muduo/test/base/LogStream_test.i
+
+# target to preprocess a source file
+muduo/test/base/LogStream_test.cc.i:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/muduo/test/base/LogStream_test.cc.i
+.PHONY : muduo/test/base/LogStream_test.cc.i
+
+muduo/test/base/LogStream_test.s: muduo/test/base/LogStream_test.cc.s
+
+.PHONY : muduo/test/base/LogStream_test.s
+
+# target to generate assembly for a file
+muduo/test/base/LogStream_test.cc.s:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/muduo/test/base/LogStream_test.cc.s
+.PHONY : muduo/test/base/LogStream_test.cc.s
+
+muduo/test/base/Logging_test.o: muduo/test/base/Logging_test.cc.o
+
+.PHONY : muduo/test/base/Logging_test.o
+
+# target to build an object file
+muduo/test/base/Logging_test.cc.o:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o
+.PHONY : muduo/test/base/Logging_test.cc.o
+
+muduo/test/base/Logging_test.i: muduo/test/base/Logging_test.cc.i
+
+.PHONY : muduo/test/base/Logging_test.i
+
+# target to preprocess a source file
+muduo/test/base/Logging_test.cc.i:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.i
+.PHONY : muduo/test/base/Logging_test.cc.i
+
+muduo/test/base/Logging_test.s: muduo/test/base/Logging_test.cc.s
+
+.PHONY : muduo/test/base/Logging_test.s
+
+# target to generate assembly for a file
+muduo/test/base/Logging_test.cc.s:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.s
+.PHONY : muduo/test/base/Logging_test.cc.s
 
 muduo/test/base/TheadLocal_test.o: muduo/test/base/TheadLocal_test.cc.o
 
@@ -457,22 +726,38 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... ThreadLocalSingle_test"
-	@echo "... Atomic_unittest"
-	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... ThreadLocal_test"
-	@echo "... rebuild_cache"
+	@echo "... install"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... muduo_base"
+	@echo "... rebuild_cache"
+	@echo "... ThreadLocal_test"
+	@echo "... Atomic_unittest"
+	@echo "... ThreadLocalSingle_test"
+	@echo "... LogStream_test"
+	@echo "... Logging_test"
+	@echo "... edit_cache"
+	@echo "... LogFile_test"
+	@echo "... test"
+	@echo "... muduo/base/Date.o"
+	@echo "... muduo/base/Date.i"
+	@echo "... muduo/base/Date.s"
 	@echo "... muduo/base/Exception.o"
 	@echo "... muduo/base/Exception.i"
 	@echo "... muduo/base/Exception.s"
 	@echo "... muduo/base/FileUtil.o"
 	@echo "... muduo/base/FileUtil.i"
 	@echo "... muduo/base/FileUtil.s"
+	@echo "... muduo/base/LogFile.o"
+	@echo "... muduo/base/LogFile.i"
+	@echo "... muduo/base/LogFile.s"
+	@echo "... muduo/base/LogStream.o"
+	@echo "... muduo/base/LogStream.i"
+	@echo "... muduo/base/LogStream.s"
+	@echo "... muduo/base/Loggin.o"
+	@echo "... muduo/base/Loggin.i"
+	@echo "... muduo/base/Loggin.s"
 	@echo "... muduo/base/ProcessInfo.o"
 	@echo "... muduo/base/ProcessInfo.i"
 	@echo "... muduo/base/ProcessInfo.s"
@@ -482,12 +767,24 @@ help:
 	@echo "... muduo/base/ThreadPoll.o"
 	@echo "... muduo/base/ThreadPoll.i"
 	@echo "... muduo/base/ThreadPoll.s"
+	@echo "... muduo/base/TimeZone.o"
+	@echo "... muduo/base/TimeZone.i"
+	@echo "... muduo/base/TimeZone.s"
 	@echo "... muduo/base/Timestamp.o"
 	@echo "... muduo/base/Timestamp.i"
 	@echo "... muduo/base/Timestamp.s"
 	@echo "... muduo/test/base/Atomic_unittest.o"
 	@echo "... muduo/test/base/Atomic_unittest.i"
 	@echo "... muduo/test/base/Atomic_unittest.s"
+	@echo "... muduo/test/base/LogFile_test.o"
+	@echo "... muduo/test/base/LogFile_test.i"
+	@echo "... muduo/test/base/LogFile_test.s"
+	@echo "... muduo/test/base/LogStream_test.o"
+	@echo "... muduo/test/base/LogStream_test.i"
+	@echo "... muduo/test/base/LogStream_test.s"
+	@echo "... muduo/test/base/Logging_test.o"
+	@echo "... muduo/test/base/Logging_test.i"
+	@echo "... muduo/test/base/Logging_test.s"
 	@echo "... muduo/test/base/TheadLocal_test.o"
 	@echo "... muduo/test/base/TheadLocal_test.i"
 	@echo "... muduo/test/base/TheadLocal_test.s"

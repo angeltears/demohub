@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5.1)
 project(muduo)
 
+enable_testing()
+
 set(CMAKE_CXX_STANDARD 11)
 
 set(CXX_FLAGS
@@ -46,7 +48,19 @@ set(base_SRCS
         muduo/base/CountDownLatch.hpp
         muduo/base/CurrentThread.h
         muduo/base/ThreadLocalSingletion.h
-        muduo/base/StringPiece.h muduo/base/ProcessInfo.h muduo/base/ProcessInfo.cc muduo/base/FileUtil.h muduo/base/FileUtil.cc)
+        muduo/base/StringPiece.h
+        muduo/base/ProcessInfo.h
+        muduo/base/ProcessInfo.cc
+        muduo/base/FileUtil.h
+        muduo/base/FileUtil.cc
+        muduo/base/LogStream.h
+        muduo/base/LogStream.cc
+        muduo/base/Loggin.h
+        muduo/base/Loggin.cc
+        muduo/base/TimeZone.h
+        muduo/base/TimeZone.cc
+        muduo/base/Date.h
+        muduo/base/Date.cc muduo/base/LogFile.cpp muduo/base/LogFile_test.hpp)
 
 add_library(muduo_base ${base_SRCS})
 target_link_libraries(muduo_base pthread rt)
@@ -61,10 +75,21 @@ target_link_libraries(ThreadLocal_test muduo_base)
 
 
 add_executable(Atomic_unittest
-        muduo/test/base/Atomic_unittest.cpp )
+        muduo/test/base/Atomic_unittest.cpp muduo/test/base/LogFile_test.cc)
 target_link_libraries(Atomic_unittest muduo_base)
 
 
 add_executable(ThreadLocalSingle_test
         muduo/test/base/ThreadLocalSingle_test.cc)
 target_link_libraries(ThreadLocalSingle_test muduo_base)
+
+add_executable(LogStream_test
+        muduo/test/base/LogStream_test.cc)
+target_link_libraries(LogStream_test  muduo_base)
+add_executable(Logging_test
+        muduo/test/base/Logging_test.cc)
+target_link_libraries(Logging_test muduo_base)
+
+add_executable(LogFile_test
+        muduo/test/base/LogFile_test.cc)
+target_link_libraries(LogFile_test muduo_base)

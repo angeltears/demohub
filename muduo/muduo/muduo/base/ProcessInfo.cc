@@ -210,7 +210,7 @@ int ProcessInfo::maxOpenFiles()
     }
 }
 
-ProcessInfo::CpuTime ProcessInfo::CpuTime()
+ProcessInfo::CpuTime ProcessInfo::cpuTime()
 {
     ProcessInfo::CpuTime t;
     struct tms tms_;

@@ -50,7 +50,7 @@ namespace jmuduo
 
             CpuTime():userSeconds(0.0), systemSeconds(0.0) {}
         };
-        CpuTime cputime();
+        CpuTime cpuTime();
 
         int numThreads();
         std::vector<pid_t> threads();
