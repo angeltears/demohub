@@ -64,7 +64,7 @@ int FileUtil::ReadSmallFile::readToString(int maxSize,
                 if (S_ISREG(statbuf.st_mode))
                 {
                     *filesize = statbuf.st_size;
-                    content->reserve(static_cast<int>(std::min(implicit_case<int64_t>(maxSize), *filesize)));
+                    content->reserve(static_cast<int>(std::min(implicit_cast<int64_t>(maxSize), *filesize)));
                 }
                 else if (S_ISDIR(statbuf.st_mode))
                 {
@@ -87,9 +87,9 @@ int FileUtil::ReadSmallFile::readToString(int maxSize,
         }
     }
 
-    while (content-> size() <  implicit_case<size_t>(maxSize))
+    while (content-> size() <  implicit_cast<size_t>(maxSize))
     {
-        size_t toRead = std::min(implicit_case<size_t>(maxSize) - content->size(), sizeof(buf_));
+        size_t toRead = std::min(implicit_cast<size_t>(maxSize) - content->size(), sizeof(buf_));
         ssize_t n = ::read(fd_, buf_, toRead);
         if (n > 0)
         {

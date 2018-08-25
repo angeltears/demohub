@@ -22,10 +22,8 @@ using std::string;
 typedef __gnu_cxx::__sso_string string;
 #endif
 
-
-// 这个在c++11中已经实现了，而且提供的更加全面，但是为了程序的快捷，这样做也未尝不可
 template<typename To, typename From>
-inline To implicit_case(From const &f)
+inline To implicit_cast(From const &f)
 {
     return f;
 }
@@ -36,7 +34,7 @@ inline To down_cast(From *f)
 {
     if (false)
     {
-        implicit_case<From*, To>(0);
+        implicit_cast<From *, To>(0);
     }
 #if !defined(NDEBUG) && !defined(GOOGLE_PROTOBUF_NO_RTTI)
     assert(f == NULL || dynamic_cast<To>(f) != NULL );

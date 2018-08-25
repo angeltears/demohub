@@ -41,7 +41,7 @@ namespace jmuduo
             }
             void append(const char * buf, size_t len)
             {
-                if (implicit_case<size_t>(avail()) > len)
+                if (implicit_cast<size_t>(avail()) > len)
                 {
                     memcpy(cur_, buf, len);
                     cur_ += len;

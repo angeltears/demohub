@@ -215,6 +215,9 @@ muduo_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/muduo/muduo
 //Dependencies for the target
 muduo_base_LIB_DEPENDS:STATIC=general;pthread;general;rt;
 
+//Dependencies for the target
+muduo_net_LIB_DEPENDS:STATIC=general;muduo_base;
+
 //Dependencies for target
 pthread_LIB_DEPENDS:STATIC=
 

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.o"
-  "CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.o"
   "Atomic_unittest.pdb"
   "Atomic_unittest"
 )

@@ -102,17 +102,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -123,6 +112,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target test
 test:
@@ -181,6 +181,32 @@ muduo_base/fast:
 .PHONY : muduo_base/fast
 
 #=============================================================================
+# Target rules for targets named muduo_net
+
+# Build rule for target.
+muduo_net: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 muduo_net
+.PHONY : muduo_net
+
+# fast build rule for target.
+muduo_net/fast:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/build
+.PHONY : muduo_net/fast
+
+#=============================================================================
+# Target rules for targets named Logging_test
+
+# Build rule for target.
+Logging_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Logging_test
+.PHONY : Logging_test
+
+# fast build rule for target.
+Logging_test/fast:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
+.PHONY : Logging_test/fast
+
+#=============================================================================
 # Target rules for targets named ThreadLocal_test
 
 # Build rule for target.
@@ -233,19 +259,6 @@ LogStream_test/fast:
 .PHONY : LogStream_test/fast
 
 #=============================================================================
-# Target rules for targets named Logging_test
-
-# Build rule for target.
-Logging_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Logging_test
-.PHONY : Logging_test
-
-# fast build rule for target.
-Logging_test/fast:
-	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
-.PHONY : Logging_test/fast
-
-#=============================================================================
 # Target rules for targets named LogFile_test
 
 # Build rule for target.
@@ -257,6 +270,19 @@ LogFile_test: cmake_check_build_system
 LogFile_test/fast:
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/build
 .PHONY : LogFile_test/fast
+
+#=============================================================================
+# Target rules for targets named EventLoop_test
+
+# Build rule for target.
+EventLoop_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test
+.PHONY : EventLoop_test
+
+# fast build rule for target.
+EventLoop_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
+.PHONY : EventLoop_test/fast
 
 muduo/base/Date.o: muduo/base/Date.cc.o
 
@@ -555,6 +581,249 @@ muduo/base/Timestamp.cc.s:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.s
 .PHONY : muduo/base/Timestamp.cc.s
 
+muduo/net/Channel.o: muduo/net/Channel.cc.o
+
+.PHONY : muduo/net/Channel.o
+
+# target to build an object file
+muduo/net/Channel.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Channel.cc.o
+.PHONY : muduo/net/Channel.cc.o
+
+muduo/net/Channel.i: muduo/net/Channel.cc.i
+
+.PHONY : muduo/net/Channel.i
+
+# target to preprocess a source file
+muduo/net/Channel.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Channel.cc.i
+.PHONY : muduo/net/Channel.cc.i
+
+muduo/net/Channel.s: muduo/net/Channel.cc.s
+
+.PHONY : muduo/net/Channel.s
+
+# target to generate assembly for a file
+muduo/net/Channel.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Channel.cc.s
+.PHONY : muduo/net/Channel.cc.s
+
+muduo/net/EventLoop.o: muduo/net/EventLoop.cc.o
+
+.PHONY : muduo/net/EventLoop.o
+
+# target to build an object file
+muduo/net/EventLoop.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoop.cc.o
+.PHONY : muduo/net/EventLoop.cc.o
+
+muduo/net/EventLoop.i: muduo/net/EventLoop.cc.i
+
+.PHONY : muduo/net/EventLoop.i
+
+# target to preprocess a source file
+muduo/net/EventLoop.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoop.cc.i
+.PHONY : muduo/net/EventLoop.cc.i
+
+muduo/net/EventLoop.s: muduo/net/EventLoop.cc.s
+
+.PHONY : muduo/net/EventLoop.s
+
+# target to generate assembly for a file
+muduo/net/EventLoop.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoop.cc.s
+.PHONY : muduo/net/EventLoop.cc.s
+
+muduo/net/EventLoopThread.o: muduo/net/EventLoopThread.cc.o
+
+.PHONY : muduo/net/EventLoopThread.o
+
+# target to build an object file
+muduo/net/EventLoopThread.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoopThread.cc.o
+.PHONY : muduo/net/EventLoopThread.cc.o
+
+muduo/net/EventLoopThread.i: muduo/net/EventLoopThread.cc.i
+
+.PHONY : muduo/net/EventLoopThread.i
+
+# target to preprocess a source file
+muduo/net/EventLoopThread.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoopThread.cc.i
+.PHONY : muduo/net/EventLoopThread.cc.i
+
+muduo/net/EventLoopThread.s: muduo/net/EventLoopThread.cc.s
+
+.PHONY : muduo/net/EventLoopThread.s
+
+# target to generate assembly for a file
+muduo/net/EventLoopThread.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/EventLoopThread.cc.s
+.PHONY : muduo/net/EventLoopThread.cc.s
+
+muduo/net/Poller.o: muduo/net/Poller.cpp.o
+
+.PHONY : muduo/net/Poller.o
+
+# target to build an object file
+muduo/net/Poller.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller.cpp.o
+.PHONY : muduo/net/Poller.cpp.o
+
+muduo/net/Poller.i: muduo/net/Poller.cpp.i
+
+.PHONY : muduo/net/Poller.i
+
+# target to preprocess a source file
+muduo/net/Poller.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller.cpp.i
+.PHONY : muduo/net/Poller.cpp.i
+
+muduo/net/Poller.s: muduo/net/Poller.cpp.s
+
+.PHONY : muduo/net/Poller.s
+
+# target to generate assembly for a file
+muduo/net/Poller.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller.cpp.s
+.PHONY : muduo/net/Poller.cpp.s
+
+muduo/net/Poller/DefaultPoller.o: muduo/net/Poller/DefaultPoller.cc.o
+
+.PHONY : muduo/net/Poller/DefaultPoller.o
+
+# target to build an object file
+muduo/net/Poller/DefaultPoller.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/DefaultPoller.cc.o
+.PHONY : muduo/net/Poller/DefaultPoller.cc.o
+
+muduo/net/Poller/DefaultPoller.i: muduo/net/Poller/DefaultPoller.cc.i
+
+.PHONY : muduo/net/Poller/DefaultPoller.i
+
+# target to preprocess a source file
+muduo/net/Poller/DefaultPoller.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/DefaultPoller.cc.i
+.PHONY : muduo/net/Poller/DefaultPoller.cc.i
+
+muduo/net/Poller/DefaultPoller.s: muduo/net/Poller/DefaultPoller.cc.s
+
+.PHONY : muduo/net/Poller/DefaultPoller.s
+
+# target to generate assembly for a file
+muduo/net/Poller/DefaultPoller.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/DefaultPoller.cc.s
+.PHONY : muduo/net/Poller/DefaultPoller.cc.s
+
+muduo/net/Poller/EPollPoller.o: muduo/net/Poller/EPollPoller.cc.o
+
+.PHONY : muduo/net/Poller/EPollPoller.o
+
+# target to build an object file
+muduo/net/Poller/EPollPoller.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/EPollPoller.cc.o
+.PHONY : muduo/net/Poller/EPollPoller.cc.o
+
+muduo/net/Poller/EPollPoller.i: muduo/net/Poller/EPollPoller.cc.i
+
+.PHONY : muduo/net/Poller/EPollPoller.i
+
+# target to preprocess a source file
+muduo/net/Poller/EPollPoller.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/EPollPoller.cc.i
+.PHONY : muduo/net/Poller/EPollPoller.cc.i
+
+muduo/net/Poller/EPollPoller.s: muduo/net/Poller/EPollPoller.cc.s
+
+.PHONY : muduo/net/Poller/EPollPoller.s
+
+# target to generate assembly for a file
+muduo/net/Poller/EPollPoller.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/EPollPoller.cc.s
+.PHONY : muduo/net/Poller/EPollPoller.cc.s
+
+muduo/net/Poller/PollPoller.o: muduo/net/Poller/PollPoller.cpp.o
+
+.PHONY : muduo/net/Poller/PollPoller.o
+
+# target to build an object file
+muduo/net/Poller/PollPoller.cpp.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/PollPoller.cpp.o
+.PHONY : muduo/net/Poller/PollPoller.cpp.o
+
+muduo/net/Poller/PollPoller.i: muduo/net/Poller/PollPoller.cpp.i
+
+.PHONY : muduo/net/Poller/PollPoller.i
+
+# target to preprocess a source file
+muduo/net/Poller/PollPoller.cpp.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/PollPoller.cpp.i
+.PHONY : muduo/net/Poller/PollPoller.cpp.i
+
+muduo/net/Poller/PollPoller.s: muduo/net/Poller/PollPoller.cpp.s
+
+.PHONY : muduo/net/Poller/PollPoller.s
+
+# target to generate assembly for a file
+muduo/net/Poller/PollPoller.cpp.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Poller/PollPoller.cpp.s
+.PHONY : muduo/net/Poller/PollPoller.cpp.s
+
+muduo/net/Timer.o: muduo/net/Timer.cc.o
+
+.PHONY : muduo/net/Timer.o
+
+# target to build an object file
+muduo/net/Timer.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Timer.cc.o
+.PHONY : muduo/net/Timer.cc.o
+
+muduo/net/Timer.i: muduo/net/Timer.cc.i
+
+.PHONY : muduo/net/Timer.i
+
+# target to preprocess a source file
+muduo/net/Timer.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Timer.cc.i
+.PHONY : muduo/net/Timer.cc.i
+
+muduo/net/Timer.s: muduo/net/Timer.cc.s
+
+.PHONY : muduo/net/Timer.s
+
+# target to generate assembly for a file
+muduo/net/Timer.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Timer.cc.s
+.PHONY : muduo/net/Timer.cc.s
+
+muduo/net/TimerQueue.o: muduo/net/TimerQueue.cc.o
+
+.PHONY : muduo/net/TimerQueue.o
+
+# target to build an object file
+muduo/net/TimerQueue.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TimerQueue.cc.o
+.PHONY : muduo/net/TimerQueue.cc.o
+
+muduo/net/TimerQueue.i: muduo/net/TimerQueue.cc.i
+
+.PHONY : muduo/net/TimerQueue.i
+
+# target to preprocess a source file
+muduo/net/TimerQueue.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TimerQueue.cc.i
+.PHONY : muduo/net/TimerQueue.cc.i
+
+muduo/net/TimerQueue.s: muduo/net/TimerQueue.cc.s
+
+.PHONY : muduo/net/TimerQueue.s
+
+# target to generate assembly for a file
+muduo/net/TimerQueue.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TimerQueue.cc.s
+.PHONY : muduo/net/TimerQueue.cc.s
+
 muduo/test/base/Atomic_unittest.o: muduo/test/base/Atomic_unittest.cpp.o
 
 .PHONY : muduo/test/base/Atomic_unittest.o
@@ -582,13 +851,39 @@ muduo/test/base/Atomic_unittest.cpp.s:
 	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.s
 .PHONY : muduo/test/base/Atomic_unittest.cpp.s
 
+muduo/test/base/EventLoop_unittest.o: muduo/test/base/EventLoop_unittest.cc.o
+
+.PHONY : muduo/test/base/EventLoop_unittest.o
+
+# target to build an object file
+muduo/test/base/EventLoop_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/muduo/test/base/EventLoop_unittest.cc.o
+.PHONY : muduo/test/base/EventLoop_unittest.cc.o
+
+muduo/test/base/EventLoop_unittest.i: muduo/test/base/EventLoop_unittest.cc.i
+
+.PHONY : muduo/test/base/EventLoop_unittest.i
+
+# target to preprocess a source file
+muduo/test/base/EventLoop_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/muduo/test/base/EventLoop_unittest.cc.i
+.PHONY : muduo/test/base/EventLoop_unittest.cc.i
+
+muduo/test/base/EventLoop_unittest.s: muduo/test/base/EventLoop_unittest.cc.s
+
+.PHONY : muduo/test/base/EventLoop_unittest.s
+
+# target to generate assembly for a file
+muduo/test/base/EventLoop_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/muduo/test/base/EventLoop_unittest.cc.s
+.PHONY : muduo/test/base/EventLoop_unittest.cc.s
+
 muduo/test/base/LogFile_test.o: muduo/test/base/LogFile_test.cc.o
 
 .PHONY : muduo/test/base/LogFile_test.o
 
 # target to build an object file
 muduo/test/base/LogFile_test.cc.o:
-	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.o
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.o
 .PHONY : muduo/test/base/LogFile_test.cc.o
 
@@ -598,7 +893,6 @@ muduo/test/base/LogFile_test.i: muduo/test/base/LogFile_test.cc.i
 
 # target to preprocess a source file
 muduo/test/base/LogFile_test.cc.i:
-	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.i
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.i
 .PHONY : muduo/test/base/LogFile_test.cc.i
 
@@ -608,7 +902,6 @@ muduo/test/base/LogFile_test.s: muduo/test/base/LogFile_test.cc.s
 
 # target to generate assembly for a file
 muduo/test/base/LogFile_test.cc.s:
-	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/LogFile_test.cc.s
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/muduo/test/base/LogFile_test.cc.s
 .PHONY : muduo/test/base/LogFile_test.cc.s
 
@@ -730,15 +1023,17 @@ help:
 	@echo "... install"
 	@echo "... install/strip"
 	@echo "... list_install_components"
-	@echo "... muduo_base"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... muduo_base"
+	@echo "... muduo_net"
+	@echo "... Logging_test"
 	@echo "... ThreadLocal_test"
 	@echo "... Atomic_unittest"
 	@echo "... ThreadLocalSingle_test"
 	@echo "... LogStream_test"
-	@echo "... Logging_test"
-	@echo "... edit_cache"
 	@echo "... LogFile_test"
+	@echo "... EventLoop_test"
 	@echo "... test"
 	@echo "... muduo/base/Date.o"
 	@echo "... muduo/base/Date.i"
@@ -773,9 +1068,39 @@ help:
 	@echo "... muduo/base/Timestamp.o"
 	@echo "... muduo/base/Timestamp.i"
 	@echo "... muduo/base/Timestamp.s"
+	@echo "... muduo/net/Channel.o"
+	@echo "... muduo/net/Channel.i"
+	@echo "... muduo/net/Channel.s"
+	@echo "... muduo/net/EventLoop.o"
+	@echo "... muduo/net/EventLoop.i"
+	@echo "... muduo/net/EventLoop.s"
+	@echo "... muduo/net/EventLoopThread.o"
+	@echo "... muduo/net/EventLoopThread.i"
+	@echo "... muduo/net/EventLoopThread.s"
+	@echo "... muduo/net/Poller.o"
+	@echo "... muduo/net/Poller.i"
+	@echo "... muduo/net/Poller.s"
+	@echo "... muduo/net/Poller/DefaultPoller.o"
+	@echo "... muduo/net/Poller/DefaultPoller.i"
+	@echo "... muduo/net/Poller/DefaultPoller.s"
+	@echo "... muduo/net/Poller/EPollPoller.o"
+	@echo "... muduo/net/Poller/EPollPoller.i"
+	@echo "... muduo/net/Poller/EPollPoller.s"
+	@echo "... muduo/net/Poller/PollPoller.o"
+	@echo "... muduo/net/Poller/PollPoller.i"
+	@echo "... muduo/net/Poller/PollPoller.s"
+	@echo "... muduo/net/Timer.o"
+	@echo "... muduo/net/Timer.i"
+	@echo "... muduo/net/Timer.s"
+	@echo "... muduo/net/TimerQueue.o"
+	@echo "... muduo/net/TimerQueue.i"
+	@echo "... muduo/net/TimerQueue.s"
 	@echo "... muduo/test/base/Atomic_unittest.o"
 	@echo "... muduo/test/base/Atomic_unittest.i"
 	@echo "... muduo/test/base/Atomic_unittest.s"
+	@echo "... muduo/test/base/EventLoop_unittest.o"
+	@echo "... muduo/test/base/EventLoop_unittest.i"
+	@echo "... muduo/test/base/EventLoop_unittest.s"
 	@echo "... muduo/test/base/LogFile_test.o"
 	@echo "... muduo/test/base/LogFile_test.i"
 	@echo "... muduo/test/base/LogFile_test.s"

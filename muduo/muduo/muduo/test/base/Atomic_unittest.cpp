@@ -4,7 +4,8 @@
 
 #include "../../base/Atomic.h"
 #include <assert.h>
-
+#include <string>
+#include <iostream>
 int main()
 {
     {
