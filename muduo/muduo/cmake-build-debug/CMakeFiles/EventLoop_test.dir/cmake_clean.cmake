@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/EventLoop_test.dir/muduo/test/base/EventLoop_unittest.cc.o"
+  "CMakeFiles/EventLoop_test.dir/muduo/test/net/EventLoop_unittest.cc.o"
   "EventLoop_test.pdb"
   "EventLoop_test"
 )

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Buffer_test.dir/muduo/test/net/Buffer_unittest.cc.o  -o Buffer_test libmuduo_net.a libmuduo_base.a -lpthread -lrt 

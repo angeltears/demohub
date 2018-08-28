@@ -36,7 +36,7 @@ boost/noncopyable.hpp
 stdint.h
 -
 
-/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
 Mutex.hpp
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Mutex.hpp
 Types.h
@@ -153,8 +153,8 @@ assert.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Logging_test.cc
 ../../base/Loggin.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Loggin.h
-../../base/LogFile.hpp
-/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
+../../base/LogFile_test.hpp
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
 ../../base/ThreadPool.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ThreadPool.h
 ../../base/TimeZone.h

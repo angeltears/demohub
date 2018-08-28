@@ -45,6 +45,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/Buffer_test.dir/DependInfo.cmake"
   "CMakeFiles/muduo_base.dir/DependInfo.cmake"
   "CMakeFiles/muduo_net.dir/DependInfo.cmake"
   "CMakeFiles/Logging_test.dir/DependInfo.cmake"
@@ -52,6 +53,8 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Atomic_unittest.dir/DependInfo.cmake"
   "CMakeFiles/ThreadLocalSingle_test.dir/DependInfo.cmake"
   "CMakeFiles/LogStream_test.dir/DependInfo.cmake"
+  "CMakeFiles/EventLoopThreadPoll_test.dir/DependInfo.cmake"
   "CMakeFiles/LogFile_test.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test.dir/DependInfo.cmake"
+  "CMakeFiles/EventLoopThread_test.dir/DependInfo.cmake"
   )

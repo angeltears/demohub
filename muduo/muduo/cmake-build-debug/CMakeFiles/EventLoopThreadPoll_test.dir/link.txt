@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/EventLoopThreadPoll_test.dir/muduo/test/net/EventLoopThreadPoll_test.cc.o  -o EventLoopThreadPoll_test libmuduo_net.a libmuduo_base.a -lpthread -lrt 

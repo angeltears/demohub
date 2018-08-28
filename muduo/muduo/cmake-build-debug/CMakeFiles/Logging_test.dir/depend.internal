@@ -6,7 +6,7 @@ CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Condition.hpp
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/CountDownLatch.hpp
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/CurrentThread.h
- /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
+ /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogStream.h
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Loggin.h
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Mutex.hpp

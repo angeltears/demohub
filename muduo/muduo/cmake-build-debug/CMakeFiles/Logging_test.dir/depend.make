@@ -5,7 +5,7 @@ CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/Ato
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/Condition.hpp
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/CountDownLatch.hpp
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/CurrentThread.h
-CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/LogFile.hpp
+CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/LogFile_test.hpp
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/LogStream.h
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/Loggin.h
 CMakeFiles/Logging_test.dir/muduo/test/base/Logging_test.cc.o: ../muduo/base/Mutex.hpp

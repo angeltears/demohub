@@ -86,7 +86,25 @@ set(net_SRCS
         muduo/net/Poller/EPollPoller.h
         muduo/net/Callbacks.h
         muduo/net/TimerQueue.cc
-        muduo/net/TimerQueue.h muduo/net/TimerId.h muduo/net/Timer.cc muduo/net/Timer.h muduo/net/EventLoopThread.cc muduo/net/EventLoopThread.h)
+        muduo/net/TimerQueue.h
+        muduo/net/TimerId.h
+        muduo/net/Timer.cc
+        muduo/net/Timer.h
+        muduo/net/EventLoopThread.cc
+        muduo/net/EventLoopThread.h
+        muduo/net/SocketsOpt.cc
+        muduo/net/SocketsOpt.h
+        muduo/net/Endian.h
+        muduo/net/Socket.cc
+        muduo/net/Socket.h
+        muduo/net/InetAddress.cc
+        muduo/net/InetAddress.h
+        muduo/net/Connector.cc
+        muduo/net/Connector.h
+        muduo/net/TcpConnection.cc
+        muduo/net/TcpConnection.h
+        muduo/net/Buffer.cc
+        muduo/net/Buffer.h muduo/net/EventLoopThreadPool.cc muduo/net/EventLoopThreadPool.h muduo/net/TcpServer.cc muduo/net/TcpServer.h)
 
 
 add_library(muduo_net ${net_SRCS})
@@ -120,6 +138,17 @@ add_executable(LogFile_test
 target_link_libraries(LogFile_test muduo_base)
 
 add_executable(EventLoop_test
-        muduo/test/base/EventLoop_unittest.cc)
-set(EventLoop_test MUDUO_LOG_TRACE)
+        muduo/test/net/EventLoop_unittest.cc)
 target_link_libraries(EventLoop_test muduo_net)
+
+add_executable(EventLoopThread_test
+        muduo/test/net/EventLoopThread_unittest.cc)
+target_link_libraries(EventLoopThread_test muduo_net)
+
+add_executable(Buffer_test
+        muduo/test/net/Buffer_unittest.cc)
+target_link_libraries(Buffer_test muduo_net)
+
+add_executable(EventLoopThreadPoll_test
+        muduo/test/net/EventLoopThreadPoll_test.cc)
+target_link_libraries(EventLoopThreadPoll_test muduo_net)
