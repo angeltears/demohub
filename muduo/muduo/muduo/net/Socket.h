@@ -17,6 +17,7 @@ namespace jmuduo
 
         class Socket : boost ::noncopyable
         {
+        public:
             explicit  Socket(int sockfd)
                 : sockfd_(sockfd)
             {}

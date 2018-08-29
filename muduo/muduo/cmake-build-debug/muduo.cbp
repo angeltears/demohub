@@ -739,6 +739,9 @@
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Types.h">
 			<Option target="muduo_base"/>
 		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/WeakCallback.h">
+			<Option target="muduo_base"/>
+		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/base/copyable.h">
 			<Option target="muduo_base"/>
 		</Unit>

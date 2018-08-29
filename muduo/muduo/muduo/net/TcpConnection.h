@@ -105,7 +105,7 @@ namespace jmuduo
             void connectDestroyed();  // should be called only once
 
         private:
-            enum StateE { kDisconnected, kConnecting, kConnected };
+            enum StateE { kDisconnected, kConnecting, kConnected,kDisconnecting };
             void handleRead(Timestamp receiveTime);
             void handleWrite();
             void handleClose();

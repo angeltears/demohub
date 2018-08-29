@@ -63,7 +63,7 @@ set(base_SRCS
         muduo/base/Date.h
         muduo/base/Date.cc
         muduo/base/LogFile.cpp
-        muduo/base/LogFile_test.hpp )
+        muduo/base/LogFile_test.hpp muduo/base/WeakCallback.h)
 
 add_library(muduo_base ${base_SRCS})
 target_link_libraries(muduo_base pthread rt)

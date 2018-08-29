@@ -176,16 +176,39 @@ CMakeFiles/muduo_net.dir/muduo/net/SocketsOpt.cc.o: ../muduo/net/Endian.h
 CMakeFiles/muduo_net.dir/muduo/net/SocketsOpt.cc.o: ../muduo/net/SocketsOpt.cc
 CMakeFiles/muduo_net.dir/muduo/net/SocketsOpt.cc.o: ../muduo/net/SocketsOpt.h
 
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/CurrentThread.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/LogStream.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/Loggin.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/Mutex.hpp
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/StringPiece.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/Timestamp.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/Types.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/WeakCallback.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/base/copyable.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/Buffer.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/Callbacks.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/Channel.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/Endian.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/EventLoop.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/InetAddress.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/Socket.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/SocketsOpt.h
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/TcpConnection.cc
 CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/TcpConnection.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o: ../muduo/net/TimerId.h
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/base/Atomic.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/base/StringPiece.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/base/Timestamp.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/base/Types.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/base/copyable.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/Buffer.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/Callbacks.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/Endian.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/InetAddress.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/TcpConnection.h
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/TcpServer.cc
+CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o: ../muduo/net/TcpServer.h
 
 CMakeFiles/muduo_net.dir/muduo/net/Timer.cc.o: ../muduo/base/Atomic.h
 CMakeFiles/muduo_net.dir/muduo/net/Timer.cc.o: ../muduo/base/Timestamp.h

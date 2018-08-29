@@ -135,3 +135,11 @@ string Channel::eventsToString(int fd, int ev)
 
     return oss.str().c_str();
 }
+
+
+
+void Channel::tie(const boost::shared_ptr<void>& obj)
+{
+    tie_ = obj;
+    tied_ = true;
+}

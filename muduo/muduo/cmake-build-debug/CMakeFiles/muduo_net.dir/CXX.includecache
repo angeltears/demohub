@@ -112,6 +112,16 @@ ext/vstring_fwd.h
 assert.h
 -
 
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/WeakCallback.h
+functional
+-
+boost/function.hpp
+-
+boost/shared_ptr.hpp
+-
+boost/weak_ptr.hpp
+-
+
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/copyable.h
 
 /home/onter/project/hub/demohub/muduo/muduo/muduo/net/Buffer.cc
@@ -431,6 +441,22 @@ arpa/inet.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpConnection.cc
 TcpConnection.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpConnection.h
+../base/WeakCallback.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/WeakCallback.h
+../base/Loggin.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Loggin.h
+Channel.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/Channel.h
+EventLoop.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/EventLoop.h
+Socket.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/Socket.h
+SocketsOpt.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/SocketsOpt.h
+boost/bind.hpp
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/boost/bind.hpp
+errno.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/errno.h
 
 /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpConnection.h
 ../base/StringPiece.h
@@ -446,6 +472,26 @@ InetAddress.h
 boost/any.hpp
 -
 boost/enable_shared_from_this.hpp
+-
+boost/noncopyable.hpp
+-
+boost/scoped_ptr.hpp
+-
+boost/shared_ptr.hpp
+-
+
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpServer.cc
+TcpServer.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpServer.h
+
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpServer.h
+../base/Atomic.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Atomic.h
+../base/Types.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/Types.h
+TcpConnection.h
+/home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpConnection.h
+map
 -
 boost/noncopyable.hpp
 -

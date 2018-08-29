@@ -53,6 +53,9 @@ namespace jmuduo
             { errorCallback_ = std::move(cb); }
 #endif
 
+            /// Tie this channel to the owner object managed by shared_ptr,
+            /// prevent the owner object being destroyed in handleEvent.
+            void tie(const boost::shared_ptr<void>&);
             int fd() const
             { return fd_; }
             int events() const
