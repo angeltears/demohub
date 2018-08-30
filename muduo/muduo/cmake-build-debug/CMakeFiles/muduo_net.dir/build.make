@@ -465,6 +465,54 @@ CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o.provides: CMakeFiles/muduo_net
 CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o.provides.build: CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o
 
 
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o: CMakeFiles/muduo_net.dir/flags.make
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o: ../muduo/net/Acceptor.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/net/Acceptor.cc
+
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/net/Acceptor.cc > CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.i
+
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/net/Acceptor.cc -o CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.s
+
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.requires:
+
+.PHONY : CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.requires
+
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.provides: CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.requires
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.provides.build
+.PHONY : CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.provides
+
+CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.provides.build: CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o
+
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o: CMakeFiles/muduo_net.dir/flags.make
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o: ../muduo/net/TcpClient.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o -c /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpClient.cc
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpClient.cc > CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.i
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/muduo/muduo/muduo/net/TcpClient.cc -o CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.s
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.requires:
+
+.PHONY : CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.requires
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.provides: CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.requires
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.provides.build
+.PHONY : CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.provides
+
+CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.provides.build: CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o
+
+
 # Object files for target muduo_net
 muduo_net_OBJECTS = \
 "CMakeFiles/muduo_net.dir/muduo/net/Poller.cpp.o" \
@@ -483,7 +531,9 @@ muduo_net_OBJECTS = \
 "CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o" \
 "CMakeFiles/muduo_net.dir/muduo/net/Buffer.cc.o" \
 "CMakeFiles/muduo_net.dir/muduo/net/EventLoopThreadPool.cc.o" \
-"CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o"
+"CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o" \
+"CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o" \
+"CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o"
 
 # External object files for target muduo_net
 muduo_net_EXTERNAL_OBJECTS =
@@ -505,9 +555,11 @@ libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/TcpConnection.cc.o
 libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/Buffer.cc.o
 libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/EventLoopThreadPool.cc.o
 libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o
+libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o
+libmuduo_net.a: CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o
 libmuduo_net.a: CMakeFiles/muduo_net.dir/build.make
 libmuduo_net.a: CMakeFiles/muduo_net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libmuduo_net.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX static library libmuduo_net.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/muduo_net.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/muduo_net.dir/link.txt --verbose=$(VERBOSE)
 
@@ -533,6 +585,8 @@ CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/TcpConnect
 CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/Buffer.cc.o.requires
 CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/EventLoopThreadPool.cc.o.requires
 CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o.requires
+CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o.requires
+CMakeFiles/muduo_net.dir/requires: CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o.requires
 
 .PHONY : CMakeFiles/muduo_net.dir/requires
 

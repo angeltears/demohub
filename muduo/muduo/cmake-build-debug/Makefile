@@ -56,17 +56,60 @@ CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -80,60 +123,17 @@ install/fast: preinstall/fast
 	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,121 +168,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Buffer_test
+# Target rules for targets named EventLoop_test
 
 # Build rule for target.
-Buffer_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Buffer_test
-.PHONY : Buffer_test
+EventLoop_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test
+.PHONY : EventLoop_test
 
 # fast build rule for target.
-Buffer_test/fast:
-	$(MAKE) -f CMakeFiles/Buffer_test.dir/build.make CMakeFiles/Buffer_test.dir/build
-.PHONY : Buffer_test/fast
-
-#=============================================================================
-# Target rules for targets named muduo_base
-
-# Build rule for target.
-muduo_base: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 muduo_base
-.PHONY : muduo_base
-
-# fast build rule for target.
-muduo_base/fast:
-	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
-.PHONY : muduo_base/fast
-
-#=============================================================================
-# Target rules for targets named muduo_net
-
-# Build rule for target.
-muduo_net: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 muduo_net
-.PHONY : muduo_net
-
-# fast build rule for target.
-muduo_net/fast:
-	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/build
-.PHONY : muduo_net/fast
-
-#=============================================================================
-# Target rules for targets named Logging_test
-
-# Build rule for target.
-Logging_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Logging_test
-.PHONY : Logging_test
-
-# fast build rule for target.
-Logging_test/fast:
-	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
-.PHONY : Logging_test/fast
-
-#=============================================================================
-# Target rules for targets named ThreadLocal_test
-
-# Build rule for target.
-ThreadLocal_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocal_test
-.PHONY : ThreadLocal_test
-
-# fast build rule for target.
-ThreadLocal_test/fast:
-	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/build
-.PHONY : ThreadLocal_test/fast
-
-#=============================================================================
-# Target rules for targets named Atomic_unittest
-
-# Build rule for target.
-Atomic_unittest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Atomic_unittest
-.PHONY : Atomic_unittest
-
-# fast build rule for target.
-Atomic_unittest/fast:
-	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
-.PHONY : Atomic_unittest/fast
-
-#=============================================================================
-# Target rules for targets named ThreadLocalSingle_test
-
-# Build rule for target.
-ThreadLocalSingle_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingle_test
-.PHONY : ThreadLocalSingle_test
-
-# fast build rule for target.
-ThreadLocalSingle_test/fast:
-	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
-.PHONY : ThreadLocalSingle_test/fast
-
-#=============================================================================
-# Target rules for targets named LogStream_test
-
-# Build rule for target.
-LogStream_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LogStream_test
-.PHONY : LogStream_test
-
-# fast build rule for target.
-LogStream_test/fast:
-	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/build
-.PHONY : LogStream_test/fast
-
-#=============================================================================
-# Target rules for targets named EventLoopThreadPoll_test
-
-# Build rule for target.
-EventLoopThreadPoll_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoopThreadPoll_test
-.PHONY : EventLoopThreadPoll_test
-
-# fast build rule for target.
-EventLoopThreadPoll_test/fast:
-	$(MAKE) -f CMakeFiles/EventLoopThreadPoll_test.dir/build.make CMakeFiles/EventLoopThreadPoll_test.dir/build
-.PHONY : EventLoopThreadPoll_test/fast
+EventLoop_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
+.PHONY : EventLoop_test/fast
 
 #=============================================================================
 # Target rules for targets named LogFile_test
@@ -298,17 +194,108 @@ LogFile_test/fast:
 .PHONY : LogFile_test/fast
 
 #=============================================================================
-# Target rules for targets named EventLoop_test
+# Target rules for targets named EventLoopThreadPoll_test
 
 # Build rule for target.
-EventLoop_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test
-.PHONY : EventLoop_test
+EventLoopThreadPoll_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoopThreadPoll_test
+.PHONY : EventLoopThreadPoll_test
 
 # fast build rule for target.
-EventLoop_test/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
-.PHONY : EventLoop_test/fast
+EventLoopThreadPoll_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoopThreadPoll_test.dir/build.make CMakeFiles/EventLoopThreadPoll_test.dir/build
+.PHONY : EventLoopThreadPoll_test/fast
+
+#=============================================================================
+# Target rules for targets named LogStream_test
+
+# Build rule for target.
+LogStream_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 LogStream_test
+.PHONY : LogStream_test
+
+# fast build rule for target.
+LogStream_test/fast:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/build
+.PHONY : LogStream_test/fast
+
+#=============================================================================
+# Target rules for targets named TcpClient_reg3
+
+# Build rule for target.
+TcpClient_reg3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TcpClient_reg3
+.PHONY : TcpClient_reg3
+
+# fast build rule for target.
+TcpClient_reg3/fast:
+	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/build
+.PHONY : TcpClient_reg3/fast
+
+#=============================================================================
+# Target rules for targets named ThreadLocal_test
+
+# Build rule for target.
+ThreadLocal_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocal_test
+.PHONY : ThreadLocal_test
+
+# fast build rule for target.
+ThreadLocal_test/fast:
+	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/build
+.PHONY : ThreadLocal_test/fast
+
+#=============================================================================
+# Target rules for targets named Logging_test
+
+# Build rule for target.
+Logging_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Logging_test
+.PHONY : Logging_test
+
+# fast build rule for target.
+Logging_test/fast:
+	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
+.PHONY : Logging_test/fast
+
+#=============================================================================
+# Target rules for targets named muduo_net
+
+# Build rule for target.
+muduo_net: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 muduo_net
+.PHONY : muduo_net
+
+# fast build rule for target.
+muduo_net/fast:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/build
+.PHONY : muduo_net/fast
+
+#=============================================================================
+# Target rules for targets named EchoServer_unittest
+
+# Build rule for target.
+EchoServer_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EchoServer_unittest
+.PHONY : EchoServer_unittest
+
+# fast build rule for target.
+EchoServer_unittest/fast:
+	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/build
+.PHONY : EchoServer_unittest/fast
+
+#=============================================================================
+# Target rules for targets named muduo_base
+
+# Build rule for target.
+muduo_base: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 muduo_base
+.PHONY : muduo_base
+
+# fast build rule for target.
+muduo_base/fast:
+	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
+.PHONY : muduo_base/fast
 
 #=============================================================================
 # Target rules for targets named EventLoopThread_test
@@ -322,6 +309,71 @@ EventLoopThread_test: cmake_check_build_system
 EventLoopThread_test/fast:
 	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/build
 .PHONY : EventLoopThread_test/fast
+
+#=============================================================================
+# Target rules for targets named ThreadLocalSingle_test
+
+# Build rule for target.
+ThreadLocalSingle_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadLocalSingle_test
+.PHONY : ThreadLocalSingle_test
+
+# fast build rule for target.
+ThreadLocalSingle_test/fast:
+	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
+.PHONY : ThreadLocalSingle_test/fast
+
+#=============================================================================
+# Target rules for targets named TcpClient_reg1
+
+# Build rule for target.
+TcpClient_reg1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TcpClient_reg1
+.PHONY : TcpClient_reg1
+
+# fast build rule for target.
+TcpClient_reg1/fast:
+	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/build
+.PHONY : TcpClient_reg1/fast
+
+#=============================================================================
+# Target rules for targets named Atomic_unittest
+
+# Build rule for target.
+Atomic_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Atomic_unittest
+.PHONY : Atomic_unittest
+
+# fast build rule for target.
+Atomic_unittest/fast:
+	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/build
+.PHONY : Atomic_unittest/fast
+
+#=============================================================================
+# Target rules for targets named TcpClient_reg2
+
+# Build rule for target.
+TcpClient_reg2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TcpClient_reg2
+.PHONY : TcpClient_reg2
+
+# fast build rule for target.
+TcpClient_reg2/fast:
+	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/build
+.PHONY : TcpClient_reg2/fast
+
+#=============================================================================
+# Target rules for targets named Buffer_test
+
+# Build rule for target.
+Buffer_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Buffer_test
+.PHONY : Buffer_test
+
+# fast build rule for target.
+Buffer_test/fast:
+	$(MAKE) -f CMakeFiles/Buffer_test.dir/build.make CMakeFiles/Buffer_test.dir/build
+.PHONY : Buffer_test/fast
 
 muduo/base/Date.o: muduo/base/Date.cc.o
 
@@ -619,6 +671,33 @@ muduo/base/Timestamp.s: muduo/base/Timestamp.cc.s
 muduo/base/Timestamp.cc.s:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/muduo/base/Timestamp.cc.s
 .PHONY : muduo/base/Timestamp.cc.s
+
+muduo/net/Acceptor.o: muduo/net/Acceptor.cc.o
+
+.PHONY : muduo/net/Acceptor.o
+
+# target to build an object file
+muduo/net/Acceptor.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o
+.PHONY : muduo/net/Acceptor.cc.o
+
+muduo/net/Acceptor.i: muduo/net/Acceptor.cc.i
+
+.PHONY : muduo/net/Acceptor.i
+
+# target to preprocess a source file
+muduo/net/Acceptor.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.i
+.PHONY : muduo/net/Acceptor.cc.i
+
+muduo/net/Acceptor.s: muduo/net/Acceptor.cc.s
+
+.PHONY : muduo/net/Acceptor.s
+
+# target to generate assembly for a file
+muduo/net/Acceptor.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.s
+.PHONY : muduo/net/Acceptor.cc.s
 
 muduo/net/Buffer.o: muduo/net/Buffer.cc.o
 
@@ -971,6 +1050,33 @@ muduo/net/SocketsOpt.cc.s:
 	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/SocketsOpt.cc.s
 .PHONY : muduo/net/SocketsOpt.cc.s
 
+muduo/net/TcpClient.o: muduo/net/TcpClient.cc.o
+
+.PHONY : muduo/net/TcpClient.o
+
+# target to build an object file
+muduo/net/TcpClient.cc.o:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o
+.PHONY : muduo/net/TcpClient.cc.o
+
+muduo/net/TcpClient.i: muduo/net/TcpClient.cc.i
+
+.PHONY : muduo/net/TcpClient.i
+
+# target to preprocess a source file
+muduo/net/TcpClient.cc.i:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.i
+.PHONY : muduo/net/TcpClient.cc.i
+
+muduo/net/TcpClient.s: muduo/net/TcpClient.cc.s
+
+.PHONY : muduo/net/TcpClient.s
+
+# target to generate assembly for a file
+muduo/net/TcpClient.cc.s:
+	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.s
+.PHONY : muduo/net/TcpClient.cc.s
+
 muduo/net/TcpConnection.o: muduo/net/TcpConnection.cc.o
 
 .PHONY : muduo/net/TcpConnection.o
@@ -1268,6 +1374,33 @@ muduo/test/net/Buffer_unittest.cc.s:
 	$(MAKE) -f CMakeFiles/Buffer_test.dir/build.make CMakeFiles/Buffer_test.dir/muduo/test/net/Buffer_unittest.cc.s
 .PHONY : muduo/test/net/Buffer_unittest.cc.s
 
+muduo/test/net/EchoServer_unittest.o: muduo/test/net/EchoServer_unittest.cc.o
+
+.PHONY : muduo/test/net/EchoServer_unittest.o
+
+# target to build an object file
+muduo/test/net/EchoServer_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/muduo/test/net/EchoServer_unittest.cc.o
+.PHONY : muduo/test/net/EchoServer_unittest.cc.o
+
+muduo/test/net/EchoServer_unittest.i: muduo/test/net/EchoServer_unittest.cc.i
+
+.PHONY : muduo/test/net/EchoServer_unittest.i
+
+# target to preprocess a source file
+muduo/test/net/EchoServer_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/muduo/test/net/EchoServer_unittest.cc.i
+.PHONY : muduo/test/net/EchoServer_unittest.cc.i
+
+muduo/test/net/EchoServer_unittest.s: muduo/test/net/EchoServer_unittest.cc.s
+
+.PHONY : muduo/test/net/EchoServer_unittest.s
+
+# target to generate assembly for a file
+muduo/test/net/EchoServer_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/muduo/test/net/EchoServer_unittest.cc.s
+.PHONY : muduo/test/net/EchoServer_unittest.cc.s
+
 muduo/test/net/EventLoopThreadPoll_test.o: muduo/test/net/EventLoopThreadPoll_test.cc.o
 
 .PHONY : muduo/test/net/EventLoopThreadPoll_test.o
@@ -1349,31 +1482,116 @@ muduo/test/net/EventLoop_unittest.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/muduo/test/net/EventLoop_unittest.cc.s
 .PHONY : muduo/test/net/EventLoop_unittest.cc.s
 
+muduo/test/net/TcpClient_reg1.o: muduo/test/net/TcpClient_reg1.cc.o
+
+.PHONY : muduo/test/net/TcpClient_reg1.o
+
+# target to build an object file
+muduo/test/net/TcpClient_reg1.cc.o:
+	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/muduo/test/net/TcpClient_reg1.cc.o
+.PHONY : muduo/test/net/TcpClient_reg1.cc.o
+
+muduo/test/net/TcpClient_reg1.i: muduo/test/net/TcpClient_reg1.cc.i
+
+.PHONY : muduo/test/net/TcpClient_reg1.i
+
+# target to preprocess a source file
+muduo/test/net/TcpClient_reg1.cc.i:
+	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/muduo/test/net/TcpClient_reg1.cc.i
+.PHONY : muduo/test/net/TcpClient_reg1.cc.i
+
+muduo/test/net/TcpClient_reg1.s: muduo/test/net/TcpClient_reg1.cc.s
+
+.PHONY : muduo/test/net/TcpClient_reg1.s
+
+# target to generate assembly for a file
+muduo/test/net/TcpClient_reg1.cc.s:
+	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/muduo/test/net/TcpClient_reg1.cc.s
+.PHONY : muduo/test/net/TcpClient_reg1.cc.s
+
+muduo/test/net/TcpClient_reg2.o: muduo/test/net/TcpClient_reg2.cc.o
+
+.PHONY : muduo/test/net/TcpClient_reg2.o
+
+# target to build an object file
+muduo/test/net/TcpClient_reg2.cc.o:
+	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/muduo/test/net/TcpClient_reg2.cc.o
+.PHONY : muduo/test/net/TcpClient_reg2.cc.o
+
+muduo/test/net/TcpClient_reg2.i: muduo/test/net/TcpClient_reg2.cc.i
+
+.PHONY : muduo/test/net/TcpClient_reg2.i
+
+# target to preprocess a source file
+muduo/test/net/TcpClient_reg2.cc.i:
+	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/muduo/test/net/TcpClient_reg2.cc.i
+.PHONY : muduo/test/net/TcpClient_reg2.cc.i
+
+muduo/test/net/TcpClient_reg2.s: muduo/test/net/TcpClient_reg2.cc.s
+
+.PHONY : muduo/test/net/TcpClient_reg2.s
+
+# target to generate assembly for a file
+muduo/test/net/TcpClient_reg2.cc.s:
+	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/muduo/test/net/TcpClient_reg2.cc.s
+.PHONY : muduo/test/net/TcpClient_reg2.cc.s
+
+muduo/test/net/TcpClient_reg3.o: muduo/test/net/TcpClient_reg3.cc.o
+
+.PHONY : muduo/test/net/TcpClient_reg3.o
+
+# target to build an object file
+muduo/test/net/TcpClient_reg3.cc.o:
+	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/muduo/test/net/TcpClient_reg3.cc.o
+.PHONY : muduo/test/net/TcpClient_reg3.cc.o
+
+muduo/test/net/TcpClient_reg3.i: muduo/test/net/TcpClient_reg3.cc.i
+
+.PHONY : muduo/test/net/TcpClient_reg3.i
+
+# target to preprocess a source file
+muduo/test/net/TcpClient_reg3.cc.i:
+	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/muduo/test/net/TcpClient_reg3.cc.i
+.PHONY : muduo/test/net/TcpClient_reg3.cc.i
+
+muduo/test/net/TcpClient_reg3.s: muduo/test/net/TcpClient_reg3.cc.s
+
+.PHONY : muduo/test/net/TcpClient_reg3.s
+
+# target to generate assembly for a file
+muduo/test/net/TcpClient_reg3.cc.s:
+	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/muduo/test/net/TcpClient_reg3.cc.s
+.PHONY : muduo/test/net/TcpClient_reg3.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... install"
 	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... Buffer_test"
-	@echo "... muduo_base"
-	@echo "... muduo_net"
-	@echo "... Logging_test"
-	@echo "... ThreadLocal_test"
-	@echo "... Atomic_unittest"
-	@echo "... ThreadLocalSingle_test"
-	@echo "... LogStream_test"
-	@echo "... EventLoopThreadPoll_test"
-	@echo "... LogFile_test"
 	@echo "... EventLoop_test"
+	@echo "... LogFile_test"
+	@echo "... EventLoopThreadPoll_test"
+	@echo "... LogStream_test"
+	@echo "... TcpClient_reg3"
+	@echo "... ThreadLocal_test"
+	@echo "... Logging_test"
+	@echo "... muduo_net"
+	@echo "... EchoServer_unittest"
+	@echo "... muduo_base"
 	@echo "... EventLoopThread_test"
+	@echo "... ThreadLocalSingle_test"
+	@echo "... rebuild_cache"
+	@echo "... TcpClient_reg1"
+	@echo "... Atomic_unittest"
+	@echo "... TcpClient_reg2"
+	@echo "... test"
+	@echo "... Buffer_test"
+	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... install/local"
 	@echo "... muduo/base/Date.o"
 	@echo "... muduo/base/Date.i"
 	@echo "... muduo/base/Date.s"
@@ -1407,6 +1625,9 @@ help:
 	@echo "... muduo/base/Timestamp.o"
 	@echo "... muduo/base/Timestamp.i"
 	@echo "... muduo/base/Timestamp.s"
+	@echo "... muduo/net/Acceptor.o"
+	@echo "... muduo/net/Acceptor.i"
+	@echo "... muduo/net/Acceptor.s"
 	@echo "... muduo/net/Buffer.o"
 	@echo "... muduo/net/Buffer.i"
 	@echo "... muduo/net/Buffer.s"
@@ -1446,6 +1667,9 @@ help:
 	@echo "... muduo/net/SocketsOpt.o"
 	@echo "... muduo/net/SocketsOpt.i"
 	@echo "... muduo/net/SocketsOpt.s"
+	@echo "... muduo/net/TcpClient.o"
+	@echo "... muduo/net/TcpClient.i"
+	@echo "... muduo/net/TcpClient.s"
 	@echo "... muduo/net/TcpConnection.o"
 	@echo "... muduo/net/TcpConnection.i"
 	@echo "... muduo/net/TcpConnection.s"
@@ -1479,6 +1703,9 @@ help:
 	@echo "... muduo/test/net/Buffer_unittest.o"
 	@echo "... muduo/test/net/Buffer_unittest.i"
 	@echo "... muduo/test/net/Buffer_unittest.s"
+	@echo "... muduo/test/net/EchoServer_unittest.o"
+	@echo "... muduo/test/net/EchoServer_unittest.i"
+	@echo "... muduo/test/net/EchoServer_unittest.s"
 	@echo "... muduo/test/net/EventLoopThreadPoll_test.o"
 	@echo "... muduo/test/net/EventLoopThreadPoll_test.i"
 	@echo "... muduo/test/net/EventLoopThreadPoll_test.s"
@@ -1488,6 +1715,15 @@ help:
 	@echo "... muduo/test/net/EventLoop_unittest.o"
 	@echo "... muduo/test/net/EventLoop_unittest.i"
 	@echo "... muduo/test/net/EventLoop_unittest.s"
+	@echo "... muduo/test/net/TcpClient_reg1.o"
+	@echo "... muduo/test/net/TcpClient_reg1.i"
+	@echo "... muduo/test/net/TcpClient_reg1.s"
+	@echo "... muduo/test/net/TcpClient_reg2.o"
+	@echo "... muduo/test/net/TcpClient_reg2.i"
+	@echo "... muduo/test/net/TcpClient_reg2.s"
+	@echo "... muduo/test/net/TcpClient_reg3.o"
+	@echo "... muduo/test/net/TcpClient_reg3.i"
+	@echo "... muduo/test/net/TcpClient_reg3.s"
 .PHONY : help
 
 

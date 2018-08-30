@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/TcpClient_reg2.dir/muduo/test/net/TcpClient_reg2.cc.o  -o TcpClient_reg2 libmuduo_net.a libmuduo_base.a -lpthread -lrt 

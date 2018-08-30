@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/muduo_net.dir/muduo/net/Buffer.cc.o"
   "CMakeFiles/muduo_net.dir/muduo/net/EventLoopThreadPool.cc.o"
   "CMakeFiles/muduo_net.dir/muduo/net/TcpServer.cc.o"
+  "CMakeFiles/muduo_net.dir/muduo/net/Acceptor.cc.o"
+  "CMakeFiles/muduo_net.dir/muduo/net/TcpClient.cc.o"
   "libmuduo_net.pdb"
   "libmuduo_net.a"
 )

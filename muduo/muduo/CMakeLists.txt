@@ -104,7 +104,7 @@ set(net_SRCS
         muduo/net/TcpConnection.cc
         muduo/net/TcpConnection.h
         muduo/net/Buffer.cc
-        muduo/net/Buffer.h muduo/net/EventLoopThreadPool.cc muduo/net/EventLoopThreadPool.h muduo/net/TcpServer.cc muduo/net/TcpServer.h)
+        muduo/net/Buffer.h muduo/net/EventLoopThreadPool.cc muduo/net/EventLoopThreadPool.h muduo/net/TcpServer.cc muduo/net/TcpServer.h muduo/net/Acceptor.cc muduo/net/Acceptor.h muduo/net/TcpClient.cc muduo/net/TcpClient.h)
 
 
 add_library(muduo_net ${net_SRCS})
@@ -152,3 +152,19 @@ target_link_libraries(Buffer_test muduo_net)
 add_executable(EventLoopThreadPoll_test
         muduo/test/net/EventLoopThreadPoll_test.cc)
 target_link_libraries(EventLoopThreadPoll_test muduo_net)
+
+add_executable(TcpClient_reg1
+        muduo/test/net/TcpClient_reg1.cc)
+target_link_libraries(TcpClient_reg1 muduo_net)
+
+add_executable(TcpClient_reg2
+        muduo/test/net/TcpClient_reg2.cc)
+target_link_libraries(TcpClient_reg2 muduo_net)
+
+add_executable(TcpClient_reg3
+        muduo/test/net/TcpClient_reg3.cc)
+target_link_libraries(TcpClient_reg3 muduo_net)
+
+add_executable(EchoServer_unittest
+        muduo/test/net/EchoServer_unittest.cc)
+target_link_libraries(EchoServer_unittest muduo_net)

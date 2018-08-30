@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/EchoServer_unittest.dir/muduo/test/net/EchoServer_unittest.cc.o  -o EchoServer_unittest libmuduo_net.a libmuduo_base.a -lpthread -lrt 

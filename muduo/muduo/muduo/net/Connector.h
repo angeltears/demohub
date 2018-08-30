@@ -32,7 +32,7 @@ namespace jmuduo
             { newConnectionCallback_ = cb; }
 
             void start();  // can be called in any thread
-            void restart();  // must be called in loop thread
+            void restart();  // must be o in loop thread
             void stop();  // can be called in any thread
 
             const InetAddress& serverAddress() const { return serverAddr_; }
