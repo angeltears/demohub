@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/muduo/examples/filestransfer/download.cc
+muduo/net/TcpServer.h
+-
+muduo/net/EventLoop.h
+-
+muduo/base/Logging.h
+-
+

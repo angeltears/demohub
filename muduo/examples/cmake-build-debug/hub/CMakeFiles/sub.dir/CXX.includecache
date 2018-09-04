@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/muduo/examples/hub/pubsub.h
+muduo/net/TcpClient.h
+-
+
+/home/onter/project/hub/demohub/muduo/examples/hub/sub.cc
+pubsub.h
+/home/onter/project/hub/demohub/muduo/examples/hub/pubsub.h
+muduo/base/ProcessInfo.h
+-
+muduo/net/EventLoop.h
+-
+boost/bind.hpp
+-
+vector
+-
+stdio.h
+-
+
