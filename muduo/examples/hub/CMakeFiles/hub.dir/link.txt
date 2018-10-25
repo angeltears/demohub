@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/hub.dir/hub.cc.o CMakeFiles/hub.dir/codec.cc.o  -o hub -lmuduo_inspect -lmuduo_net -lmuduo_base -lpthread 
+/usr/bin/c++  -g   CMakeFiles/hub.dir/hub.cc.o CMakeFiles/hub.dir/codec.cc.o  -o hub -lmuduo_inspect -lmuduo_net -lmuduo_base -lpthread 

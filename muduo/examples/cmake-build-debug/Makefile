@@ -175,6 +175,19 @@ download/fast:
 	$(MAKE) -f filestransfer/CMakeFiles/download.dir/build.make filestransfer/CMakeFiles/download.dir/build
 .PHONY : download/fast
 
+#=============================================================================
+# Target rules for targets named tunnel
+
+# Build rule for target.
+tunnel: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tunnel
+.PHONY : tunnel
+
+# fast build rule for target.
+tunnel/fast:
+	$(MAKE) -f socket_4a/CMakeFiles/tunnel.dir/build.make socket_4a/CMakeFiles/tunnel.dir/build
+.PHONY : tunnel/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -188,6 +201,7 @@ help:
 	@echo "... sub"
 	@echo "... muduo_pubsub"
 	@echo "... download"
+	@echo "... tunnel"
 .PHONY : help
 
 

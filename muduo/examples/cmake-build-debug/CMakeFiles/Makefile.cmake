@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.9.6/CMakeSystem.cmake"
   "../filestransfer/CMakeLists.txt"
   "../hub/CMakeLists.txt"
+  "../socket_4a/CMakeLists.txt"
   "/home/onter/software/clion-2017.3.4/bin/cmake/share/cmake-3.9/Modules/CMakeCInformation.cmake"
   "/home/onter/software/clion-2017.3.4/bin/cmake/share/cmake-3.9/Modules/CMakeCXXInformation.cmake"
   "/home/onter/software/clion-2017.3.4/bin/cmake/share/cmake-3.9/Modules/CMakeCommonLanguageInclude.cmake"
@@ -45,6 +46,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "hub/CMakeFiles/CMakeDirectoryInformation.cmake"
   "filestransfer/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "socket_4a/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -54,4 +56,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "hub/CMakeFiles/sub.dir/DependInfo.cmake"
   "hub/CMakeFiles/muduo_pubsub.dir/DependInfo.cmake"
   "filestransfer/CMakeFiles/download.dir/DependInfo.cmake"
+  "socket_4a/CMakeFiles/tunnel.dir/DependInfo.cmake"
   )

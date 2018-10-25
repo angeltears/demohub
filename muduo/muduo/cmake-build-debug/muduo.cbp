@@ -27,47 +27,21 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="EventLoop_test">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoop_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="install/local">
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoop_test"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="EventLoop_test/fast">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoop_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="install">
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoop_test/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -165,6 +139,52 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="TcpClient_reg3">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/TcpClient_reg3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 TcpClient_reg3"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TcpClient_reg3/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/TcpClient_reg3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 TcpClient_reg3/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="LogStream_test">
 				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/LogStream_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
@@ -211,8 +231,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="TcpClient_reg3">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/TcpClient_reg3" prefix_auto="0" extension_auto="0"/>
+			<Target title="BoundedBlockingQueue_unittest">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/BoundedBlockingQueue_unittest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -228,14 +248,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 TcpClient_reg3"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 BoundedBlockingQueue_unittest"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="TcpClient_reg3/fast">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/TcpClient_reg3" prefix_auto="0" extension_auto="0"/>
+			<Target title="BoundedBlockingQueue_unittest/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/BoundedBlockingQueue_unittest" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -251,7 +271,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 TcpClient_reg3/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 BoundedBlockingQueue_unittest/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -487,8 +507,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="EventLoopThread_test">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoopThread_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="EventLoop_test">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoop_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -504,14 +524,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoopThread_test"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoop_test"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="EventLoopThread_test/fast">
-				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoopThread_test" prefix_auto="0" extension_auto="0"/>
+			<Target title="EventLoop_test/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoop_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -527,7 +547,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoopThread_test/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoop_test/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -584,6 +604,98 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EventLoopThread_test">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoopThread_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoopThread_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EventLoopThread_test/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/EventLoopThread_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 EventLoopThread_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BlockingQueue_unittest">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/BlockingQueue_unittest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 BlockingQueue_unittest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="BlockingQueue_unittest/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/BlockingQueue_unittest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 BlockingQueue_unittest/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -798,26 +910,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install">
-				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="install/local">
-				<Option working_dir="/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -1051,6 +1143,12 @@
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/Atomic_unittest.cpp">
 			<Option target="Atomic_unittest"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/BlockingQueue_unittest.cc">
+			<Option target="BlockingQueue_unittest"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/BoundedBlockingQueue_unittest.cc">
+			<Option target="BoundedBlockingQueue_unittest"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/muduo/muduo/muduo/test/base/LogFile_test.cc">
 			<Option target="LogFile_test"/>

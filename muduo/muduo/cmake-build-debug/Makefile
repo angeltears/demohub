@@ -68,6 +68,30 @@ install/strip/fast: preinstall/fast
 	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -111,30 +135,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles/progress.marks
@@ -168,19 +168,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named EventLoop_test
-
-# Build rule for target.
-EventLoop_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test
-.PHONY : EventLoop_test
-
-# fast build rule for target.
-EventLoop_test/fast:
-	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
-.PHONY : EventLoop_test/fast
-
-#=============================================================================
 # Target rules for targets named LogFile_test
 
 # Build rule for target.
@@ -207,6 +194,19 @@ EventLoopThreadPoll_test/fast:
 .PHONY : EventLoopThreadPoll_test/fast
 
 #=============================================================================
+# Target rules for targets named TcpClient_reg3
+
+# Build rule for target.
+TcpClient_reg3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TcpClient_reg3
+.PHONY : TcpClient_reg3
+
+# fast build rule for target.
+TcpClient_reg3/fast:
+	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/build
+.PHONY : TcpClient_reg3/fast
+
+#=============================================================================
 # Target rules for targets named LogStream_test
 
 # Build rule for target.
@@ -220,17 +220,17 @@ LogStream_test/fast:
 .PHONY : LogStream_test/fast
 
 #=============================================================================
-# Target rules for targets named TcpClient_reg3
+# Target rules for targets named BoundedBlockingQueue_unittest
 
 # Build rule for target.
-TcpClient_reg3: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TcpClient_reg3
-.PHONY : TcpClient_reg3
+BoundedBlockingQueue_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BoundedBlockingQueue_unittest
+.PHONY : BoundedBlockingQueue_unittest
 
 # fast build rule for target.
-TcpClient_reg3/fast:
-	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/build
-.PHONY : TcpClient_reg3/fast
+BoundedBlockingQueue_unittest/fast:
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/build
+.PHONY : BoundedBlockingQueue_unittest/fast
 
 #=============================================================================
 # Target rules for targets named ThreadLocal_test
@@ -298,17 +298,17 @@ muduo_base/fast:
 .PHONY : muduo_base/fast
 
 #=============================================================================
-# Target rules for targets named EventLoopThread_test
+# Target rules for targets named EventLoop_test
 
 # Build rule for target.
-EventLoopThread_test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 EventLoopThread_test
-.PHONY : EventLoopThread_test
+EventLoop_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoop_test
+.PHONY : EventLoop_test
 
 # fast build rule for target.
-EventLoopThread_test/fast:
-	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/build
-.PHONY : EventLoopThread_test/fast
+EventLoop_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
+.PHONY : EventLoop_test/fast
 
 #=============================================================================
 # Target rules for targets named ThreadLocalSingle_test
@@ -322,6 +322,32 @@ ThreadLocalSingle_test: cmake_check_build_system
 ThreadLocalSingle_test/fast:
 	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
 .PHONY : ThreadLocalSingle_test/fast
+
+#=============================================================================
+# Target rules for targets named EventLoopThread_test
+
+# Build rule for target.
+EventLoopThread_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoopThread_test
+.PHONY : EventLoopThread_test
+
+# fast build rule for target.
+EventLoopThread_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/build
+.PHONY : EventLoopThread_test/fast
+
+#=============================================================================
+# Target rules for targets named BlockingQueue_unittest
+
+# Build rule for target.
+BlockingQueue_unittest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 BlockingQueue_unittest
+.PHONY : BlockingQueue_unittest
+
+# fast build rule for target.
+BlockingQueue_unittest/fast:
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/build
+.PHONY : BlockingQueue_unittest/fast
 
 #=============================================================================
 # Target rules for targets named TcpClient_reg1
@@ -1212,6 +1238,60 @@ muduo/test/base/Atomic_unittest.cpp.s:
 	$(MAKE) -f CMakeFiles/Atomic_unittest.dir/build.make CMakeFiles/Atomic_unittest.dir/muduo/test/base/Atomic_unittest.cpp.s
 .PHONY : muduo/test/base/Atomic_unittest.cpp.s
 
+muduo/test/base/BlockingQueue_unittest.o: muduo/test/base/BlockingQueue_unittest.cc.o
+
+.PHONY : muduo/test/base/BlockingQueue_unittest.o
+
+# target to build an object file
+muduo/test/base/BlockingQueue_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/muduo/test/base/BlockingQueue_unittest.cc.o
+.PHONY : muduo/test/base/BlockingQueue_unittest.cc.o
+
+muduo/test/base/BlockingQueue_unittest.i: muduo/test/base/BlockingQueue_unittest.cc.i
+
+.PHONY : muduo/test/base/BlockingQueue_unittest.i
+
+# target to preprocess a source file
+muduo/test/base/BlockingQueue_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/muduo/test/base/BlockingQueue_unittest.cc.i
+.PHONY : muduo/test/base/BlockingQueue_unittest.cc.i
+
+muduo/test/base/BlockingQueue_unittest.s: muduo/test/base/BlockingQueue_unittest.cc.s
+
+.PHONY : muduo/test/base/BlockingQueue_unittest.s
+
+# target to generate assembly for a file
+muduo/test/base/BlockingQueue_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/muduo/test/base/BlockingQueue_unittest.cc.s
+.PHONY : muduo/test/base/BlockingQueue_unittest.cc.s
+
+muduo/test/base/BoundedBlockingQueue_unittest.o: muduo/test/base/BoundedBlockingQueue_unittest.cc.o
+
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.o
+
+# target to build an object file
+muduo/test/base/BoundedBlockingQueue_unittest.cc.o:
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/muduo/test/base/BoundedBlockingQueue_unittest.cc.o
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.cc.o
+
+muduo/test/base/BoundedBlockingQueue_unittest.i: muduo/test/base/BoundedBlockingQueue_unittest.cc.i
+
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.i
+
+# target to preprocess a source file
+muduo/test/base/BoundedBlockingQueue_unittest.cc.i:
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/muduo/test/base/BoundedBlockingQueue_unittest.cc.i
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.cc.i
+
+muduo/test/base/BoundedBlockingQueue_unittest.s: muduo/test/base/BoundedBlockingQueue_unittest.cc.s
+
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.s
+
+# target to generate assembly for a file
+muduo/test/base/BoundedBlockingQueue_unittest.cc.s:
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/muduo/test/base/BoundedBlockingQueue_unittest.cc.s
+.PHONY : muduo/test/base/BoundedBlockingQueue_unittest.cc.s
+
 muduo/test/base/LogFile_test.o: muduo/test/base/LogFile_test.cc.o
 
 .PHONY : muduo/test/base/LogFile_test.o
@@ -1570,19 +1650,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... EventLoop_test"
+	@echo "... install/local"
+	@echo "... install"
 	@echo "... LogFile_test"
 	@echo "... EventLoopThreadPoll_test"
-	@echo "... LogStream_test"
 	@echo "... TcpClient_reg3"
+	@echo "... LogStream_test"
+	@echo "... BoundedBlockingQueue_unittest"
 	@echo "... ThreadLocal_test"
 	@echo "... Logging_test"
 	@echo "... muduo_net"
 	@echo "... EchoServer_unittest"
 	@echo "... muduo_base"
-	@echo "... EventLoopThread_test"
+	@echo "... EventLoop_test"
 	@echo "... ThreadLocalSingle_test"
 	@echo "... rebuild_cache"
+	@echo "... EventLoopThread_test"
+	@echo "... BlockingQueue_unittest"
 	@echo "... TcpClient_reg1"
 	@echo "... Atomic_unittest"
 	@echo "... TcpClient_reg2"
@@ -1590,8 +1674,6 @@ help:
 	@echo "... Buffer_test"
 	@echo "... edit_cache"
 	@echo "... list_install_components"
-	@echo "... install"
-	@echo "... install/local"
 	@echo "... muduo/base/Date.o"
 	@echo "... muduo/base/Date.i"
 	@echo "... muduo/base/Date.s"
@@ -1685,6 +1767,12 @@ help:
 	@echo "... muduo/test/base/Atomic_unittest.o"
 	@echo "... muduo/test/base/Atomic_unittest.i"
 	@echo "... muduo/test/base/Atomic_unittest.s"
+	@echo "... muduo/test/base/BlockingQueue_unittest.o"
+	@echo "... muduo/test/base/BlockingQueue_unittest.i"
+	@echo "... muduo/test/base/BlockingQueue_unittest.s"
+	@echo "... muduo/test/base/BoundedBlockingQueue_unittest.o"
+	@echo "... muduo/test/base/BoundedBlockingQueue_unittest.i"
+	@echo "... muduo/test/base/BoundedBlockingQueue_unittest.s"
 	@echo "... muduo/test/base/LogFile_test.o"
 	@echo "... muduo/test/base/LogFile_test.i"
 	@echo "... muduo/test/base/LogFile_test.s"

@@ -9,3 +9,6 @@
 /home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/filestransfer/CMakeFiles/rebuild_cache.dir
 /home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/filestransfer/CMakeFiles/edit_cache.dir
 /home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/filestransfer/CMakeFiles/download.dir
+/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/socket_4a/CMakeFiles/edit_cache.dir
+/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/socket_4a/CMakeFiles/rebuild_cache.dir
+/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/socket_4a/CMakeFiles/tunnel.dir

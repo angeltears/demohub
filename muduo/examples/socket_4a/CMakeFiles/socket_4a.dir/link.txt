@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/socket_4a.dir/socket_4a.cc.o  -o socket_4a -lmuduo_net -lmuduo_base -lpthread 

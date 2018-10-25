@@ -60,51 +60,13 @@ CMAKE_SOURCE_DIR = /home/onter/project/hub/demohub/muduo/muduo
 CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/EventLoop_test.dir
-
-# All Build rule for target.
-CMakeFiles/EventLoop_test.dir/all: CMakeFiles/muduo_net.dir/all
-CMakeFiles/EventLoop_test.dir/all: CMakeFiles/muduo_base.dir/all
-	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/depend
-	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target EventLoop_test"
-.PHONY : CMakeFiles/EventLoop_test.dir/all
-
-# Include target in all.
-all: CMakeFiles/EventLoop_test.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/EventLoop_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 34
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/EventLoop_test.dir/rule
-
-# Convenience name for target.
-EventLoop_test: CMakeFiles/EventLoop_test.dir/rule
-
-.PHONY : EventLoop_test
-
-# clean rule for target.
-CMakeFiles/EventLoop_test.dir/clean:
-	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/clean
-.PHONY : CMakeFiles/EventLoop_test.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/EventLoop_test.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/LogFile_test.dir
 
 # All Build rule for target.
 CMakeFiles/LogFile_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/depend
 	$(MAKE) -f CMakeFiles/LogFile_test.dir/build.make CMakeFiles/LogFile_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target LogFile_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target LogFile_test"
 .PHONY : CMakeFiles/LogFile_test.dir/all
 
 # Include target in all.
@@ -142,7 +104,7 @@ CMakeFiles/EventLoopThreadPoll_test.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/EventLoopThreadPoll_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/EventLoopThreadPoll_test.dir/build.make CMakeFiles/EventLoopThreadPoll_test.dir/depend
 	$(MAKE) -f CMakeFiles/EventLoopThreadPoll_test.dir/build.make CMakeFiles/EventLoopThreadPoll_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target EventLoopThreadPoll_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=11,12 "Built target EventLoopThreadPoll_test"
 .PHONY : CMakeFiles/EventLoopThreadPoll_test.dir/all
 
 # Include target in all.
@@ -173,43 +135,6 @@ clean: CMakeFiles/EventLoopThreadPoll_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/LogStream_test.dir
-
-# All Build rule for target.
-CMakeFiles/LogStream_test.dir/all: CMakeFiles/muduo_base.dir/all
-	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/depend
-	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target LogStream_test"
-.PHONY : CMakeFiles/LogStream_test.dir/all
-
-# Include target in all.
-all: CMakeFiles/LogStream_test.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/LogStream_test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 14
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LogStream_test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/LogStream_test.dir/rule
-
-# Convenience name for target.
-LogStream_test: CMakeFiles/LogStream_test.dir/rule
-
-.PHONY : LogStream_test
-
-# clean rule for target.
-CMakeFiles/LogStream_test.dir/clean:
-	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/clean
-.PHONY : CMakeFiles/LogStream_test.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/LogStream_test.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/TcpClient_reg3.dir
 
 # All Build rule for target.
@@ -217,7 +142,7 @@ CMakeFiles/TcpClient_reg3.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/TcpClient_reg3.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/depend
 	$(MAKE) -f CMakeFiles/TcpClient_reg3.dir/build.make CMakeFiles/TcpClient_reg3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=23,24 "Built target TcpClient_reg3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=27,28 "Built target TcpClient_reg3"
 .PHONY : CMakeFiles/TcpClient_reg3.dir/all
 
 # Include target in all.
@@ -248,13 +173,87 @@ clean: CMakeFiles/TcpClient_reg3.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/LogStream_test.dir
+
+# All Build rule for target.
+CMakeFiles/LogStream_test.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/depend
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target LogStream_test"
+.PHONY : CMakeFiles/LogStream_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/LogStream_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/LogStream_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LogStream_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/LogStream_test.dir/rule
+
+# Convenience name for target.
+LogStream_test: CMakeFiles/LogStream_test.dir/rule
+
+.PHONY : LogStream_test
+
+# clean rule for target.
+CMakeFiles/LogStream_test.dir/clean:
+	$(MAKE) -f CMakeFiles/LogStream_test.dir/build.make CMakeFiles/LogStream_test.dir/clean
+.PHONY : CMakeFiles/LogStream_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/LogStream_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/BoundedBlockingQueue_unittest.dir
+
+# All Build rule for target.
+CMakeFiles/BoundedBlockingQueue_unittest.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/depend
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target BoundedBlockingQueue_unittest"
+.PHONY : CMakeFiles/BoundedBlockingQueue_unittest.dir/all
+
+# Include target in all.
+all: CMakeFiles/BoundedBlockingQueue_unittest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/BoundedBlockingQueue_unittest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/BoundedBlockingQueue_unittest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/BoundedBlockingQueue_unittest.dir/rule
+
+# Convenience name for target.
+BoundedBlockingQueue_unittest: CMakeFiles/BoundedBlockingQueue_unittest.dir/rule
+
+.PHONY : BoundedBlockingQueue_unittest
+
+# clean rule for target.
+CMakeFiles/BoundedBlockingQueue_unittest.dir/clean:
+	$(MAKE) -f CMakeFiles/BoundedBlockingQueue_unittest.dir/build.make CMakeFiles/BoundedBlockingQueue_unittest.dir/clean
+.PHONY : CMakeFiles/BoundedBlockingQueue_unittest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/BoundedBlockingQueue_unittest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/ThreadLocal_test.dir
 
 # All Build rule for target.
 CMakeFiles/ThreadLocal_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/depend
 	$(MAKE) -f CMakeFiles/ThreadLocal_test.dir/build.make CMakeFiles/ThreadLocal_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=27,28 "Built target ThreadLocal_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=31,32 "Built target ThreadLocal_test"
 .PHONY : CMakeFiles/ThreadLocal_test.dir/all
 
 # Include target in all.
@@ -291,7 +290,7 @@ clean: CMakeFiles/ThreadLocal_test.dir/clean
 CMakeFiles/Logging_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/depend
 	$(MAKE) -f CMakeFiles/Logging_test.dir/build.make CMakeFiles/Logging_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=17,18 "Built target Logging_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target Logging_test"
 .PHONY : CMakeFiles/Logging_test.dir/all
 
 # Include target in all.
@@ -328,7 +327,7 @@ clean: CMakeFiles/Logging_test.dir/clean
 CMakeFiles/muduo_net.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/depend
 	$(MAKE) -f CMakeFiles/muduo_net.dir/build.make CMakeFiles/muduo_net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60 "Built target muduo_net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64 "Built target muduo_net"
 .PHONY : CMakeFiles/muduo_net.dir/all
 
 # Include target in all.
@@ -366,7 +365,7 @@ CMakeFiles/EchoServer_unittest.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/EchoServer_unittest.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/depend
 	$(MAKE) -f CMakeFiles/EchoServer_unittest.dir/build.make CMakeFiles/EchoServer_unittest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target EchoServer_unittest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target EchoServer_unittest"
 .PHONY : CMakeFiles/EchoServer_unittest.dir/all
 
 # Include target in all.
@@ -403,7 +402,7 @@ clean: CMakeFiles/EchoServer_unittest.dir/clean
 CMakeFiles/muduo_base.dir/all:
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/depend
 	$(MAKE) -f CMakeFiles/muduo_base.dir/build.make CMakeFiles/muduo_base.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37,38,39,40 "Built target muduo_base"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=33,34,35,36,37,38,39,40,41,42,43,44 "Built target muduo_base"
 .PHONY : CMakeFiles/muduo_base.dir/all
 
 # Include target in all.
@@ -434,40 +433,40 @@ clean: CMakeFiles/muduo_base.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/EventLoopThread_test.dir
+# Target rules for target CMakeFiles/EventLoop_test.dir
 
 # All Build rule for target.
-CMakeFiles/EventLoopThread_test.dir/all: CMakeFiles/muduo_net.dir/all
-CMakeFiles/EventLoopThread_test.dir/all: CMakeFiles/muduo_base.dir/all
-	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/depend
-	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target EventLoopThread_test"
-.PHONY : CMakeFiles/EventLoopThread_test.dir/all
+CMakeFiles/EventLoop_test.dir/all: CMakeFiles/muduo_net.dir/all
+CMakeFiles/EventLoop_test.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/depend
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=15,16 "Built target EventLoop_test"
+.PHONY : CMakeFiles/EventLoop_test.dir/all
 
 # Include target in all.
-all: CMakeFiles/EventLoopThread_test.dir/all
+all: CMakeFiles/EventLoop_test.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/EventLoopThread_test.dir/rule: cmake_check_build_system
+CMakeFiles/EventLoop_test.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 34
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoopThread_test.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/EventLoopThread_test.dir/rule
+.PHONY : CMakeFiles/EventLoop_test.dir/rule
 
 # Convenience name for target.
-EventLoopThread_test: CMakeFiles/EventLoopThread_test.dir/rule
+EventLoop_test: CMakeFiles/EventLoop_test.dir/rule
 
-.PHONY : EventLoopThread_test
-
-# clean rule for target.
-CMakeFiles/EventLoopThread_test.dir/clean:
-	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/clean
-.PHONY : CMakeFiles/EventLoopThread_test.dir/clean
+.PHONY : EventLoop_test
 
 # clean rule for target.
-clean: CMakeFiles/EventLoopThread_test.dir/clean
+CMakeFiles/EventLoop_test.dir/clean:
+	$(MAKE) -f CMakeFiles/EventLoop_test.dir/build.make CMakeFiles/EventLoop_test.dir/clean
+.PHONY : CMakeFiles/EventLoop_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/EventLoop_test.dir/clean
 
 .PHONY : clean
 
@@ -478,7 +477,7 @@ clean: CMakeFiles/EventLoopThread_test.dir/clean
 CMakeFiles/ThreadLocalSingle_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/depend
 	$(MAKE) -f CMakeFiles/ThreadLocalSingle_test.dir/build.make CMakeFiles/ThreadLocalSingle_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=25,26 "Built target ThreadLocalSingle_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=29,30 "Built target ThreadLocalSingle_test"
 .PHONY : CMakeFiles/ThreadLocalSingle_test.dir/all
 
 # Include target in all.
@@ -509,6 +508,81 @@ clean: CMakeFiles/ThreadLocalSingle_test.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/EventLoopThread_test.dir
+
+# All Build rule for target.
+CMakeFiles/EventLoopThread_test.dir/all: CMakeFiles/muduo_net.dir/all
+CMakeFiles/EventLoopThread_test.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/depend
+	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=13,14 "Built target EventLoopThread_test"
+.PHONY : CMakeFiles/EventLoopThread_test.dir/all
+
+# Include target in all.
+all: CMakeFiles/EventLoopThread_test.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/EventLoopThread_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 34
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoopThread_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/EventLoopThread_test.dir/rule
+
+# Convenience name for target.
+EventLoopThread_test: CMakeFiles/EventLoopThread_test.dir/rule
+
+.PHONY : EventLoopThread_test
+
+# clean rule for target.
+CMakeFiles/EventLoopThread_test.dir/clean:
+	$(MAKE) -f CMakeFiles/EventLoopThread_test.dir/build.make CMakeFiles/EventLoopThread_test.dir/clean
+.PHONY : CMakeFiles/EventLoopThread_test.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/EventLoopThread_test.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/BlockingQueue_unittest.dir
+
+# All Build rule for target.
+CMakeFiles/BlockingQueue_unittest.dir/all: CMakeFiles/muduo_base.dir/all
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/depend
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target BlockingQueue_unittest"
+.PHONY : CMakeFiles/BlockingQueue_unittest.dir/all
+
+# Include target in all.
+all: CMakeFiles/BlockingQueue_unittest.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/BlockingQueue_unittest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 14
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/BlockingQueue_unittest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/BlockingQueue_unittest.dir/rule
+
+# Convenience name for target.
+BlockingQueue_unittest: CMakeFiles/BlockingQueue_unittest.dir/rule
+
+.PHONY : BlockingQueue_unittest
+
+# clean rule for target.
+CMakeFiles/BlockingQueue_unittest.dir/clean:
+	$(MAKE) -f CMakeFiles/BlockingQueue_unittest.dir/build.make CMakeFiles/BlockingQueue_unittest.dir/clean
+.PHONY : CMakeFiles/BlockingQueue_unittest.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/BlockingQueue_unittest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/TcpClient_reg1.dir
 
 # All Build rule for target.
@@ -516,7 +590,7 @@ CMakeFiles/TcpClient_reg1.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/TcpClient_reg1.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/depend
 	$(MAKE) -f CMakeFiles/TcpClient_reg1.dir/build.make CMakeFiles/TcpClient_reg1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=19,20 "Built target TcpClient_reg1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=23,24 "Built target TcpClient_reg1"
 .PHONY : CMakeFiles/TcpClient_reg1.dir/all
 
 # Include target in all.
@@ -591,7 +665,7 @@ CMakeFiles/TcpClient_reg2.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/TcpClient_reg2.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/depend
 	$(MAKE) -f CMakeFiles/TcpClient_reg2.dir/build.make CMakeFiles/TcpClient_reg2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=21,22 "Built target TcpClient_reg2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=25,26 "Built target TcpClient_reg2"
 .PHONY : CMakeFiles/TcpClient_reg2.dir/all
 
 # Include target in all.
@@ -629,7 +703,7 @@ CMakeFiles/Buffer_test.dir/all: CMakeFiles/muduo_net.dir/all
 CMakeFiles/Buffer_test.dir/all: CMakeFiles/muduo_base.dir/all
 	$(MAKE) -f CMakeFiles/Buffer_test.dir/build.make CMakeFiles/Buffer_test.dir/depend
 	$(MAKE) -f CMakeFiles/Buffer_test.dir/build.make CMakeFiles/Buffer_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target Buffer_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/muduo/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target Buffer_test"
 .PHONY : CMakeFiles/Buffer_test.dir/all
 
 # Include target in all.

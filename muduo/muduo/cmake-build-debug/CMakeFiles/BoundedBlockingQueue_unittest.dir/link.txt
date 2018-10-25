@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/BoundedBlockingQueue_unittest.dir/muduo/test/base/BoundedBlockingQueue_unittest.cc.o  -o BoundedBlockingQueue_unittest libmuduo_base.a -lpthread -lrt 

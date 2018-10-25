@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/BlockingQueue_unittest.dir/muduo/test/base/BlockingQueue_unittest.cc.o  -o BlockingQueue_unittest libmuduo_base.a -lpthread -lrt 

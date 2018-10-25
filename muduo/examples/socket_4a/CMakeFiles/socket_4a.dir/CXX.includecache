@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/muduo/examples/socket_4a/socket_4a.cc
+tunnel.h
+/home/onter/project/hub/demohub/muduo/examples/socket_4a/tunnel.h
+muduo/net/Endian.h
+-
+stdio.h
+-
+netdb.h
+-
+unistd.h
+-
+
+/home/onter/project/hub/demohub/muduo/examples/socket_4a/tunnel.h
+muduo/base/Logging.h
+-
+muduo/net/EventLoop.h
+-
+muduo/net/InetAddress.h
+-
+muduo/net/TcpClient.h
+-
+muduo/net/TcpServer.h
+-
+boost/bind.hpp
+-
+boost/enable_shared_from_this.hpp
+-
+

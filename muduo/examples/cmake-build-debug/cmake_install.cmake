@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/hub/cmake_install.cmake")
   include("/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/filestransfer/cmake_install.cmake")
+  include("/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/socket_4a/cmake_install.cmake")
 
 endif()
 

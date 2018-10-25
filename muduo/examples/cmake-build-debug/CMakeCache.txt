@@ -203,6 +203,9 @@ Project_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/muduo/examples
 //Dependencies for the target
 muduo_pubsub_LIB_DEPENDS:STATIC=general;muduo_net;general;muduo_base;general;pthread;
 
+//Dependencies for the target
+tunnel_LIB_DEPENDS:STATIC=general;muduo_net;general;muduo_base;general;pthread;
+
 
 ########################
 # INTERNAL cache entries
@@ -310,7 +313,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

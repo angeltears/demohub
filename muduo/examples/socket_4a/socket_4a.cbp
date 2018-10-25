@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="socket_4a"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\hub\;CMake Files\filestransfer\;CMake Files\socket_4a\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/examples/socket_4a"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="balancer">
+				<Option output="/home/onter/project/hub/demohub/muduo/examples/socket_4a/balancer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/examples/socket_4a"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 balancer"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="balancer/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/examples/socket_4a/balancer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/examples/socket_4a"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 balancer/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="socket_4a">
+				<Option output="/home/onter/project/hub/demohub/muduo/examples/socket_4a/socket_4a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/examples/socket_4a"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 socket_4a"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="socket_4a/fast">
+				<Option output="/home/onter/project/hub/demohub/muduo/examples/socket_4a/socket_4a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/muduo/examples/socket_4a"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 socket_4a/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/muduo/examples/socket_4a/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/socket_4a/balancer.cc">
+			<Option target="balancer"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/socket_4a/socket_4a.cc">
+			<Option target="socket_4a"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/socket_4a/tunnel.h">
+			<Option target="balancer"/>
+			<Option target="socket_4a"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/hub/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\hub\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/filestransfer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\filestransfer\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/socket_4a/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\socket_4a\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/muduo/examples/socket_4a/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\socket_4a\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

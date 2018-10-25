@@ -104,7 +104,15 @@ set(net_SRCS
         muduo/net/TcpConnection.cc
         muduo/net/TcpConnection.h
         muduo/net/Buffer.cc
-        muduo/net/Buffer.h muduo/net/EventLoopThreadPool.cc muduo/net/EventLoopThreadPool.h muduo/net/TcpServer.cc muduo/net/TcpServer.h muduo/net/Acceptor.cc muduo/net/Acceptor.h muduo/net/TcpClient.cc muduo/net/TcpClient.h)
+        muduo/net/Buffer.h
+        muduo/net/EventLoopThreadPool.cc
+        muduo/net/EventLoopThreadPool.h
+        muduo/net/TcpServer.cc
+        muduo/net/TcpServer.h
+        muduo/net/Acceptor.cc
+        muduo/net/Acceptor.h
+        muduo/net/TcpClient.cc
+        muduo/net/TcpClient.h)
 
 
 add_library(muduo_net ${net_SRCS})
@@ -114,12 +122,17 @@ add_executable(ThreadLocal_test
        muduo/test/base/TheadLocal_test.cc)
 target_link_libraries(ThreadLocal_test muduo_base)
 
+add_executable(BoundedBlockingQueue_unittest
+        muduo/test/base/BoundedBlockingQueue_unittest.cc)
+target_link_libraries(BoundedBlockingQueue_unittest muduo_base)
 
 add_executable(Atomic_unittest
         muduo/test/base/Atomic_unittest.cpp )
 target_link_libraries(Atomic_unittest muduo_base)
 
-
+add_executable(BlockingQueue_unittest
+        muduo/test/base/BlockingQueue_unittest.cc)
+target_link_libraries(BlockingQueue_unittest muduo_base)
 add_executable(ThreadLocalSingle_test
         muduo/test/base/ThreadLocalSingle_test.cc)
 target_link_libraries(ThreadLocalSingle_test muduo_base)

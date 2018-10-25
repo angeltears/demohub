@@ -19,7 +19,7 @@ namespace jmuduo
     class BlockingQueue : boost::noncopyable
     {
     public:
-        BlockingQueue():mutex_, notEmpty_(mutex_), queue_()
+        BlockingQueue():mutex_(), notEmpty_(mutex_), queue_()
         {}
 
         void put(const T& x)    // 生产T， 生产者
@@ -44,7 +44,7 @@ namespace jmuduo
             {
                 notEmpty_.wait();
             }
-            assert(queue_.empty());
+            assert(!queue_.empty());
 #ifdef __GXX_EXPERIMENTAL_CXX0X__             // 相比拷贝构造，转化成右值移动更节省空间
             T front(std::move(queue_.front()));
 #else

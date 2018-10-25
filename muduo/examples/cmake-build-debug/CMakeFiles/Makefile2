@@ -287,6 +287,61 @@ clean: filestransfer/CMakeFiles/download.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory socket_4a
+
+# Convenience name for "all" pass in the directory.
+socket_4a/all: socket_4a/CMakeFiles/tunnel.dir/all
+
+.PHONY : socket_4a/all
+
+# Convenience name for "clean" pass in the directory.
+socket_4a/clean: socket_4a/CMakeFiles/tunnel.dir/clean
+
+.PHONY : socket_4a/clean
+
+# Convenience name for "preinstall" pass in the directory.
+socket_4a/preinstall:
+
+.PHONY : socket_4a/preinstall
+
+#=============================================================================
+# Target rules for target socket_4a/CMakeFiles/tunnel.dir
+
+# All Build rule for target.
+socket_4a/CMakeFiles/tunnel.dir/all:
+	$(MAKE) -f socket_4a/CMakeFiles/tunnel.dir/build.make socket_4a/CMakeFiles/tunnel.dir/depend
+	$(MAKE) -f socket_4a/CMakeFiles/tunnel.dir/build.make socket_4a/CMakeFiles/tunnel.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/CMakeFiles --progress-num= "Built target tunnel"
+.PHONY : socket_4a/CMakeFiles/tunnel.dir/all
+
+# Include target in all.
+all: socket_4a/CMakeFiles/tunnel.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+socket_4a/CMakeFiles/tunnel.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 socket_4a/CMakeFiles/tunnel.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/muduo/examples/cmake-build-debug/CMakeFiles 0
+.PHONY : socket_4a/CMakeFiles/tunnel.dir/rule
+
+# Convenience name for target.
+tunnel: socket_4a/CMakeFiles/tunnel.dir/rule
+
+.PHONY : tunnel
+
+# clean rule for target.
+socket_4a/CMakeFiles/tunnel.dir/clean:
+	$(MAKE) -f socket_4a/CMakeFiles/tunnel.dir/build.make socket_4a/CMakeFiles/tunnel.dir/clean
+.PHONY : socket_4a/CMakeFiles/tunnel.dir/clean
+
+# clean rule for target.
+clean: socket_4a/CMakeFiles/tunnel.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

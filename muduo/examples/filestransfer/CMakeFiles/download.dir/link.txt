@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/download.dir/download.cc.o  -o download -lmuduo_net -lmuduo_base -lpthread 
+/usr/bin/c++  -g   CMakeFiles/download.dir/download.cc.o  -o download -lmuduo_net -lmuduo_base -lpthread 

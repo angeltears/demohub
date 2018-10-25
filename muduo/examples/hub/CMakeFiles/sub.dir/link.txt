@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/sub.dir/sub.cc.o  -o sub libmuduo_pubsub.a -lmuduo_net -lmuduo_base -lpthread 
+/usr/bin/c++  -g   CMakeFiles/sub.dir/sub.cc.o  -o sub libmuduo_pubsub.a -lmuduo_net -lmuduo_base -lpthread 
