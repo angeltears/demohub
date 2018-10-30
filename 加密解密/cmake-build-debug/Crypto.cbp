@@ -5,7 +5,7 @@
 		<Option title="Crypto"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;CMake Files\md5\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/onter/project/hub/demohub/加密解密/cmake-build-debug"/>
@@ -83,7 +83,62 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/sha_1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="md5">
+				<Option output="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/md5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 md5"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="md5/fast">
+				<Option output="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/md5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 md5/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/main.cc">
+			<Option target="md5"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/md5.cc">
+			<Option target="md5"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/md5.h">
+			<Option target="md5"/>
+		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/加密解密/sha_1/main.cc">
 			<Option target="sha_1"/>
 		</Unit>
@@ -101,6 +156,12 @@
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/加密解密/sha_1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\sha_1\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\md5\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\md5\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

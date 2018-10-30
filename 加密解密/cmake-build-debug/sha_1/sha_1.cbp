@@ -5,7 +5,7 @@
 		<Option title="sha_1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;CMake Files\md5\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/sha_1"/>
@@ -81,6 +81,12 @@
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/加密解密/sha_1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\sha_1\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\md5\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/md5/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\md5\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

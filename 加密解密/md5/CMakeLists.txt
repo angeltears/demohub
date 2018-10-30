@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
-project(Crypto)
+project(md5)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_subdirectory(sha_1)
-
-add_subdirectory(md5)
+add_executable(md5
+        md5.cc md5.h main.cc)

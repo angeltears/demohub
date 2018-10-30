@@ -201,6 +201,12 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
 
 //Value Computed by CMake
+md5_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5
+
+//Value Computed by CMake
+md5_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/加密解密/md5
+
+//Value Computed by CMake
 sha_1_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/加密解密/cmake-build-debug/sha_1
 
 //Value Computed by CMake
@@ -313,7 +319,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
