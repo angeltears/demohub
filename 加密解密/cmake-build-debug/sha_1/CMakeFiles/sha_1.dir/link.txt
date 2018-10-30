@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/sha_1.dir/main.cc.o CMakeFiles/sha_1.dir/sha.cc.o  -o sha_1 

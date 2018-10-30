@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/加密解密/sha_1/main.cc
+sha.h
+/home/onter/project/hub/demohub/加密解密/sha_1/sha.h
+
+/home/onter/project/hub/demohub/加密解密/sha_1/sha.cc
+sha.h
+/home/onter/project/hub/demohub/加密解密/sha_1/sha.h
+
+/home/onter/project/hub/demohub/加密解密/sha_1/sha.h
+cstdio
+-
+cstring
+-
+
