@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/des.dir/main.cc.o  -o des 

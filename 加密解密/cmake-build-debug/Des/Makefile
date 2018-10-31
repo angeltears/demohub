@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/加密解密/cmake-build-debug/CMakeFiles /home/onter/project/hub/demohub/加密解密/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/加密解密/cmake-build-debug/CMakeFiles /home/onter/project/hub/demohub/加密解密/cmake-build-debug/Des/CMakeFiles/progress.marks
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Des/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/onter/project/hub/demohub/加密解密/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Des/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,57 +97,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Des/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Des/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named sha_1
+# Convenience name for target.
+Des/CMakeFiles/des.dir/rule:
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 Des/CMakeFiles/des.dir/rule
+.PHONY : Des/CMakeFiles/des.dir/rule
 
-# Build rule for target.
-sha_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sha_1
-.PHONY : sha_1
+# Convenience name for target.
+des: Des/CMakeFiles/des.dir/rule
 
-# fast build rule for target.
-sha_1/fast:
-	$(MAKE) -f sha_1/CMakeFiles/sha_1.dir/build.make sha_1/CMakeFiles/sha_1.dir/build
-.PHONY : sha_1/fast
-
-#=============================================================================
-# Target rules for targets named md5
-
-# Build rule for target.
-md5: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 md5
-.PHONY : md5
-
-# fast build rule for target.
-md5/fast:
-	$(MAKE) -f md5/CMakeFiles/md5.dir/build.make md5/CMakeFiles/md5.dir/build
-.PHONY : md5/fast
-
-#=============================================================================
-# Target rules for targets named des
-
-# Build rule for target.
-des: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 des
 .PHONY : des
 
 # fast build rule for target.
 des/fast:
-	$(MAKE) -f Des/CMakeFiles/des.dir/build.make Des/CMakeFiles/des.dir/build
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f Des/CMakeFiles/des.dir/build.make Des/CMakeFiles/des.dir/build
 .PHONY : des/fast
+
+main.o: main.cc.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cc.o:
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f Des/CMakeFiles/des.dir/build.make Des/CMakeFiles/des.dir/main.cc.o
+.PHONY : main.cc.o
+
+main.i: main.cc.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cc.i:
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f Des/CMakeFiles/des.dir/build.make Des/CMakeFiles/des.dir/main.cc.i
+.PHONY : main.cc.i
+
+main.s: main.cc.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cc.s:
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(MAKE) -f Des/CMakeFiles/des.dir/build.make Des/CMakeFiles/des.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:
@@ -157,9 +160,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... sha_1"
-	@echo "... md5"
 	@echo "... des"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
@@ -171,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/onter/project/hub/demohub/加密解密/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
