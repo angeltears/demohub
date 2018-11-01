@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/加密解密/Rc4/Rc4.cc
+string.h
+-
+Rc4.h
+/home/onter/project/hub/demohub/加密解密/Rc4/Rc4.h
+
+/home/onter/project/hub/demohub/加密解密/Rc4/Rc4.h
+algorithm
+-
+
+/home/onter/project/hub/demohub/加密解密/Rc4/main.cc
+Rc4.h
+/home/onter/project/hub/demohub/加密解密/Rc4/Rc4.h
+

@@ -160,7 +160,7 @@ void generateKeys()
     bitset<28> right;
     bitset<48> compressKey;
     for(int i = 0; i < 56; i++)
-        realKey[56 - i] = key[64 - PC_1[i]];
+        realKey[i] = key[PC_1[i]];
     for (int round = 0; round < 16; round++)
     {
         // 获得Li 和Ri
@@ -187,7 +187,7 @@ void generateKeys()
         //压缩置换PC-2
         for(int i = 0; i < 48; i++)
         {
-            compressKey[47 - i] = realKey[56 - PC_2[i]];
+            compressKey[i] = realKey[PC_2[i]];
         }
         subKey[round] = compressKey;
     }
@@ -199,11 +199,12 @@ bitset<32> f(bitset<32> R, bitset<48> k)
     // 扩展
     for (int i = 0; i < 48; i++)
     {
-        expandR[47 - i] = R[32 - E[i]];
+        expandR[i] = R[E[i]];
     }
     expandR = expandR ^ k;
     bitset<32> output;
-    for (int i = 0, x = 0; i < 48; i= i + 6, x = x + 4)
+    int x = 0;
+    for (int i = 0; i < 48; i= i + 6)
     {
         int row = expandR[47 - i] * 2 + expandR[47-i-5];
         int col = expandR[47 -i - 1] * 8 + expandR[47 -i - 2] * 4 +\
@@ -214,12 +215,13 @@ bitset<32> f(bitset<32> R, bitset<48> k)
         output[31 - x - 1] = binnary[2];
         output[31 - x - 2] = binnary[1];
         output[31 - x - 3] = binnary[0];
+        x = x + 4;
     }
 
     bitset<32> tmp = output;
     for (int i = 0; i < 32; ++i)
     {
-        output[31 - i] = tmp[32 - P[i]];
+        output[i] = tmp[P[i]];
     }
     return output;
 }
@@ -233,7 +235,7 @@ bitset<64>  encrypt(bitset<64>& plain)
     bitset<32> newLeft;
     // 初始化置换IP
     for (int i = 0; i < 64; i++) {
-        currentBits[63 - i] = plain[64 - IP[i]];
+        currentBits[i] = plain[IP[i]];
     }
     // 获取Li和Ri
     for (int i = 32; i < 64; ++i) {
@@ -249,7 +251,7 @@ bitset<64>  encrypt(bitset<64>& plain)
     }
     for (int i = 32; i < 64; i++)
     {
-        cipher[i] = left[i - 32];
+        cipher[i] = right[i - 32];
     }
     for (int i = 0; i < 32; i++)
     {
@@ -258,10 +260,45 @@ bitset<64>  encrypt(bitset<64>& plain)
     // 第五步：结尾置换IP-1
     currentBits = cipher;
     for(int i=0; i<64; ++i)
-        cipher[63-i] = currentBits[64-IP_1[i]];
+        cipher[i] = currentBits[IP_1[i]];
     // 返回密文
     return cipher;
 
+}
+
+bitset<64> decrypt(bitset<64>& cipher)
+{
+    bitset<64> plain;
+    bitset<64> currentBits;
+    bitset<32> left;
+    bitset<32> right;
+    bitset<32> newLeft;
+    // 第一步：初始置换IP
+    for(int i=0; i<64; ++i)
+        currentBits[i] = cipher[IP[i]];
+    // 第二步：获取 Li 和 Ri
+    for(int i=32; i<64; ++i)
+        left[i-32] = currentBits[i];
+    for(int i=0; i<32; ++i)
+        right[i] = currentBits[i];
+    // 第三步：共16轮迭代（子密钥逆序应用）
+    for(int round=0; round<16; ++round)
+    {
+        newLeft = right;
+        right = left ^ f(right,subKey[15-round]);
+        left = newLeft;
+    }
+    // 第四步：合并L16和R16，注意合并为 R16L16
+    for(int i=0; i<32; ++i)
+        plain[i] = left[i];
+    for(int i=32; i<64; ++i)
+        plain[i] = right[i-32];
+    // 第五步：结尾置换IP-1
+    currentBits = plain;
+    for(int i=0; i<64; ++i)
+        plain[i] = currentBits[IP_1[i]];
+    // 返回明文
+    return plain;
 }
 
 /**
@@ -278,17 +315,17 @@ bitset<64> charToBitset(const char s[8])
 /*       test程序        */
 void printcipher(bitset<64> cipher)
 {
-    for(int i = 0; i < 64; i+=8)
+    for(int i = 8; i < 72; i+=8)
     {
-       unsigned char c = cipher[64 -i - 8] * 128 + cipher[64 -i - 7]*64 + cipher[64 -i - 6]*32+ cipher[64 -i - 5]*16
-                       +cipher[64 -i - 4]*8 + cipher[64 -i - 3]*4 + cipher[64 -i - 2]*2+ cipher[64 -i - 1];
+       unsigned char c = cipher[i - 1] * 128 + cipher[i - 2]*64 + cipher[i - 3]*32+ cipher[i - 4]*16
+                       +cipher[i - 5]*8 + cipher[i - 6]*4 + cipher[i - 7]*2+ cipher[i - 8];
         printf("%02x",c);
     }
 }
 
 bitset<64> Des()
 {
-    string s = "romantic";
+    string s = "r";
     string k = "12345678";
     bitset<64> plain = charToBitset(s.c_str());
     key = charToBitset(k.c_str());
@@ -296,6 +333,7 @@ bitset<64> Des()
     generateKeys();
     // 密文写入 a.txt
     bitset<64> cipher = encrypt(plain);
+    plain = decrypt(cipher);
     printcipher(cipher);
     return  cipher;
 }

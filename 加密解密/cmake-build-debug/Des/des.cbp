@@ -5,7 +5,7 @@
 		<Option title="des"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;CMake Files\md5\;CMake Files\Des\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\sha_1\;CMake Files\md5\;CMake Files\Des\;CMake Files\Rc4\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/onter/project/hub/demohub/加密解密/cmake-build-debug/Des"/>
@@ -90,6 +90,12 @@
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/加密解密/Des/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\Des\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/Rc4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Rc4\"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/加密解密/Rc4/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Rc4\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

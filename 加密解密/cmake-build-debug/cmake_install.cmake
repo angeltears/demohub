@@ -37,6 +37,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/onter/project/hub/demohub/加密解密/cmake-build-debug/sha_1/cmake_install.cmake")
   include("/home/onter/project/hub/demohub/加密解密/cmake-build-debug/md5/cmake_install.cmake")
   include("/home/onter/project/hub/demohub/加密解密/cmake-build-debug/Des/cmake_install.cmake")
+  include("/home/onter/project/hub/demohub/加密解密/cmake-build-debug/Rc4/cmake_install.cmake")
 
 endif()
 
