@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/数据压缩/bit.h
+
+/home/onter/project/hub/demohub/数据压缩/bit_test.cc
+cstdio
+-
+boost/test/included/unit_test.hpp
+-
+bit.h
+/home/onter/project/hub/demohub/数据压缩/bit.h
+

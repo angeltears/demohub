@@ -2,7 +2,7 @@
 // Created by onter on 18-8-20.
 //
 
-#include "LogFile_test.hpp"
+#include "LogFile.hpp"
 #include "FileUtil.h"
 #include "ProcessInfo.h"
 

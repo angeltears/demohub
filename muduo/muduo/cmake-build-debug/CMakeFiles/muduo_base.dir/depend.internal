@@ -23,7 +23,7 @@ CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/CurrentThread.h
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/FileUtil.h
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.cpp
- /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
+ /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Mutex.hpp
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/ProcessInfo.h
  /home/onter/project/hub/demohub/muduo/muduo/muduo/base/StringPiece.h

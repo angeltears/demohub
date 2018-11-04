@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/bit_test.dir/bit_test.cc.o  -o bit_test libbit.a 

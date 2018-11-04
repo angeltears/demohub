@@ -22,7 +22,7 @@ CMakeFiles/muduo_base.dir/muduo/base/FileUtil.cc.o: ../muduo/base/copyable.h
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/CurrentThread.h
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/FileUtil.h
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/LogFile.cpp
-CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/LogFile_test.hpp
+CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/LogFile.hpp
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/Mutex.hpp
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/ProcessInfo.h
 CMakeFiles/muduo_base.dir/muduo/base/LogFile.cpp.o: ../muduo/base/StringPiece.h

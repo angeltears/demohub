@@ -93,8 +93,8 @@ sys/types.h
 -
 
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.cpp
-LogFile_test.hpp
-/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
+LogFile.hpp
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
 FileUtil.h
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/FileUtil.h
 ProcessInfo.h
@@ -106,7 +106,7 @@ stdio.h
 time.h
 -
 
-/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile_test.hpp
+/home/onter/project/hub/demohub/muduo/muduo/muduo/base/LogFile.hpp
 Mutex.hpp
 /home/onter/project/hub/demohub/muduo/muduo/muduo/base/Mutex.hpp
 Types.h
