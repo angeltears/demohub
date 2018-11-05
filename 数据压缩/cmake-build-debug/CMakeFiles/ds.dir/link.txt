@@ -1,0 +1,2 @@
+/usr/bin/ar qc libds.a  CMakeFiles/ds.dir/bit.cc.o CMakeFiles/ds.dir/bitree.cc.o CMakeFiles/ds.dir/pqueue.cc.o CMakeFiles/ds.dir/heap.cc.o
+/usr/bin/ranlib libds.a

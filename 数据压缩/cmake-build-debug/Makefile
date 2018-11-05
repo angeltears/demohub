@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/onter/project/hub/demohub/数据压缩/cmake-build-debu
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -88,6 +77,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/onter/software/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,6 +122,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named huffman
+
+# Build rule for target.
+huffman: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 huffman
+.PHONY : huffman
+
+# fast build rule for target.
+huffman/fast:
+	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/build
+.PHONY : huffman/fast
+
+#=============================================================================
 # Target rules for targets named bit_test
 
 # Build rule for target.
@@ -135,17 +148,17 @@ bit_test/fast:
 .PHONY : bit_test/fast
 
 #=============================================================================
-# Target rules for targets named bit
+# Target rules for targets named ds
 
 # Build rule for target.
-bit: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bit
-.PHONY : bit
+ds: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ds
+.PHONY : ds
 
 # fast build rule for target.
-bit/fast:
-	$(MAKE) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/build
-.PHONY : bit/fast
+ds/fast:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/build
+.PHONY : ds/fast
 
 bit.o: bit.cc.o
 
@@ -153,7 +166,7 @@ bit.o: bit.cc.o
 
 # target to build an object file
 bit.cc.o:
-	$(MAKE) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit.cc.o
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.o
 .PHONY : bit.cc.o
 
 bit.i: bit.cc.i
@@ -162,7 +175,7 @@ bit.i: bit.cc.i
 
 # target to preprocess a source file
 bit.cc.i:
-	$(MAKE) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit.cc.i
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.i
 .PHONY : bit.cc.i
 
 bit.s: bit.cc.s
@@ -171,7 +184,7 @@ bit.s: bit.cc.s
 
 # target to generate assembly for a file
 bit.cc.s:
-	$(MAKE) -f CMakeFiles/bit.dir/build.make CMakeFiles/bit.dir/bit.cc.s
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.s
 .PHONY : bit.cc.s
 
 bit_test.o: bit_test.cc.o
@@ -201,23 +214,144 @@ bit_test.cc.s:
 	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit_test.cc.s
 .PHONY : bit_test.cc.s
 
+bitree.o: bitree.cc.o
+
+.PHONY : bitree.o
+
+# target to build an object file
+bitree.cc.o:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bitree.cc.o
+.PHONY : bitree.cc.o
+
+bitree.i: bitree.cc.i
+
+.PHONY : bitree.i
+
+# target to preprocess a source file
+bitree.cc.i:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bitree.cc.i
+.PHONY : bitree.cc.i
+
+bitree.s: bitree.cc.s
+
+.PHONY : bitree.s
+
+# target to generate assembly for a file
+bitree.cc.s:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bitree.cc.s
+.PHONY : bitree.cc.s
+
+heap.o: heap.cc.o
+
+.PHONY : heap.o
+
+# target to build an object file
+heap.cc.o:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/heap.cc.o
+.PHONY : heap.cc.o
+
+heap.i: heap.cc.i
+
+.PHONY : heap.i
+
+# target to preprocess a source file
+heap.cc.i:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/heap.cc.i
+.PHONY : heap.cc.i
+
+heap.s: heap.cc.s
+
+.PHONY : heap.s
+
+# target to generate assembly for a file
+heap.cc.s:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/heap.cc.s
+.PHONY : heap.cc.s
+
+huffman.o: huffman.cc.o
+
+.PHONY : huffman.o
+
+# target to build an object file
+huffman.cc.o:
+	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/huffman.cc.o
+.PHONY : huffman.cc.o
+
+huffman.i: huffman.cc.i
+
+.PHONY : huffman.i
+
+# target to preprocess a source file
+huffman.cc.i:
+	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/huffman.cc.i
+.PHONY : huffman.cc.i
+
+huffman.s: huffman.cc.s
+
+.PHONY : huffman.s
+
+# target to generate assembly for a file
+huffman.cc.s:
+	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/huffman.cc.s
+.PHONY : huffman.cc.s
+
+pqueue.o: pqueue.cc.o
+
+.PHONY : pqueue.o
+
+# target to build an object file
+pqueue.cc.o:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.o
+.PHONY : pqueue.cc.o
+
+pqueue.i: pqueue.cc.i
+
+.PHONY : pqueue.i
+
+# target to preprocess a source file
+pqueue.cc.i:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.i
+.PHONY : pqueue.cc.i
+
+pqueue.s: pqueue.cc.s
+
+.PHONY : pqueue.s
+
+# target to generate assembly for a file
+pqueue.cc.s:
+	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.s
+.PHONY : pqueue.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... huffman"
 	@echo "... bit_test"
-	@echo "... bit"
+	@echo "... ds"
 	@echo "... bit.o"
 	@echo "... bit.i"
 	@echo "... bit.s"
 	@echo "... bit_test.o"
 	@echo "... bit_test.i"
 	@echo "... bit_test.s"
+	@echo "... bitree.o"
+	@echo "... bitree.i"
+	@echo "... bitree.s"
+	@echo "... heap.o"
+	@echo "... heap.i"
+	@echo "... heap.s"
+	@echo "... huffman.o"
+	@echo "... huffman.i"
+	@echo "... huffman.s"
+	@echo "... pqueue.o"
+	@echo "... pqueue.i"
+	@echo "... pqueue.s"
 .PHONY : help
 
 

@@ -45,6 +45,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/huffman.dir/DependInfo.cmake"
   "CMakeFiles/bit_test.dir/DependInfo.cmake"
-  "CMakeFiles/bit.dir/DependInfo.cmake"
+  "CMakeFiles/ds.dir/DependInfo.cmake"
   )

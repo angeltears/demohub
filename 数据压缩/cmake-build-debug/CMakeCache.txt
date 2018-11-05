@@ -224,6 +224,12 @@ dataCompression_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩/c
 //Value Computed by CMake
 dataCompression_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩
 
+//Dependencies for target
+ds_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+huffman_LIB_DEPENDS:STATIC=
+
 
 ########################
 # INTERNAL cache entries

@@ -90,7 +90,7 @@ bit_test_EXTERNAL_OBJECTS =
 
 bit_test: CMakeFiles/bit_test.dir/bit_test.cc.o
 bit_test: CMakeFiles/bit_test.dir/build.make
-bit_test: libbit.a
+bit_test: libds.a
 bit_test: CMakeFiles/bit_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bit_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bit_test.dir/link.txt --verbose=$(VERBOSE)
