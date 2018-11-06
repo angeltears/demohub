@@ -40,12 +40,12 @@ void heap_init(Heap *heap,
     heap->size = 0;
     heap->compare = compare;
     heap->destroy = destroy;
-    heap->tree = nullptr;
+    heap->tree = NULL;
 }
 
 void heap_destroy(Heap* heap)
 {
-    if (heap->destroy != nullptr)
+    if (heap->destroy != NULL)
     {
         for (int i = 0; i < heap_size(heap); i++)
         {
@@ -54,7 +54,7 @@ void heap_destroy(Heap* heap)
     }
 
     free(heap->tree);
-    memset(heap, 0, sizeof Heap);
+    memset(heap, 0, sizeof(Heap));
 }
 
 int heap_insert(Heap *heap, const void *data)
@@ -68,17 +68,19 @@ int heap_insert(Heap *heap, const void *data)
     /// 上滤
     int ipos = heap_size(heap);
     int ppos = heap_parent(ipos);
-    void * tmp = nullptr;
+    void * tmp = NULL;
     /// 交换当前结点与父结点内容
     while (ipos > 0 && heap->compare(heap->tree[ppos], heap->tree[ipos]) < 0)
     {
         tmp = heap->tree[ppos];
         heap->tree[ppos] = heap->tree[ipos];
-        heap->tree[ipos] = temp;
+        heap->tree[ipos] = tmp;
 
         ipos = ppos;
         ppos = heap_parent(ipos);
     }
+    heap->size++;
+    return 0;
 }
 
 int heap_extract(Heap *heap, void **data)
@@ -159,5 +161,5 @@ int heap_extract(Heap *heap, void **data)
         }
     }
 
-
+    return 0;
 }

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/数据压缩/bit.h
+
+/home/onter/project/hub/demohub/数据压缩/bitree.h
+
+/home/onter/project/hub/demohub/数据压缩/compress.h
+
+/home/onter/project/hub/demohub/数据压缩/heap.h
+
+/home/onter/project/hub/demohub/数据压缩/huffman.cc
+compress.h
+/home/onter/project/hub/demohub/数据压缩/compress.h
+bitree.h
+/home/onter/project/hub/demohub/数据压缩/bitree.h
+pqueue.h
+/home/onter/project/hub/demohub/数据压缩/pqueue.h
+bit.h
+/home/onter/project/hub/demohub/数据压缩/bit.h
+malloc.h
+-
+climits
+-
+memory.h
+-
+netinet/in.h
+-
+
+/home/onter/project/hub/demohub/数据压缩/pqueue.h
+heap.h
+/home/onter/project/hub/demohub/数据压缩/heap.h
+

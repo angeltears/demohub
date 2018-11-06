@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/ds.dir/bit.cc.o"
   "CMakeFiles/ds.dir/bitree.cc.o"
-  "CMakeFiles/ds.dir/pqueue.cc.o"
   "CMakeFiles/ds.dir/heap.cc.o"
   "libds.pdb"
   "libds.a"

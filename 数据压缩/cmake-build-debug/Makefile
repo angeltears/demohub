@@ -122,6 +122,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
 # Target rules for targets named huffman
 
 # Build rule for target.
@@ -295,32 +308,32 @@ huffman.cc.s:
 	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/huffman.cc.s
 .PHONY : huffman.cc.s
 
-pqueue.o: pqueue.cc.o
+main.o: main.cc.o
 
-.PHONY : pqueue.o
+.PHONY : main.o
 
 # target to build an object file
-pqueue.cc.o:
-	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.o
-.PHONY : pqueue.cc.o
+main.cc.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.o
+.PHONY : main.cc.o
 
-pqueue.i: pqueue.cc.i
+main.i: main.cc.i
 
-.PHONY : pqueue.i
+.PHONY : main.i
 
 # target to preprocess a source file
-pqueue.cc.i:
-	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.i
-.PHONY : pqueue.cc.i
+main.cc.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
+.PHONY : main.cc.i
 
-pqueue.s: pqueue.cc.s
+main.s: main.cc.s
 
-.PHONY : pqueue.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-pqueue.cc.s:
-	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.s
-.PHONY : pqueue.cc.s
+main.cc.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
+.PHONY : main.cc.s
 
 # Help Target
 help:
@@ -330,6 +343,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... huffman"
 	@echo "... bit_test"
@@ -349,9 +363,9 @@ help:
 	@echo "... huffman.o"
 	@echo "... huffman.i"
 	@echo "... huffman.s"
-	@echo "... pqueue.o"
-	@echo "... pqueue.i"
-	@echo "... pqueue.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

@@ -21,8 +21,8 @@ typedef struct HuffCode_
     unsigned char used;
     unsigned short code;
     unsigned char size;
-};
-int huffman_commiess(const unsigned char* original, unsigned char** compressed, int size);
+}HuffCode;
+int huffman_compress(const unsigned char* original, unsigned char** compressed, int size);
 int huffman_uncompress(const unsigned char *compressed, unsigned char** original);
 
 #endif //DATACOMPRESSION_HUFFMAN_H

@@ -14,13 +14,13 @@ void bitree_init(BiTree* tree, void (*destroy)(void *data))
 {
     tree->size = 0;
     tree->destroy = destroy;
-    tree->root = nullptr;
+    tree->root = NULL;
 }
 
 void bitree_destroy(BiTree* tree)
 {
     /// 删除所有树的结点
-    bitree_rem_left(tree, nullptr);
+    bitree_rem_left(tree, NULL);
     /// 清理二叉树数据结构
     memset(tree, 0, sizeof(BiTree));
 }
@@ -39,17 +39,17 @@ int bitree_ins_left(BiTree *tree, BiTreeNode *node, const void *data)
     }
     else
     {
-        if(bitree_left(node) != nullptr)
+        if(bitree_left(node) != NULL)
             return -1;
         position = &node->left;
     }
     /// 初始化结点存储空间
-    if ((new_node = (BiTreeNode *)malloc(sizeof BiTreeNode)) == nullptr)
+    if ((new_node = (BiTreeNode *)malloc(sizeof (BiTreeNode))) == NULL)
         return -1;
     /// 将结点插入到树中
     new_node->data = (void *)data;
-    new_node->left = nullptr;
-    new_node->right = nullptr;
+    new_node->left = NULL;
+    new_node->right = NULL;
     *position = new_node;
     tree->size++;
 
@@ -99,7 +99,7 @@ void bitree_rem_left(BiTree* tree, BiTreeNode* node)
 
     if (bitree_size(tree) == 0)
         return;
-    if (node == nullptr)
+    if (node == NULL)
     {
         position = &tree->root;
     } else
@@ -120,7 +120,7 @@ void bitree_rem_left(BiTree* tree, BiTreeNode* node)
         }
 
         free(*position);
-        position = nullptr;
+        position = NULL;
         tree->size--;
     }
 }
@@ -169,7 +169,7 @@ int bitree_merge(BiTree *merge, BiTree *left, BiTree *right, const void *data)
 {
     bitree_init(merge, left->destroy);
 
-    if (bitree_ins_left(merge, nullptr, data) != 0)
+    if (bitree_ins_left(merge, NULL, data) != 0)
     {
         bitree_destroy(merge);
         return -1;

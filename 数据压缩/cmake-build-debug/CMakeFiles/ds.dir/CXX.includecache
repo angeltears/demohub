@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/数据压缩/bit.cc
+bit.h
+/home/onter/project/hub/demohub/数据压缩/bit.h
+
+/home/onter/project/hub/demohub/数据压缩/bit.h
+
+/home/onter/project/hub/demohub/数据压缩/bitree.cc
+bitree.h
+/home/onter/project/hub/demohub/数据压缩/bitree.h
+memory.h
+-
+malloc.h
+-
+
+/home/onter/project/hub/demohub/数据压缩/bitree.h
+
+/home/onter/project/hub/demohub/数据压缩/heap.cc
+heap.h
+/home/onter/project/hub/demohub/数据压缩/heap.h
+cstdlib
+-
+cstring
+-
+
+/home/onter/project/hub/demohub/数据压缩/heap.h
+

@@ -4,7 +4,7 @@ enable_testing()
 set(DsSrc
         bit.h bit.cc
         bitree.cc bitree.h
-        pqueue.cc pqueue.h heap.cc heap.h)
+        pqueue.h heap.cc heap.h)
 
 add_library(ds ${DsSrc})
 
@@ -16,3 +16,6 @@ set(huffmanSrc
         compress.h)
 
 add_library(huffman ${huffmanSrc})
+target_link_libraries(huffman ds)
+add_executable(main  main.cc)
+target_link_libraries(main huffman)

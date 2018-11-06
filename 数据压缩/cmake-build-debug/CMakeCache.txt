@@ -227,8 +227,8 @@ dataCompression_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩
 //Dependencies for target
 ds_LIB_DEPENDS:STATIC=
 
-//Dependencies for target
-huffman_LIB_DEPENDS:STATIC=
+//Dependencies for the target
+huffman_LIB_DEPENDS:STATIC=general;ds;
 
 
 ########################

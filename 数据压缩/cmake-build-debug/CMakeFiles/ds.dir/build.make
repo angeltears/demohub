@@ -105,33 +105,9 @@ CMakeFiles/ds.dir/bitree.cc.o.provides: CMakeFiles/ds.dir/bitree.cc.o.requires
 CMakeFiles/ds.dir/bitree.cc.o.provides.build: CMakeFiles/ds.dir/bitree.cc.o
 
 
-CMakeFiles/ds.dir/pqueue.cc.o: CMakeFiles/ds.dir/flags.make
-CMakeFiles/ds.dir/pqueue.cc.o: ../pqueue.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ds.dir/pqueue.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ds.dir/pqueue.cc.o -c /home/onter/project/hub/demohub/数据压缩/pqueue.cc
-
-CMakeFiles/ds.dir/pqueue.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ds.dir/pqueue.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/onter/project/hub/demohub/数据压缩/pqueue.cc > CMakeFiles/ds.dir/pqueue.cc.i
-
-CMakeFiles/ds.dir/pqueue.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ds.dir/pqueue.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/onter/project/hub/demohub/数据压缩/pqueue.cc -o CMakeFiles/ds.dir/pqueue.cc.s
-
-CMakeFiles/ds.dir/pqueue.cc.o.requires:
-
-.PHONY : CMakeFiles/ds.dir/pqueue.cc.o.requires
-
-CMakeFiles/ds.dir/pqueue.cc.o.provides: CMakeFiles/ds.dir/pqueue.cc.o.requires
-	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/pqueue.cc.o.provides.build
-.PHONY : CMakeFiles/ds.dir/pqueue.cc.o.provides
-
-CMakeFiles/ds.dir/pqueue.cc.o.provides.build: CMakeFiles/ds.dir/pqueue.cc.o
-
-
 CMakeFiles/ds.dir/heap.cc.o: CMakeFiles/ds.dir/flags.make
 CMakeFiles/ds.dir/heap.cc.o: ../heap.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ds.dir/heap.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ds.dir/heap.cc.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ds.dir/heap.cc.o -c /home/onter/project/hub/demohub/数据压缩/heap.cc
 
 CMakeFiles/ds.dir/heap.cc.i: cmake_force
@@ -157,7 +133,6 @@ CMakeFiles/ds.dir/heap.cc.o.provides.build: CMakeFiles/ds.dir/heap.cc.o
 ds_OBJECTS = \
 "CMakeFiles/ds.dir/bit.cc.o" \
 "CMakeFiles/ds.dir/bitree.cc.o" \
-"CMakeFiles/ds.dir/pqueue.cc.o" \
 "CMakeFiles/ds.dir/heap.cc.o"
 
 # External object files for target ds
@@ -165,11 +140,10 @@ ds_EXTERNAL_OBJECTS =
 
 libds.a: CMakeFiles/ds.dir/bit.cc.o
 libds.a: CMakeFiles/ds.dir/bitree.cc.o
-libds.a: CMakeFiles/ds.dir/pqueue.cc.o
 libds.a: CMakeFiles/ds.dir/heap.cc.o
 libds.a: CMakeFiles/ds.dir/build.make
 libds.a: CMakeFiles/ds.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libds.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libds.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ds.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ds.dir/link.txt --verbose=$(VERBOSE)
 
@@ -180,7 +154,6 @@ CMakeFiles/ds.dir/build: libds.a
 
 CMakeFiles/ds.dir/requires: CMakeFiles/ds.dir/bit.cc.o.requires
 CMakeFiles/ds.dir/requires: CMakeFiles/ds.dir/bitree.cc.o.requires
-CMakeFiles/ds.dir/requires: CMakeFiles/ds.dir/pqueue.cc.o.requires
 CMakeFiles/ds.dir/requires: CMakeFiles/ds.dir/heap.cc.o.requires
 
 .PHONY : CMakeFiles/ds.dir/requires
