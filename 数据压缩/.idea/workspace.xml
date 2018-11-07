@@ -2,10 +2,10 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
+      <config projectName="dataCompression" targetName="ds" />
+      <config projectName="dataCompression" targetName="main" />
       <config projectName="dataCompression" targetName="huffman" />
       <config projectName="dataCompression" targetName="bit_test" />
-      <config projectName="dataCompression" targetName="main" />
-      <config projectName="dataCompression" targetName="ds" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -26,21 +26,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pqueue.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pqueue.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+            <state relative-caret-position="1144">
+              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -49,7 +39,7 @@
       <file leaf-file-name="heap.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heap.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="1672">
               <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
               <folding>
                 <element signature="e#187#204#0" expanded="true" />
@@ -61,7 +51,7 @@
       <file leaf-file-name="heap.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/heap.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="1144">
               <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="42" />
               <folding />
             </state>
@@ -71,7 +61,7 @@
       <file leaf-file-name="bitree.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitree.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="1232">
               <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="e#183#202#0" expanded="true" />
@@ -83,7 +73,7 @@
       <file leaf-file-name="bitree.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bitree.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
+            <state relative-caret-position="2002">
               <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="13" />
               <folding />
             </state>
@@ -93,7 +83,7 @@
       <file leaf-file-name="huffman.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/huffman.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
+            <state relative-caret-position="-1178">
               <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
               <folding>
                 <element signature="e#183#204#0" expanded="true" />
@@ -102,20 +92,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="lz77.cc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lz77.cc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding>
+                <element signature="e#188#211#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="bit.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bit.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="902">
               <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.cc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cc">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
+            <state relative-caret-position="1100">
               <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
               <folding>
                 <element signature="e#182#203#0" expanded="true" />
@@ -127,8 +129,8 @@
       <file leaf-file-name="compress.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/compress.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state relative-caret-position="780">
+              <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -149,11 +151,12 @@
         <option value="$PROJECT_DIR$/heap.h" />
         <option value="$PROJECT_DIR$/pqueue.h" />
         <option value="$PROJECT_DIR$/bitree.cc" />
-        <option value="$PROJECT_DIR$/compress.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/heap.cc" />
         <option value="$PROJECT_DIR$/huffman.cc" />
         <option value="$PROJECT_DIR$/main.cc" />
+        <option value="$PROJECT_DIR$/compress.h" />
+        <option value="$PROJECT_DIR$/lz77.cc" />
       </list>
     </option>
   </component>
@@ -190,11 +193,6 @@
             <path>
               <item name="dataCompression" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="数据压缩" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dataCompression" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="数据压缩" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,28 +264,29 @@
       <workItem from="1541383891411" duration="16832000" />
       <workItem from="1541472324218" duration="3109000" />
       <workItem from="1541493375299" duration="8283000" />
+      <workItem from="1541592403336" duration="1447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40281000" />
+    <option name="totallyTimeSpent" value="41728000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="437" y="-4" width="1922" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14479166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21486762" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299389" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -331,20 +330,101 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pqueue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heap.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+          <folding>
+            <element signature="e#187#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heap.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitree.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#183#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bitree.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/huffman.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6952">
+          <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
+          <folding>
+            <element signature="e#183#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bit.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compress.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
+          <folding>
+            <element signature="e#182#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="42" lean-forward="false" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pqueue.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pqueue.cc" />
     <entry file="file://$PROJECT_DIR$/heap.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
@@ -399,14 +479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pqueue.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pqueue.cc" />
     <entry file="file://$PROJECT_DIR$/heap.cc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
@@ -534,14 +607,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/compress.cc" />
-    <entry file="file://$PROJECT_DIR$/pqueue.cc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/pqueue.cc" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -552,15 +618,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pqueue.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="52" column="29" lean-forward="true" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+        <state relative-caret-position="1144">
+          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bitree.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
+        <state relative-caret-position="2002">
           <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="13" />
           <folding />
         </state>
@@ -568,7 +634,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heap.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="1144">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="42" />
           <folding />
         </state>
@@ -576,7 +642,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/heap.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="1672">
           <caret line="76" column="28" lean-forward="false" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
           <folding>
             <element signature="e#187#204#0" expanded="true" />
@@ -584,17 +650,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/compress.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bitree.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="1232">
           <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="e#183#202#0" expanded="true" />
@@ -604,15 +662,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bit.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="902">
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
+          <folding>
+            <element signature="e#182#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compress.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="79" column="23" lean-forward="false" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/huffman.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
+        <state relative-caret-position="-1178">
           <caret line="316" column="0" lean-forward="false" selection-start-line="316" selection-start-column="0" selection-end-line="316" selection-end-column="0" />
           <folding>
             <element signature="e#183#204#0" expanded="true" />
@@ -620,12 +696,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cc">
+    <entry file="file://$PROJECT_DIR$/lz77.cc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="50" column="66" lean-forward="false" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
+        <state relative-caret-position="352">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding>
-            <element signature="e#182#203#0" expanded="true" />
+            <element signature="e#188#211#0" expanded="true" />
           </folding>
         </state>
       </provider>
