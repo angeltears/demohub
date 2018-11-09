@@ -54,11 +54,11 @@ int huffman_uncompress(const unsigned char *compressed, unsigned char** original
 #define     LZ77_BUFFER_SIZE     32
 
 /// LZ77短语长度
-#define     LZ77_PHRASE_BITS    (LZ77_TYPE_BITS+LZ77_WINOFF_BITS+LZ77_NEXT_BITS+LZ77_BUFLEN_BITS)
+#define     LZ77_PHRASE_BITS    (LZ77_TYPE_BITS+LZ77_WINOFF_BITS+LZ77_NEXT_BITS+LZ77_BUFLEN_BITS)   //  1+12+5+8 = 26;
 
 /// LZ77符号长度
 #define     LZ77_SYMBOL_BITS    (LZ77_TYPE_BITS+LZ77_NEXT_BITS)
-#define LZ77_SYNBOL_BITS (LZ77_TYPE_BITS+LZ77_NEXT_BITS)
+#define     LZ77_SYNBOL_BITS    (LZ77_TYPE_BITS+LZ77_NEXT_BITS)
 /**
  用 LZ77 算法压缩缓冲区 original 中的数据 - O(n) n 是原始数据中符号的个数
  @param original 原始数据缓冲区
@@ -78,4 +78,3 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
 int lz77_uncompress(const unsigned char *compressed, unsigned char **original);
 
 #endif /* COMPRESS_H */
-#endif //DATACOMPRESSION_HUFFMAN_H

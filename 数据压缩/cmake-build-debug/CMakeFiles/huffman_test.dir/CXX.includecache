@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/onter/project/hub/demohub/数据压缩/compress.h
+
+/home/onter/project/hub/demohub/数据压缩/huffman_test.cc
+compress.h
+/home/onter/project/hub/demohub/数据压缩/compress.h
+iostream
+-
+unistd.h
+-
+fcntl.h
+-
+sys/stat.h
+-
+cstring
+-
+malloc.h
+-
+

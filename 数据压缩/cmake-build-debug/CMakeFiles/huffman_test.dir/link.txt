@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/huffman_test.dir/huffman_test.cc.o  -o huffman_test libhuffman.a libds.a 

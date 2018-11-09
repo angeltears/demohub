@@ -122,17 +122,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named lz77
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+lz77: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lz77
+.PHONY : lz77
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+lz77/fast:
+	$(MAKE) -f CMakeFiles/lz77.dir/build.make CMakeFiles/lz77.dir/build
+.PHONY : lz77/fast
+
+#=============================================================================
+# Target rules for targets named lz77_test
+
+# Build rule for target.
+lz77_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lz77_test
+.PHONY : lz77_test
+
+# fast build rule for target.
+lz77_test/fast:
+	$(MAKE) -f CMakeFiles/lz77_test.dir/build.make CMakeFiles/lz77_test.dir/build
+.PHONY : lz77_test/fast
+
+#=============================================================================
+# Target rules for targets named huffman_test
+
+# Build rule for target.
+huffman_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 huffman_test
+.PHONY : huffman_test
+
+# fast build rule for target.
+huffman_test/fast:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/build
+.PHONY : huffman_test/fast
 
 #=============================================================================
 # Target rules for targets named huffman
@@ -179,6 +205,7 @@ bit.o: bit.cc.o
 
 # target to build an object file
 bit.cc.o:
+	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.o
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.o
 .PHONY : bit.cc.o
 
@@ -188,6 +215,7 @@ bit.i: bit.cc.i
 
 # target to preprocess a source file
 bit.cc.i:
+	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.i
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.i
 .PHONY : bit.cc.i
 
@@ -197,6 +225,7 @@ bit.s: bit.cc.s
 
 # target to generate assembly for a file
 bit.cc.s:
+	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.s
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.s
 .PHONY : bit.cc.s
 
@@ -308,32 +337,86 @@ huffman.cc.s:
 	$(MAKE) -f CMakeFiles/huffman.dir/build.make CMakeFiles/huffman.dir/huffman.cc.s
 .PHONY : huffman.cc.s
 
-main.o: main.cc.o
+huffman_test.o: huffman_test.cc.o
 
-.PHONY : main.o
+.PHONY : huffman_test.o
 
 # target to build an object file
-main.cc.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.o
-.PHONY : main.cc.o
+huffman_test.cc.o:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/huffman_test.cc.o
+.PHONY : huffman_test.cc.o
 
-main.i: main.cc.i
+huffman_test.i: huffman_test.cc.i
 
-.PHONY : main.i
+.PHONY : huffman_test.i
 
 # target to preprocess a source file
-main.cc.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.i
-.PHONY : main.cc.i
+huffman_test.cc.i:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/huffman_test.cc.i
+.PHONY : huffman_test.cc.i
 
-main.s: main.cc.s
+huffman_test.s: huffman_test.cc.s
 
-.PHONY : main.s
+.PHONY : huffman_test.s
 
 # target to generate assembly for a file
-main.cc.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cc.s
-.PHONY : main.cc.s
+huffman_test.cc.s:
+	$(MAKE) -f CMakeFiles/huffman_test.dir/build.make CMakeFiles/huffman_test.dir/huffman_test.cc.s
+.PHONY : huffman_test.cc.s
+
+lz77.o: lz77.cc.o
+
+.PHONY : lz77.o
+
+# target to build an object file
+lz77.cc.o:
+	$(MAKE) -f CMakeFiles/lz77.dir/build.make CMakeFiles/lz77.dir/lz77.cc.o
+.PHONY : lz77.cc.o
+
+lz77.i: lz77.cc.i
+
+.PHONY : lz77.i
+
+# target to preprocess a source file
+lz77.cc.i:
+	$(MAKE) -f CMakeFiles/lz77.dir/build.make CMakeFiles/lz77.dir/lz77.cc.i
+.PHONY : lz77.cc.i
+
+lz77.s: lz77.cc.s
+
+.PHONY : lz77.s
+
+# target to generate assembly for a file
+lz77.cc.s:
+	$(MAKE) -f CMakeFiles/lz77.dir/build.make CMakeFiles/lz77.dir/lz77.cc.s
+.PHONY : lz77.cc.s
+
+lz77_test.o: lz77_test.cc.o
+
+.PHONY : lz77_test.o
+
+# target to build an object file
+lz77_test.cc.o:
+	$(MAKE) -f CMakeFiles/lz77_test.dir/build.make CMakeFiles/lz77_test.dir/lz77_test.cc.o
+.PHONY : lz77_test.cc.o
+
+lz77_test.i: lz77_test.cc.i
+
+.PHONY : lz77_test.i
+
+# target to preprocess a source file
+lz77_test.cc.i:
+	$(MAKE) -f CMakeFiles/lz77_test.dir/build.make CMakeFiles/lz77_test.dir/lz77_test.cc.i
+.PHONY : lz77_test.cc.i
+
+lz77_test.s: lz77_test.cc.s
+
+.PHONY : lz77_test.s
+
+# target to generate assembly for a file
+lz77_test.cc.s:
+	$(MAKE) -f CMakeFiles/lz77_test.dir/build.make CMakeFiles/lz77_test.dir/lz77_test.cc.s
+.PHONY : lz77_test.cc.s
 
 # Help Target
 help:
@@ -342,8 +425,10 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... lz77"
 	@echo "... test"
-	@echo "... main"
+	@echo "... lz77_test"
+	@echo "... huffman_test"
 	@echo "... rebuild_cache"
 	@echo "... huffman"
 	@echo "... bit_test"
@@ -363,9 +448,15 @@ help:
 	@echo "... huffman.o"
 	@echo "... huffman.i"
 	@echo "... huffman.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... huffman_test.o"
+	@echo "... huffman_test.i"
+	@echo "... huffman_test.s"
+	@echo "... lz77.o"
+	@echo "... lz77.i"
+	@echo "... lz77.s"
+	@echo "... lz77_test.o"
+	@echo "... lz77_test.i"
+	@echo "... lz77_test.s"
 .PHONY : help
 
 

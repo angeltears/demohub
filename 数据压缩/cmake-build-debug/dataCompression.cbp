@@ -27,6 +27,52 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="lz77">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/liblz77.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 lz77"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lz77/fast">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/liblz77.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 lz77/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="test">
 				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
 				<Option type="4"/>
@@ -37,8 +83,8 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="main">
-				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+			<Target title="lz77_test">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/lz77_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -54,14 +100,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 lz77_test"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="main/fast">
-				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+			<Target title="lz77_test/fast">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/lz77_test" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -77,7 +123,53 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 lz77_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="huffman_test">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/huffman_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 huffman_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="huffman_test/fast">
+				<Option output="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/huffman_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/onter/project/hub/demohub/数据压缩/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 huffman_test/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/onter/project/hub/demohub/数据压缩/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -233,9 +325,11 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit.cc">
+			<Option target="bit_test"/>
 			<Option target="ds"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit.h">
+			<Option target="bit_test"/>
 			<Option target="ds"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit_test.cc">
@@ -248,6 +342,7 @@
 			<Option target="ds"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/compress.h">
+			<Option target="lz77"/>
 			<Option target="huffman"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/heap.cc">
@@ -259,8 +354,14 @@
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/huffman.cc">
 			<Option target="huffman"/>
 		</Unit>
-		<Unit filename="/home/onter/project/hub/demohub/数据压缩/main.cc">
-			<Option target="main"/>
+		<Unit filename="/home/onter/project/hub/demohub/数据压缩/huffman_test.cc">
+			<Option target="huffman_test"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/数据压缩/lz77.cc">
+			<Option target="lz77"/>
+		</Unit>
+		<Unit filename="/home/onter/project/hub/demohub/数据压缩/lz77_test.cc">
+			<Option target="lz77_test"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/pqueue.h">
 			<Option target="ds"/>

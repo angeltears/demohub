@@ -230,6 +230,9 @@ ds_LIB_DEPENDS:STATIC=
 //Dependencies for the target
 huffman_LIB_DEPENDS:STATIC=general;ds;
 
+//Dependencies for the target
+lz77_LIB_DEPENDS:STATIC=general;ds;
+
 
 ########################
 # INTERNAL cache entries

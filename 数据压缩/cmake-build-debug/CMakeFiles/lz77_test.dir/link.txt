@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lz77_test.dir/lz77_test.cc.o  -o lz77_test liblz77.a libds.a 
