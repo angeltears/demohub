@@ -325,11 +325,9 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit.cc">
-			<Option target="bit_test"/>
 			<Option target="ds"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit.h">
-			<Option target="bit_test"/>
 			<Option target="ds"/>
 		</Unit>
 		<Unit filename="/home/onter/project/hub/demohub/数据压缩/bit_test.cc">

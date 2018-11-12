@@ -1,2 +1,0 @@
-/usr/bin/ar qc "libBit,&{BitSrc}.a"  "CMakeFiles/Bit,&{BitSrc}.dir/bit.cc.o"
-/usr/bin/ranlib "libBit,&{BitSrc}.a"

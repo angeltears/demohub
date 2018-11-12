@@ -205,7 +205,6 @@ bit.o: bit.cc.o
 
 # target to build an object file
 bit.cc.o:
-	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.o
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.o
 .PHONY : bit.cc.o
 
@@ -215,7 +214,6 @@ bit.i: bit.cc.i
 
 # target to preprocess a source file
 bit.cc.i:
-	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.i
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.i
 .PHONY : bit.cc.i
 
@@ -225,7 +223,6 @@ bit.s: bit.cc.s
 
 # target to generate assembly for a file
 bit.cc.s:
-	$(MAKE) -f CMakeFiles/bit_test.dir/build.make CMakeFiles/bit_test.dir/bit.cc.s
 	$(MAKE) -f CMakeFiles/ds.dir/build.make CMakeFiles/ds.dir/bit.cc.s
 .PHONY : bit.cc.s
 

@@ -14,21 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Dependencies for target
-Bit,&{BitSrc}_LIB_DEPENDS:STATIC=
-
-//Dependencies for target
-Bit,&{bit}_LIB_DEPENDS:STATIC=
-
-//Dependencies for target
-Bit,bit.cc_LIB_DEPENDS:STATIC=
-
-//Dependencies for target
-Bit,{&bit}_LIB_DEPENDS:STATIC=
-
-//Dependencies for target
-Bit,{bit}_LIB_DEPENDS:STATIC=
-
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
@@ -208,15 +193,6 @@ ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=/sbin/sysctl
-
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩
-
-//Dependencies for target
-bit_LIB_DEPENDS:STATIC=
 
 //Value Computed by CMake
 dataCompression_BINARY_DIR:STATIC=/home/onter/project/hub/demohub/数据压缩/cmake-build-debug

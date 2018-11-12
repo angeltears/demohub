@@ -1,2 +1,0 @@
-/usr/bin/ar qc libbit.a  CMakeFiles/bit.dir/bit.cc.o
-/usr/bin/ranlib libbit.a

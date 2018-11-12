@@ -57,5 +57,4 @@ int main()
         temp = temp -rdsize;
     }
     free(outbuf);
-    free(buff);
 }

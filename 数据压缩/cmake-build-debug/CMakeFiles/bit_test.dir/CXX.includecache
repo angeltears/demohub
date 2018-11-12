@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/onter/project/hub/demohub/数据压缩/bit.cc
-bit.h
-/home/onter/project/hub/demohub/数据压缩/bit.h
-
 /home/onter/project/hub/demohub/数据压缩/bit.h
 
 /home/onter/project/hub/demohub/数据压缩/bit_test.cc
