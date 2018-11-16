@@ -59,23 +59,6 @@ static int compare_win(const unsigned char* window,
     }
     return longest;
 }
-static uint64_t htonll(uint64_t value)
-{
-    // The answer is 42
-    static const int num = 42;
-
-    // Check the endianness
-    if (*reinterpret_cast<const char*>(&num) == num)
-    {
-        const uint32_t high_part = htonl(static_cast<uint32_t>(value >> 32));
-        const uint32_t low_part = htonl(static_cast<uint32_t>(value & 0xFFFFFFFFLL));
-
-        return (static_cast<uint64_t>(low_part) << 32) | high_part;
-    } else
-    {
-        return value;
-    }
-}
 
 int lz77_compress(const unsigned char *original, unsigned char **compressed, int size)
 {
@@ -113,13 +96,22 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
     int length = 0;
     int offset = 0;
     unsigned char next;
-    unsigned long token;
+    unsigned int token;
     int tbits;
     while (remaining > 0)
     {
         if ((length = compare_win(window, buffer, &offset, &next)) != 0)
         {
-            /// 在64位系统下 unsigned long = 64bit，  分别存放前8位存放短语标记，最后八位存放next
+            /**
+             * /// 类型长度
+            #define LZ77_TYPE_BITS    1
+               /// 滑动窗口偏移量长度
+            #define LZ77_WINOFF_BITS  13
+                /// 短语标志长度
+            #define LZ77_BUFLEN_BITS  5
+                /// 下一个匹配符号长度
+            #define     LZ77_NEXT_BITS        8          26
+             */
             /// 编码短语标记
             token = 0x00000001 << (LZ77_PHRASE_BITS - 1);     // 0x200 0000
             /// 设置偏移量当在滑动窗口中找到结果
@@ -128,7 +120,6 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
             /// 设置最大匹配长度
             token = token | (length << (LZ77_PHRASE_BITS - LZ77_TYPE_BITS -
                                         LZ77_WINOFF_BITS - LZ77_BUFLEN_BITS));
-
             /// 设置前向缓冲区中匹配后的下一个符号
             token = token | next;
 
@@ -147,8 +138,8 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
             tbits = LZ77_SYMBOL_BITS;
         }
 
+        token = htonl(token);
         /// 确保短语标记是以大端字节格式存放
-        token = htonll(token);
 
         for (int i = 0; i < tbits; i++)
         {
@@ -168,7 +159,7 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
                 comp = temp;
             }
 
-            tpos = (sizeof(unsigned long) * 8) - tbits + i;
+            tpos = (sizeof(unsigned int) * 8) - tbits + i;
             bit_set(comp, opos,  bit_get((unsigned char *)&token, tpos));
             opos++;
         }
@@ -193,7 +184,13 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
 
     /// 将缓冲区指向已压缩数据
     *compressed = comp;
-
+    for (int i = 0; i < opos; i++)
+    {
+        if (i % 8 == 0)
+            printf("\t");
+        printf("%d", bit_get(*compressed, i));
+    }
+    printf("\n");
     /// 返回压缩后数据的长度
     return ((opos - 1) / 8) + 1;
 }
@@ -279,10 +276,10 @@ int lz77_uncompress(const unsigned char *compressed, unsigned char **original)
             int i = 0;
             while (i < length && remaining > 0)
             {
-                orig[opos] = window[offset + i];
+                orig[opos] = window[offset + i - 1];
                 opos++;
                 /// 记录前向缓冲区中的符号直到更新入滑动窗口
-                buffer[i] = window[offset + i];
+                buffer[i] = window[offset + i - 1];
                 i++;
                 /// 更新生于的需要处理的符号数量
                 remaining--;
