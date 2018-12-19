@@ -184,13 +184,6 @@ int lz77_compress(const unsigned char *original, unsigned char **compressed, int
 
     /// 将缓冲区指向已压缩数据
     *compressed = comp;
-    for (int i = 0; i < opos; i++)
-    {
-        if (i % 8 == 0)
-            printf("\t");
-        printf("%d", bit_get(*compressed, i));
-    }
-    printf("\n");
     /// 返回压缩后数据的长度
     return ((opos - 1) / 8) + 1;
 }
