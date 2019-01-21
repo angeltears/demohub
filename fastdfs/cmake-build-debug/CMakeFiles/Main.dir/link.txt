@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Main.dir/Main.cc.o CMakeFiles/Main.dir/fdfs_api.cc.o CMakeFiles/Main.dir/make_log.cc.o  -o Main -lfdfsclient -lfastcommon 
